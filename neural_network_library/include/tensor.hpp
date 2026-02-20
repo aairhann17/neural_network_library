@@ -33,6 +33,7 @@ private:
     bool requires_grad_;
     std::function<void()> backward_fn_;
     std::vector<std::shared_ptr<Tensor>> parents_;
+    void backward_impl();
     
 public:
     // Constructors
@@ -116,3 +117,4 @@ private:
 };
 
 } // namespace nn
+
