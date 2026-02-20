@@ -1,5 +1,10 @@
 #pragma once
 
+// losses.hpp
+// Loss functions for supervised learning.
+//
+// Functions return Tensor losses so they can participate in autograd
+// and backpropagate into model parameters.
 #include "tensor.hpp"
 
 namespace nn {
