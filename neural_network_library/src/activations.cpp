@@ -1,4 +1,12 @@
 #include "activations.hpp"
+
+// activations.cpp
+// Element-wise and normalized activation implementations.
+//
+// Notes:
+// - Functions are stateless and return a new Tensor.
+// - Softmax uses max-subtraction for numerical stability.
+
 #include <algorithm>
 #include <cmath>
 #include <numeric>
