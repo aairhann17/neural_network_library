@@ -1,4 +1,13 @@
 #include "optimizer.hpp"
+
+// optimizer.cpp
+// Implementations of parameter update rules (SGD and Adam).
+//
+// Training step pattern:
+// - Read each parameter's gradient
+// - Optionally apply weight decay
+// - Update parameter values in-place
+
 #include <cmath>
 #include <algorithm>
 
