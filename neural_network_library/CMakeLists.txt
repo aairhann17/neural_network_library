@@ -61,12 +61,11 @@ enable_testing()
 if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/tests/test_tensor.cpp")
     add_executable(test_tensor tests/test_tensor.cpp)
     target_link_libraries(test_tensor neuralnet)
+    add_test(NAME TensorTests COMMAND test_tensor)
 endif()
-add_test(NAME TensorTests COMMAND test_tensor)
 
-add_executable(test_layers tests/test_layers.cpp)
-target_link_libraries(test_layers neuralnet)
-add_test(NAME LayerTests COMMAND test_layers)
-
-include\tensor.hpp
-    Tensor& operator*=(const Tensor& other);
+if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/tests/test_layers.cpp")
+    add_executable(test_layers tests/test_layers.cpp)
+    target_link_libraries(test_layers neuralnet)
+    add_test(NAME LayerTests COMMAND test_layers)
+endif()
