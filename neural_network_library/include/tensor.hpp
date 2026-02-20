@@ -1,5 +1,17 @@
 #pragma once
 
+// tensor.hpp
+// Core Tensor primitive used across the library.
+//
+// What this file defines:
+// - Dense n-dimensional tensor storage and shape metadata
+// - Arithmetic/matrix/reduction APIs
+// - Lightweight autograd fields (gradient, parents, backward callback)
+//
+// Reading tip:
+// - Start from public APIs in class Tensor.
+// - Then check src/tensor.cpp for operation implementations and backprop rules.
+
 #include <vector>
 #include <memory>
 #include <stdexcept>
