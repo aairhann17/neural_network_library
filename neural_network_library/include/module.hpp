@@ -1,5 +1,12 @@
 #pragma once
 
+// module.hpp
+// Layer abstractions used to build trainable neural networks.
+//
+// Key pieces:
+// - Module: base interface (forward, parameters, mode switching)
+// - Linear: fully connected layer with trainable weight/bias
+// - ReLU/Sigmoid/Tanh/Dropout: common activation and regularization layers
 #include "tensor.hpp"
 #include <vector>
 #include <memory>
