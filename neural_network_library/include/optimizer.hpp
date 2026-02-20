@@ -1,5 +1,11 @@
 #pragma once
 
+// optimizer.hpp
+// Optimization algorithms that update model parameters using gradients.
+//
+// Included optimizers:
+// - SGD (optional momentum + weight decay)
+// - Adam (adaptive first/second moment estimates)
 #include "tensor.hpp"
 #include <vector>
 #include <memory>
