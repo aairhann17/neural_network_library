@@ -1,4 +1,14 @@
 #include "tensor.hpp"
+
+// tensor.cpp
+// Implementation of Tensor math, shape utilities, and lightweight autograd.
+//
+// High-level flow:
+// - Each forward op computes output values.
+// - If gradients are required, the op stores parent references and a
+//   backward callback describing local gradient propagation.
+// - backward() executes local propagation, then recursively traverses parents.
+
 #include <algorithm>
 #include <numeric>
 #include <cmath>
