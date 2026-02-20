@@ -105,7 +105,9 @@ Tensor::Tensor(const Tensor& other)
     : data_(other.data_),
       shape_(other.shape_),
       requires_grad_(other.requires_grad_),
-      grad_(nullptr) {
+    grad_(nullptr),
+    backward_fn_(other.backward_fn_),
+    parents_(other.parents_) {
     
     if (requires_grad_) {
         allocate_grad();
@@ -116,13 +118,17 @@ Tensor::Tensor(Tensor&& other) noexcept
     : data_(std::move(other.data_)),
       shape_(std::move(other.shape_)),
       requires_grad_(other.requires_grad_),
-      grad_(std::move(other.grad_)) {}
+    grad_(std::move(other.grad_)),
+    backward_fn_(std::move(other.backward_fn_)),
+    parents_(std::move(other.parents_)) {}
 
 Tensor& Tensor::operator=(const Tensor& other) {
     if (this != &other) {
         data_ = other.data_;
         shape_ = other.shape_;
         requires_grad_ = other.requires_grad_;
+        backward_fn_ = other.backward_fn_;
+        parents_ = other.parents_;
         grad_ = nullptr;
         if (requires_grad_) {
             allocate_grad();
@@ -137,6 +143,8 @@ Tensor& Tensor::operator=(Tensor&& other) noexcept {
         shape_ = std::move(other.shape_);
         requires_grad_ = other.requires_grad_;
         grad_ = std::move(other.grad_);
+        backward_fn_ = std::move(other.backward_fn_);
+        parents_ = std::move(other.parents_);
     }
     return *this;
 }
@@ -190,9 +198,10 @@ Tensor Tensor::operator+(const Tensor& other) const {
     if (result.requires_grad_) {
         auto left = std::shared_ptr<Tensor>(const_cast<Tensor*>(this), [](Tensor*) {});
         auto right = std::shared_ptr<Tensor>(const_cast<Tensor*>(&other), [](Tensor*) {});
+        auto out_grad = result.grad_;
         result.parents_ = {left, right};
-        result.backward_fn_ = [result_ptr = &result, left, right]() {
-            if (!result_ptr->grad_) {
+        result.backward_fn_ = [out_grad, left, right]() {
+            if (!out_grad) {
                 return;
             }
             if (left->requires_grad_) {
@@ -200,7 +209,7 @@ Tensor Tensor::operator+(const Tensor& other) const {
                     left->allocate_grad();
                 }
                 for (size_t i = 0; i < left->data_.size(); ++i) {
-                    left->grad_->data_[i] += result_ptr->grad_->data_[i];
+                    left->grad_->data_[i] += out_grad->data_[i];
                 }
             }
             if (right->requires_grad_) {
@@ -208,7 +217,7 @@ Tensor Tensor::operator+(const Tensor& other) const {
                     right->allocate_grad();
                 }
                 for (size_t i = 0; i < right->data_.size(); ++i) {
-                    right->grad_->data_[i] += result_ptr->grad_->data_[i];
+                    right->grad_->data_[i] += out_grad->data_[i];
                 }
             }
         };
@@ -229,9 +238,10 @@ Tensor Tensor::operator-(const Tensor& other) const {
     if (result.requires_grad_) {
         auto left = std::shared_ptr<Tensor>(const_cast<Tensor*>(this), [](Tensor*) {});
         auto right = std::shared_ptr<Tensor>(const_cast<Tensor*>(&other), [](Tensor*) {});
+        auto out_grad = result.grad_;
         result.parents_ = {left, right};
-        result.backward_fn_ = [result_ptr = &result, left, right]() {
-            if (!result_ptr->grad_) {
+        result.backward_fn_ = [out_grad, left, right]() {
+            if (!out_grad) {
                 return;
             }
             if (left->requires_grad_) {
@@ -239,7 +249,7 @@ Tensor Tensor::operator-(const Tensor& other) const {
                     left->allocate_grad();
                 }
                 for (size_t i = 0; i < left->data_.size(); ++i) {
-                    left->grad_->data_[i] += result_ptr->grad_->data_[i];
+                    left->grad_->data_[i] += out_grad->data_[i];
                 }
             }
             if (right->requires_grad_) {
@@ -247,7 +257,7 @@ Tensor Tensor::operator-(const Tensor& other) const {
                     right->allocate_grad();
                 }
                 for (size_t i = 0; i < right->data_.size(); ++i) {
-                    right->grad_->data_[i] -= result_ptr->grad_->data_[i];
+                    right->grad_->data_[i] -= out_grad->data_[i];
                 }
             }
         };
@@ -268,9 +278,10 @@ Tensor Tensor::operator*(const Tensor& other) const {
     if (result.requires_grad_) {
         auto left = std::shared_ptr<Tensor>(const_cast<Tensor*>(this), [](Tensor*) {});
         auto right = std::shared_ptr<Tensor>(const_cast<Tensor*>(&other), [](Tensor*) {});
+        auto out_grad = result.grad_;
         result.parents_ = {left, right};
-        result.backward_fn_ = [result_ptr = &result, left, right]() {
-            if (!result_ptr->grad_) {
+        result.backward_fn_ = [out_grad, left, right]() {
+            if (!out_grad) {
                 return;
             }
             if (left->requires_grad_) {
@@ -278,7 +289,7 @@ Tensor Tensor::operator*(const Tensor& other) const {
                     left->allocate_grad();
                 }
                 for (size_t i = 0; i < left->data_.size(); ++i) {
-                    left->grad_->data_[i] += result_ptr->grad_->data_[i] * right->data_[i];
+                    left->grad_->data_[i] += out_grad->data_[i] * right->data_[i];
                 }
             }
             if (right->requires_grad_) {
@@ -286,7 +297,7 @@ Tensor Tensor::operator*(const Tensor& other) const {
                     right->allocate_grad();
                 }
                 for (size_t i = 0; i < right->data_.size(); ++i) {
-                    right->grad_->data_[i] += result_ptr->grad_->data_[i] * left->data_[i];
+                    right->grad_->data_[i] += out_grad->data_[i] * left->data_[i];
                 }
             }
         };
@@ -310,9 +321,10 @@ Tensor Tensor::operator/(const Tensor& other) const {
     if (result.requires_grad_) {
         auto left = std::shared_ptr<Tensor>(const_cast<Tensor*>(this), [](Tensor*) {});
         auto right = std::shared_ptr<Tensor>(const_cast<Tensor*>(&other), [](Tensor*) {});
+        auto out_grad = result.grad_;
         result.parents_ = {left, right};
-        result.backward_fn_ = [result_ptr = &result, left, right]() {
-            if (!result_ptr->grad_) {
+        result.backward_fn_ = [out_grad, left, right]() {
+            if (!out_grad) {
                 return;
             }
             if (left->requires_grad_) {
@@ -320,7 +332,7 @@ Tensor Tensor::operator/(const Tensor& other) const {
                     left->allocate_grad();
                 }
                 for (size_t i = 0; i < left->data_.size(); ++i) {
-                    left->grad_->data_[i] += result_ptr->grad_->data_[i] / right->data_[i];
+                    left->grad_->data_[i] += out_grad->data_[i] / right->data_[i];
                 }
             }
             if (right->requires_grad_) {
@@ -329,7 +341,7 @@ Tensor Tensor::operator/(const Tensor& other) const {
                 }
                 for (size_t i = 0; i < right->data_.size(); ++i) {
                     const value_type denom = right->data_[i] * right->data_[i];
-                    right->grad_->data_[i] -= result_ptr->grad_->data_[i] * left->data_[i] / denom;
+                    right->grad_->data_[i] -= out_grad->data_[i] * left->data_[i] / denom;
                 }
             }
         };
@@ -347,16 +359,17 @@ Tensor Tensor::operator+(value_type scalar) const {
 
     if (result.requires_grad_) {
         auto left = std::shared_ptr<Tensor>(const_cast<Tensor*>(this), [](Tensor*) {});
+        auto out_grad = result.grad_;
         result.parents_ = {left};
-        result.backward_fn_ = [result_ptr = &result, left]() {
-            if (!result_ptr->grad_ || !left->requires_grad_) {
+        result.backward_fn_ = [out_grad, left]() {
+            if (!out_grad || !left->requires_grad_) {
                 return;
             }
             if (!left->grad_) {
                 left->allocate_grad();
             }
             for (size_t i = 0; i < left->data_.size(); ++i) {
-                left->grad_->data_[i] += result_ptr->grad_->data_[i];
+                left->grad_->data_[i] += out_grad->data_[i];
             }
         };
     }
@@ -373,16 +386,17 @@ Tensor Tensor::operator-(value_type scalar) const {
 
     if (result.requires_grad_) {
         auto left = std::shared_ptr<Tensor>(const_cast<Tensor*>(this), [](Tensor*) {});
+        auto out_grad = result.grad_;
         result.parents_ = {left};
-        result.backward_fn_ = [result_ptr = &result, left]() {
-            if (!result_ptr->grad_ || !left->requires_grad_) {
+        result.backward_fn_ = [out_grad, left]() {
+            if (!out_grad || !left->requires_grad_) {
                 return;
             }
             if (!left->grad_) {
                 left->allocate_grad();
             }
             for (size_t i = 0; i < left->data_.size(); ++i) {
-                left->grad_->data_[i] += result_ptr->grad_->data_[i];
+                left->grad_->data_[i] += out_grad->data_[i];
             }
         };
     }
@@ -399,16 +413,17 @@ Tensor Tensor::operator*(value_type scalar) const {
 
     if (result.requires_grad_) {
         auto left = std::shared_ptr<Tensor>(const_cast<Tensor*>(this), [](Tensor*) {});
+        auto out_grad = result.grad_;
         result.parents_ = {left};
-        result.backward_fn_ = [result_ptr = &result, left, scalar]() {
-            if (!result_ptr->grad_ || !left->requires_grad_) {
+        result.backward_fn_ = [out_grad, left, scalar]() {
+            if (!out_grad || !left->requires_grad_) {
                 return;
             }
             if (!left->grad_) {
                 left->allocate_grad();
             }
             for (size_t i = 0; i < left->data_.size(); ++i) {
-                left->grad_->data_[i] += result_ptr->grad_->data_[i] * scalar;
+                left->grad_->data_[i] += out_grad->data_[i] * scalar;
             }
         };
     }
@@ -429,16 +444,17 @@ Tensor Tensor::operator/(value_type scalar) const {
 
     if (result.requires_grad_) {
         auto left = std::shared_ptr<Tensor>(const_cast<Tensor*>(this), [](Tensor*) {});
+        auto out_grad = result.grad_;
         result.parents_ = {left};
-        result.backward_fn_ = [result_ptr = &result, left, scalar]() {
-            if (!result_ptr->grad_ || !left->requires_grad_) {
+        result.backward_fn_ = [out_grad, left, scalar]() {
+            if (!out_grad || !left->requires_grad_) {
                 return;
             }
             if (!left->grad_) {
                 left->allocate_grad();
             }
             for (size_t i = 0; i < left->data_.size(); ++i) {
-                left->grad_->data_[i] += result_ptr->grad_->data_[i] / scalar;
+                left->grad_->data_[i] += out_grad->data_[i] / scalar;
             }
         };
     }
@@ -519,9 +535,10 @@ Tensor Tensor::matmul(const Tensor& other) const {
     if (result.requires_grad_) {
         auto left = std::shared_ptr<Tensor>(const_cast<Tensor*>(this), [](Tensor*) {});
         auto right = std::shared_ptr<Tensor>(const_cast<Tensor*>(&other), [](Tensor*) {});
+        auto out_grad = result.grad_;
         result.parents_ = {left, right};
-        result.backward_fn_ = [result_ptr = &result, left, right]() {
-            if (!result_ptr->grad_) {
+        result.backward_fn_ = [out_grad, left, right]() {
+            if (!out_grad) {
                 return;
             }
 
@@ -538,7 +555,7 @@ Tensor Tensor::matmul(const Tensor& other) const {
                     for (size_t p = 0; p < k_local; ++p) {
                         value_type acc = 0.0;
                         for (size_t j = 0; j < n_local; ++j) {
-                            acc += result_ptr->grad_->data_[i * n_local + j] * right->data_[p * n_local + j];
+                            acc += out_grad->data_[i * n_local + j] * right->data_[p * n_local + j];
                         }
                         left->grad_->data_[i * k_local + p] += acc;
                     }
@@ -554,7 +571,7 @@ Tensor Tensor::matmul(const Tensor& other) const {
                     for (size_t j = 0; j < n_local; ++j) {
                         value_type acc = 0.0;
                         for (size_t i = 0; i < m_local; ++i) {
-                            acc += left->data_[i * k_local + p] * result_ptr->grad_->data_[i * n_local + j];
+                            acc += left->data_[i * k_local + p] * out_grad->data_[i * n_local + j];
                         }
                         right->grad_->data_[p * n_local + j] += acc;
                     }
@@ -593,16 +610,17 @@ Tensor Tensor::sum() const {
 
     if (result.requires_grad_) {
         auto input = std::shared_ptr<Tensor>(const_cast<Tensor*>(this), [](Tensor*) {});
+        auto out_grad = result.grad_;
         result.parents_ = {input};
-        result.backward_fn_ = [result_ptr = &result, input]() {
-            if (!result_ptr->grad_ || !input->requires_grad_) {
+        result.backward_fn_ = [out_grad, input]() {
+            if (!out_grad || !input->requires_grad_) {
                 return;
             }
             if (!input->grad_) {
                 input->allocate_grad();
             }
 
-            const value_type upstream = result_ptr->grad_->data_[0];
+            const value_type upstream = out_grad->data_[0];
             for (size_t i = 0; i < input->data_.size(); ++i) {
                 input->grad_->data_[i] += upstream;
             }
@@ -647,9 +665,10 @@ Tensor Tensor::sum(int axis) const {
 
     if (result.requires_grad_) {
         auto input = std::shared_ptr<Tensor>(const_cast<Tensor*>(this), [](Tensor*) {});
+        auto out_grad = result.grad_;
         result.parents_ = {input};
-        result.backward_fn_ = [result_ptr = &result, input, axis_u]() {
-            if (!result_ptr->grad_ || !input->requires_grad_) {
+        result.backward_fn_ = [out_grad, input, axis_u]() {
+            if (!out_grad || !input->requires_grad_) {
                 return;
             }
             if (!input->grad_) {
@@ -670,7 +689,7 @@ Tensor Tensor::sum(int axis) const {
                     out_strides_local,
                     out_ndim_effective_local
                 );
-                input->grad_->data_[in_idx] += result_ptr->grad_->data_[out_idx];
+                input->grad_->data_[in_idx] += out_grad->data_[out_idx];
             }
         };
     }
@@ -685,16 +704,17 @@ Tensor Tensor::mean() const {
 
     if (result.requires_grad_) {
         auto input = std::shared_ptr<Tensor>(const_cast<Tensor*>(this), [](Tensor*) {});
+        auto out_grad = result.grad_;
         result.parents_ = {input};
-        result.backward_fn_ = [result_ptr = &result, input]() {
-            if (!result_ptr->grad_ || !input->requires_grad_) {
+        result.backward_fn_ = [out_grad, input]() {
+            if (!out_grad || !input->requires_grad_) {
                 return;
             }
             if (!input->grad_) {
                 input->allocate_grad();
             }
 
-            const value_type scale = result_ptr->grad_->data_[0] /
+            const value_type scale = out_grad->data_[0] /
                                      static_cast<value_type>(input->data_.size());
             for (size_t i = 0; i < input->data_.size(); ++i) {
                 input->grad_->data_[i] += scale;
