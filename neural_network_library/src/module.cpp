@@ -4,6 +4,13 @@
 #include <random>
 
 namespace nn {
+// module.cpp
+// Implementations for layer modules (Linear, activations, Dropout)
+// and shared Module utilities.
+//
+// Linear layer summary:
+// - Parameters are initialized with Xavier-style random weights.
+// - forward() computes input @ weight^T (+ bias when enabled).
 
 // ============ Module Base Class ============
 
