@@ -1,5 +1,13 @@
 #include "losses.hpp"
 #include "activations.hpp"
+
+// losses.cpp
+// Loss function implementations used during training.
+//
+// Design notes:
+// - Inputs are validated for shape compatibility.
+// - Losses return Tensor values so they can be part of autograd graphs.
+
 #include <cmath>
 #include <algorithm>
 
