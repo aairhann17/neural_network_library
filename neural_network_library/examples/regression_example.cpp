@@ -2,6 +2,14 @@
 #include <vector>
 #include <memory>
 #include <cmath>
+// regression_example.cpp
+// End-to-end demo for learning a noisy linear function (y = 3x + 2 + noise).
+//
+// What this example demonstrates:
+// - Building a small regression network
+// - Training with MSE loss and SGD
+// - Evaluating predictions on held-out sample inputs
+
 #include "tensor.hpp"
 #include "module.hpp"
 #include "sequential.hpp"
