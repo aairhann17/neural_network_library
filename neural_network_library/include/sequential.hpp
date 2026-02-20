@@ -1,5 +1,12 @@
 #pragma once
 
+// sequential.hpp
+// Simple container that chains modules in order.
+//
+// Typical usage:
+// - add(...) layers
+// - forward(...) to run through all layers
+// - parameters() to collect trainable tensors for optimizers
 #include "module.hpp"
 #include <vector>
 #include <memory>
