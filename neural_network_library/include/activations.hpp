@@ -1,5 +1,10 @@
 #pragma once
 
+// activations.hpp
+// Stateless activation functions operating on Tensor values.
+//
+// These functions are used both directly and via Module wrappers
+// (e.g., ReLU/Sigmoid/Tanh layers in module.hpp).
 #include "tensor.hpp"
 #include <cmath>
 
