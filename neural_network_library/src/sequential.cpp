@@ -1,5 +1,13 @@
 #include "sequential.hpp"
 
+// sequential.cpp
+// Sequential model container implementation.
+//
+// Responsibilities:
+// - Maintain ordered module list
+// - Forward input through modules in order
+// - Aggregate parameters across all child modules
+
 namespace nn {
 
 void Sequential::add(std::shared_ptr<Module> module) {
