@@ -865,26 +865,16 @@ void Tensor::backward() {
     if (!requires_grad_) {
         throw std::runtime_error("Cannot backward on tensor with requires_grad=false");
     }
-    
-    if (!grad_) {
-        allocate_grad();
-    }
+    if (!grad_) allocate_grad();
+    std::fill(grad_->data_.begin(), grad_->data_.end(), 1.0);
+    backward_impl();
+}
 
-    const bool grad_all_zero = std::all_of(
-        grad_->data_.begin(), grad_->data_.end(),
-        [](value_type v) { return v == 0.0; }
-    );
-    if (grad_all_zero) {
-        std::fill(grad_->data_.begin(), grad_->data_.end(), 1.0);
-    }
-    
-    if (backward_fn_) {
-        backward_fn_();
-    }
-
+void Tensor::backward_impl() {
+    if (backward_fn_) backward_fn_();
     for (auto& parent : parents_) {
         if (parent && parent->requires_grad_) {
-            parent->backward();
+            parent->backward_impl();
         }
     }
 }
@@ -923,3 +913,4 @@ std::ostream& operator<<(std::ostream& os, const Tensor& t) {
 }
 
 } // namespace nn
+
