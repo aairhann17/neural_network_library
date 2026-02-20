@@ -65,6 +65,7 @@ int main() {
     // Training loop
     int num_epochs = 2000;
     int print_every = 200;
+    bool grad_sanity_logged = false;
     
     model->train();
     
@@ -83,9 +84,31 @@ int main() {
             Tensor loss = losses::binary_cross_entropy(prediction, targets[i]);
             total_loss += loss[0];
             
-            // Backward pass (currently manual - autograd to be fully implemented)
-            // For now, we'll use approximate gradients
-            // In a complete implementation, this would be: loss.backward()
+            // Backward pass
+            loss.backward();
+
+            if (!grad_sanity_logged) {
+                bool has_nonzero_grad = false;
+                for (Tensor* param : params) {
+                    if (!param || !param->has_grad()) {
+                        continue;
+                    }
+                    const Tensor& grad = param->grad();
+                    for (size_t g = 0; g < grad.size(); ++g) {
+                        if (grad[g] != 0.0) {
+                            has_nonzero_grad = true;
+                            break;
+                        }
+                    }
+                    if (has_nonzero_grad) {
+                        break;
+                    }
+                }
+                std::cout << "Gradient flow check (first backward): "
+                          << (has_nonzero_grad ? "non-zero grads detected" : "all grads zero")
+                          << std::endl;
+                grad_sanity_logged = true;
+            }
             
             // Update parameters
             optimizer.step();
