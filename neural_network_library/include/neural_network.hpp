@@ -1,5 +1,11 @@
 #pragma once
 
+// neural_network.hpp
+// Umbrella header that re-exports the main library building blocks.
+//
+// Include this file when you want a single import for tensors, modules,
+// activations, losses, sequential models, and optimizers.
+
 // Neural Network Library - Main Header
 // Include this header to access all library components
 
