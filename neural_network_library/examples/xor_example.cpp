@@ -1,6 +1,14 @@
 #include <iostream>
 #include <vector>
 #include <memory>
+// xor_example.cpp
+// End-to-end demo for binary classification on the XOR problem.
+//
+// What this example demonstrates:
+// - Building a small MLP with Sequential + Linear/activation layers
+// - Running training with BCE loss and Adam optimizer
+// - Calling loss.backward() and applying optimizer updates
+
 #include "tensor.hpp"
 #include "module.hpp"
 #include "sequential.hpp"
