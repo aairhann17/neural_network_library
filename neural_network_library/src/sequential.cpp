@@ -18,14 +18,18 @@ Tensor Sequential::forward(const Tensor& input) {
     if (modules_.empty()) {
         throw std::runtime_error("Sequential model has no layers");
     }
-    
-    Tensor output = input;
-    
+
+    Tensor buffer_a = input;
+    Tensor buffer_b = input;
+    Tensor* current = &buffer_a;
+    Tensor* next = &buffer_b;
+
     for (auto& module : modules_) {
-        output = module->forward(output);
+        *next = module->forward(*current);
+        std::swap(current, next);
     }
-    
-    return output;
+
+    return *current;
 }
 
 std::vector<Tensor*> Sequential::parameters() {
