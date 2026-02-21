@@ -36,7 +36,7 @@ SGD::SGD(const std::vector<Tensor*>& parameters, double learning_rate,
     // Initialize velocity tensors for momentum
     if (momentum_ > 0.0) {
         for (auto* param : parameters_) {
-            velocities_[param] = Tensor::zeros(param->shape());
+            velocities_.emplace(param, Tensor::zeros(param->shape()));
         }
     }
 }
@@ -60,7 +60,11 @@ void SGD::step() {
         
         if (momentum_ > 0.0) {
             // Velocity update: v = momentum * v + grad
-            Tensor& velocity = velocities_[param];
+            auto velocity_it = velocities_.find(param);
+            if (velocity_it == velocities_.end()) {
+                velocity_it = velocities_.emplace(param, Tensor::zeros(param->shape())).first;
+            }
+            Tensor& velocity = velocity_it->second;
             for (size_t i = 0; i < velocity.size(); ++i) {
                 velocity[i] = momentum_ * velocity[i] + effective_grad[i];
             }
@@ -93,8 +97,8 @@ Adam::Adam(const std::vector<Tensor*>& parameters, double learning_rate,
     
     // Initialize first and second moment estimates
     for (auto* param : parameters_) {
-        m_[param] = Tensor::zeros(param->shape());
-        v_[param] = Tensor::zeros(param->shape());
+        m_.emplace(param, Tensor::zeros(param->shape()));
+        v_.emplace(param, Tensor::zeros(param->shape()));
     }
 }
 
@@ -116,8 +120,17 @@ void Adam::step() {
             }
         }
         
-        Tensor& m = m_[param]; // first moment
-        Tensor& v = v_[param]; // second moment
+        auto m_it = m_.find(param);
+        if (m_it == m_.end()) {
+            m_it = m_.emplace(param, Tensor::zeros(param->shape())).first;
+        }
+        auto v_it = v_.find(param);
+        if (v_it == v_.end()) {
+            v_it = v_.emplace(param, Tensor::zeros(param->shape())).first;
+        }
+
+        Tensor& m = m_it->second; // first moment
+        Tensor& v = v_it->second; // second moment
         
         // Update biased first and second moment estimates
         for (size_t i = 0; i < param->size(); ++i) {
