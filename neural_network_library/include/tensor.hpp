@@ -103,6 +103,11 @@ public:
     Tensor& grad() { return *grad_; }
     const Tensor& grad() const { return *grad_; }
     bool has_grad() const { return grad_ != nullptr; }
+    std::shared_ptr<Tensor> grad_ptr() const { return grad_; }
+    void ensure_grad();
+    void set_autograd(std::function<void()> backward_fn,
+                      std::vector<std::shared_ptr<Tensor>> parents);
+    static std::shared_ptr<Tensor> alias(const Tensor& tensor);
     void backward();
     void zero_grad();
     
@@ -117,4 +122,3 @@ private:
 };
 
 } // namespace nn
-
