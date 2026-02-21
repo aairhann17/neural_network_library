@@ -16,9 +16,32 @@ namespace activations {
 
 Tensor relu(const Tensor& input) {
     Tensor output(input.shape(), input.requires_grad());
+    auto mask = std::make_shared<std::vector<double>>(input.size(), 0.0);
     
     for (size_t i = 0; i < input.size(); ++i) {
-        output[i] = std::max(0.0, input[i]);
+        if (input[i] > 0.0) {
+            output[i] = input[i];
+            (*mask)[i] = 1.0;
+        } else {
+            output[i] = 0.0;
+        }
+    }
+
+    if (output.requires_grad()) {
+        auto input_ptr = Tensor::alias(input);
+        auto out_grad = output.grad_ptr();
+        output.set_autograd(
+            [input_ptr, out_grad, mask]() {
+                if (!out_grad || !input_ptr->requires_grad()) {
+                    return;
+                }
+                input_ptr->ensure_grad();
+                for (size_t i = 0; i < input_ptr->size(); ++i) {
+                    input_ptr->grad()[i] += (*out_grad)[i] * (*mask)[i];
+                }
+            },
+            {input_ptr}
+        );
     }
     
     return output;
@@ -26,9 +49,30 @@ Tensor relu(const Tensor& input) {
 
 Tensor sigmoid(const Tensor& input) {
     Tensor output(input.shape(), input.requires_grad());
+    auto sigmoid_values = std::make_shared<std::vector<double>>(input.size(), 0.0);
     
     for (size_t i = 0; i < input.size(); ++i) {
-        output[i] = 1.0 / (1.0 + std::exp(-input[i]));
+        const double s = 1.0 / (1.0 + std::exp(-input[i]));
+        output[i] = s;
+        (*sigmoid_values)[i] = s;
+    }
+
+    if (output.requires_grad()) {
+        auto input_ptr = Tensor::alias(input);
+        auto out_grad = output.grad_ptr();
+        output.set_autograd(
+            [input_ptr, out_grad, sigmoid_values]() {
+                if (!out_grad || !input_ptr->requires_grad()) {
+                    return;
+                }
+                input_ptr->ensure_grad();
+                for (size_t i = 0; i < input_ptr->size(); ++i) {
+                    const double s = (*sigmoid_values)[i];
+                    input_ptr->grad()[i] += (*out_grad)[i] * s * (1.0 - s);
+                }
+            },
+            {input_ptr}
+        );
     }
     
     return output;
