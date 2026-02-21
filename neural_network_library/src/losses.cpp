@@ -30,15 +30,39 @@ Tensor binary_cross_entropy(const Tensor& predictions, const Tensor& targets) {
     }
     
     const double epsilon = 1e-7; // for numerical stability
-    Tensor loss(predictions.shape(), predictions.requires_grad());
+    auto dloss_dpred = std::make_shared<std::vector<double>>(predictions.size(), 0.0);
+    double total_loss = 0.0;
     
     for (size_t i = 0; i < predictions.size(); ++i) {
         double p = std::max(epsilon, std::min(1.0 - epsilon, predictions[i]));
         double y = targets[i];
-        loss[i] = -(y * std::log(p) + (1.0 - y) * std::log(1.0 - p));
+        const double sample_loss = -(y * std::log(p) + (1.0 - y) * std::log(1.0 - p));
+        total_loss += sample_loss;
+        (*dloss_dpred)[i] = (-((y / p) - ((1.0 - y) / (1.0 - p)))) /
+                           static_cast<double>(predictions.size());
+    }
+
+    const double mean_loss = total_loss / static_cast<double>(predictions.size());
+    Tensor result({mean_loss}, {1}, predictions.requires_grad());
+
+    if (result.requires_grad()) {
+        auto pred_ptr = Tensor::alias(predictions);
+        auto out_grad = result.grad_ptr();
+        result.set_autograd(
+            [pred_ptr, out_grad, dloss_dpred]() {
+                if (!out_grad || !pred_ptr->requires_grad()) {
+                    return;
+                }
+                pred_ptr->ensure_grad();
+                for (size_t i = 0; i < pred_ptr->size(); ++i) {
+                    pred_ptr->grad()[i] += (*out_grad)[0] * (*dloss_dpred)[i];
+                }
+            },
+            {pred_ptr}
+        );
     }
     
-    return loss.mean();
+    return result;
 }
 
 Tensor cross_entropy_loss(const Tensor& logits, const Tensor& targets) {
