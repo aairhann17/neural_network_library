@@ -55,19 +55,14 @@ neural_network_library/
 
 ### Build Instructions
 
+All commands run from the **repo root** (`neural_network_library-1/`).
+
 ```bash
-# Create and navigate to build directory
-mkdir -p build
-cd build
+# Configure (the CMakeLists.txt lives inside the neural_network_library subfolder)
+cmake -S neural_network_library -B neural_network_library/build
 
-# Configure with CMake
-cmake ..
-
-# Build the project
-cmake --build .
-
-# On Windows with MSVC, you might use:
-cmake --build . --config Release
+# Build
+cmake --build neural_network_library/build --config Release
 ```
 
 ## Generating API Documentation
@@ -171,16 +166,16 @@ int main() {
 
 ### Running Examples
 
-After building, you can run the example programs:
+Run from the **repo root** after building:
 
 ```bash
 # Linux / macOS
-./xor_example
-./regression_example
+./neural_network_library/build/xor_example
+./neural_network_library/build/regression_example
 
 # Windows (MSVC Release build)
-.\Release\xor_example.exe
-.\Release\regression_example.exe
+.\neural_network_library\build\Release\xor_example.exe
+.\neural_network_library\build\Release\regression_example.exe
 ```
 
 For a guided walkthrough of the build process and a first run, see [QUICKSTART.md](neural_network_library/QUICKSTART.md).
