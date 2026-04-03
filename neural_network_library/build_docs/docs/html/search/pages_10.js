@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['validation_0',['Build and Validation',['../md__c_1_2_users_2aaraa_2neural__network__library-1_2_c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md24',1,'']]]
+  ['usage_20examples_0',['Usage Examples',['../index.html#autotoc_md10',1,'']]],
+  ['utilities_1',['Indexing and Shape Utilities',['../group__tensor__api.html#tensor_indexing',1,'']]]
 ];

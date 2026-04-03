@@ -45,5 +45,6 @@ var group__module__api =
       [ "forward", "classnn_1_1_dropout.html#a0aaf5ec1eb979eec697a82e2e6a18e16", null ],
       [ "parameters", "classnn_1_1_dropout.html#a56ea509388697f2efe29a345dbd53a62", null ],
       [ "p_", "classnn_1_1_dropout.html#af3f1077897d8eaffaaad84738461e62c", null ]
-    ] ]
+    ] ],
+    [ "Module and Sequential Guide", "group__module__api.html#module_guide", "group__module__api_module_guide_dup" ]
 ];

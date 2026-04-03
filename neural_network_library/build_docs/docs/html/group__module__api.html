@@ -126,7 +126,93 @@ Classes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Layer abstractions and trainable module interfaces. </p>
-<p>Use this group when defining or extending trainable components. It includes the base Module contract and built-in trainable/stateless layer wrappers. </p>
+<p>Use this group when defining or extending trainable components. It includes the base Module contract and built-in trainable/stateless layer wrappers.</p>
+<p>See the <a class="el" href="group__module__api.html" title="Module and Sequential Guide">Module and Sequential Guide</a> for a usage walkthrough. </p>
+</div>
+
+<h3 class="doxsection"><a id="module_guide" name="module_guide"></a>Module and Sequential Guide</h3><div class="textblock"><h1 class="doxsection"><a class="anchor" id="module_overview"></a>
+Overview</h1>
+<p><span class="tt"><a class="el" href="classnn_1_1_module.html" title="Base interface for all trainable or stateless neural-network layers.">nn::Module</a></span> is the base interface for every trainable or stateless component in the library. All layers implement <span class="tt">forward()</span> to define their computation and <span class="tt">parameters()</span> to expose trainable tensors to an optimizer. <span class="tt"><a class="el" href="classnn_1_1_sequential.html" title="Ordered container that applies child modules one after another.">nn::Sequential</a></span> is a convenience container that chains modules in the order they are added.</p>
+<h1 class="doxsection"><a class="anchor" id="module_builtin"></a>
+Built-in Layers</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Layer  </th><th class="markdownTableHeadNone">Header  </th><th class="markdownTableHeadNone">Description  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">Linear</span>  </td><td class="markdownTableBodyNone"><a class="el" href="module_8hpp.html" title="Layer abstractions used to assemble and train neural networks.">module.hpp</a>  </td><td class="markdownTableBodyNone">Fully connected affine transform: <span class="tt">y = xW^T + b</span>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">ReLU</span>  </td><td class="markdownTableBodyNone"><a class="el" href="module_8hpp.html" title="Layer abstractions used to assemble and train neural networks.">module.hpp</a>  </td><td class="markdownTableBodyNone">Element-wise ReLU activation  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">Sigmoid</span>  </td><td class="markdownTableBodyNone"><a class="el" href="module_8hpp.html" title="Layer abstractions used to assemble and train neural networks.">module.hpp</a>  </td><td class="markdownTableBodyNone">Element-wise sigmoid activation  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">Tanh</span>  </td><td class="markdownTableBodyNone"><a class="el" href="module_8hpp.html" title="Layer abstractions used to assemble and train neural networks.">module.hpp</a>  </td><td class="markdownTableBodyNone">Element-wise tanh activation  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">Dropout</span>  </td><td class="markdownTableBodyNone"><a class="el" href="module_8hpp.html" title="Layer abstractions used to assemble and train neural networks.">module.hpp</a>  </td><td class="markdownTableBodyNone">Stochastic zero-masking (active only in train mode)  </td></tr>
+</table>
+<h1 class="doxsection"><a class="anchor" id="module_sequential"></a>
+Assembling a Model with Sequential</h1>
+<p>The simplest way to build a feed-forward network is to push layers into a <span class="tt">Sequential</span> container. Layers execute in insertion order during <span class="tt">forward()</span>:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="sequential_8hpp.html">sequential.hpp</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="module_8hpp.html">module.hpp</a>&quot;</span></div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenn.html">nn</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> model = std::make_shared&lt;Sequential&gt;();</div>
+<div class="line">model-&gt;add(std::make_shared&lt;Linear&gt;(2, 8));    <span class="comment">// 2 inputs, 8 hidden units</span></div>
+<div class="line">model-&gt;add(std::make_shared&lt;ReLU&gt;());</div>
+<div class="line">model-&gt;add(std::make_shared&lt;Linear&gt;(8, 1));    <span class="comment">// 1 output</span></div>
+<div class="line">model-&gt;add(std::make_shared&lt;Sigmoid&gt;());       <span class="comment">// binary output probability</span></div>
+<div class="ttc" id="amodule_8hpp_html"><div class="ttname"><a href="module_8hpp.html">module.hpp</a></div><div class="ttdoc">Layer abstractions used to assemble and train neural networks.</div></div>
+<div class="ttc" id="anamespacenn_html"><div class="ttname"><a href="namespacenn.html">nn</a></div><div class="ttdoc">Root namespace for all public NeuralNetCpp APIs.</div></div>
+<div class="ttc" id="asequential_8hpp_html"><div class="ttname"><a href="sequential_8hpp.html">sequential.hpp</a></div><div class="ttdoc">Sequential module container for chaining layers in order.</div></div>
+</div><!-- fragment --><p>Run inference with a single call:</p>
+<div class="fragment"><div class="line"><a class="code hl_class" href="classnn_1_1_tensor.html">Tensor</a> x({0.0, 1.0}, {1, 2});   <span class="comment">// batch of 1, 2 features</span></div>
+<div class="line"><a class="code hl_class" href="classnn_1_1_tensor.html">Tensor</a> y = model-&gt;forward(x);   <span class="comment">// shape {1, 1}</span></div>
+<div class="ttc" id="aclassnn_1_1_tensor_html"><div class="ttname"><a href="classnn_1_1_tensor.html">nn::Tensor</a></div><div class="ttdoc">Dense n-dimensional tensor with optional gradient storage.</div><div class="ttdef"><b>Definition</b> <a href="tensor_8hpp_source.html#l00024">tensor.hpp:24</a></div></div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="module_params"></a>
+Collecting Parameters</h1>
+<p>Pass all trainable tensors to an optimizer in one step:</p>
+<div class="fragment"><div class="line"><span class="keyword">auto</span> params = model-&gt;parameters();   <span class="comment">// flattened list from all child layers</span></div>
+<div class="line"><a class="code hl_class" href="classnn_1_1_adam.html">Adam</a> opt(params, 0.001);</div>
+<div class="ttc" id="aclassnn_1_1_adam_html"><div class="ttname"><a href="classnn_1_1_adam.html">nn::Adam</a></div><div class="ttdoc">Adam optimizer with bias-corrected first and second moments.</div><div class="ttdef"><b>Definition</b> <a href="optimizer_8hpp_source.html#l00077">optimizer.hpp:77</a></div></div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="module_traineval"></a>
+Train/Eval Mode</h1>
+<p>Layers like <span class="tt">Dropout</span> behave differently depending on mode. Always switch to eval mode before running inference or computing metrics:</p>
+<div class="fragment"><div class="line">model-&gt;train();    <span class="comment">// enable stochastic behaviour (e.g. dropout masking)</span></div>
+<div class="line"><span class="comment">// ... training loop ...</span></div>
+<div class="line">model-&gt;eval();     <span class="comment">// disable stochastic behaviour for validation/inference</span></div>
+<div class="line"><a class="code hl_class" href="classnn_1_1_tensor.html">Tensor</a> pred = model-&gt;forward(test_input);</div>
+</div><!-- fragment --><p><span class="tt">Sequential::train()</span> and <span class="tt">Sequential::eval()</span> propagate recursively to all child modules.</p>
+<h1 class="doxsection"><a class="anchor" id="module_custom"></a>
+Writing a Custom Layer</h1>
+<p>Derive from <span class="tt">Module</span>, implement <span class="tt">forward()</span> and <span class="tt">parameters()</span>:</p>
+<div class="fragment"><div class="line"><span class="keyword">class </span>ScaledLinear : <span class="keyword">public</span> <a class="code hl_class" href="classnn_1_1_module.html">nn::Module</a> {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    ScaledLinear(<span class="keywordtype">size_t</span> in, <span class="keywordtype">size_t</span> out, <span class="keywordtype">double</span> scale)</div>
+<div class="line">        : linear_(in, out), scale_(scale) {}</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_class" href="classnn_1_1_tensor.html">nn::Tensor</a> <a class="code hl_function" href="classnn_1_1_module.html#a20737d6f068ac8c2498f313669ba5dff">forward</a>(<span class="keyword">const</span> <a class="code hl_class" href="classnn_1_1_tensor.html">nn::Tensor</a>&amp; x)<span class="keyword"> override </span>{</div>
+<div class="line">        <span class="keywordflow">return</span> linear_.forward(x) * scale_;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    std::vector&lt;nn::Tensor*&gt; <a class="code hl_function" href="classnn_1_1_module.html#a23fb05b673acc4a2d35a1ffc1117ddd1">parameters</a>()<span class="keyword"> override </span>{</div>
+<div class="line">        <span class="keywordflow">return</span> linear_.parameters();</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">    nn::Linear linear_;</div>
+<div class="line">    <span class="keywordtype">double</span> scale_;</div>
+<div class="line">};</div>
+<div class="ttc" id="aclassnn_1_1_module_html"><div class="ttname"><a href="classnn_1_1_module.html">nn::Module</a></div><div class="ttdoc">Base interface for all trainable or stateless neural-network layers.</div><div class="ttdef"><b>Definition</b> <a href="module_8hpp_source.html#l00020">module.hpp:20</a></div></div>
+<div class="ttc" id="aclassnn_1_1_module_html_a20737d6f068ac8c2498f313669ba5dff"><div class="ttname"><a href="classnn_1_1_module.html#a20737d6f068ac8c2498f313669ba5dff">nn::Module::forward</a></div><div class="ttdeci">virtual Tensor forward(const Tensor &amp;input)=0</div><div class="ttdoc">Runs layer forward pass.</div></div>
+<div class="ttc" id="aclassnn_1_1_module_html_a23fb05b673acc4a2d35a1ffc1117ddd1"><div class="ttname"><a href="classnn_1_1_module.html#a23fb05b673acc4a2d35a1ffc1117ddd1">nn::Module::parameters</a></div><div class="ttdeci">virtual std::vector&lt; Tensor * &gt; parameters()=0</div><div class="ttdoc">Returns trainable parameters owned by this layer.</div></div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="module_pitfalls"></a>
+Common Pitfalls</h2>
+<ul>
+<li><b>Adding a raw <span class="tt">Module</span> instead of a <span class="tt">shared_ptr</span></b> — <span class="tt">Sequential::add()</span> takes <span class="tt">std::shared_ptr&lt;Module&gt;</span>. Wrap with <span class="tt">std::make_shared&lt;&gt;</span>.</li>
+<li><b>Calling <span class="tt">forward()</span> on an empty Sequential</b> — throws <span class="tt">std::runtime_error</span>. Always add at least one layer before the forward pass.</li>
+<li><b>Forgetting to collect new parameters after adding layers</b> — if you add layers after creating an optimizer, the new parameters are not tracked. Re-collect with <span class="tt">model-&gt;parameters()</span> and rebuild the optimizer.</li>
+<li><b>Dropout in eval mode</b> — <span class="tt">Dropout</span> is a no-op during eval. If predictions look stochastic, verify you called <span class="tt">model-&gt;eval()</span> before inference. </li>
+</ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

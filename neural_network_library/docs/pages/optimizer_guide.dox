@@ -1,0 +1,120 @@
+/**
+ * @page optimizer_guide Optimizer Guide
+ * @ingroup optimizer_api
+ *
+ * @brief Practical guide to configuring and using SGD and Adam optimizers.
+ *
+ * @section optimizer_overview Overview
+ *
+ * Optimizers apply in-place updates to trainable parameters after
+ * `backward()` has accumulated gradients.  Both `nn::SGD` and `nn::Adam`
+ * accept a list of `Tensor*` pointers, which are typically obtained by
+ * calling `model->parameters()`.
+ *
+ * The standard per-step sequence is:
+ * 1. `optimizer.zero_grad()` — clear previous gradient values
+ * 2. `loss = ...forward + loss computation...` — build the graph
+ * 3. `loss.backward()` — compute gradients
+ * 4. `optimizer.step()` — apply parameter updates
+ *
+ * @section optimizer_sgd SGD
+ *
+ * Stochastic Gradient Descent with optional momentum and L2 weight decay.
+ * A good starting configuration for straight-forward problems:
+ *
+ * @code{.cpp}
+ * #include "optimizer.hpp"
+ * using namespace nn;
+ *
+ * auto params = model->parameters();
+ *
+ * // Plain SGD
+ * SGD opt_plain(params, /*learning_rate=*/0.01);
+ *
+ * // SGD with momentum (recommended — faster convergence, smoother loss curve)
+ * SGD opt_momentum(params, 0.01, /*momentum=*/0.9);
+ *
+ * // SGD with momentum + L2 regularisation (helps prevent over-fitting)
+ * SGD opt_reg(params, 0.01, 0.9, /*weight_decay=*/1e-4);
+ * @endcode
+ *
+ * @subsection optimizer_sgd_lr Learning Rate Tuning for SGD
+ *
+ * - Start at **0.01** and monitor loss per epoch.
+ * - If loss oscillates: halve the rate.
+ * - If loss barely moves: try 10x larger.
+ * - Typical range for small networks: 0.001 – 0.1.
+ *
+ * @section optimizer_adam Adam
+ *
+ * Adam maintains per-parameter adaptive learning rates using bias-corrected
+ * first and second moment estimates.  Default hyper-parameters work well for
+ * most tasks without tuning:
+ *
+ * @code{.cpp}
+ * // Default Adam — sensible starting point for most models
+ * Adam opt_adam(params, /*learning_rate=*/0.001);
+ *
+ * // Tuned Adam for a transformer-like workload
+ * Adam opt_tuned(
+ *     params,
+ *     /*learning_rate=*/3e-4,
+ *     /*beta1=*/0.9,
+ *     /*beta2=*/0.98,
+ *     /*epsilon=*/1e-9,
+ *     /*weight_decay=*/0.01
+ * );
+ * @endcode
+ *
+ * @subsection optimizer_adam_lr Learning Rate Tuning for Adam
+ *
+ * - Default `0.001` covers most small to mid-sized networks.
+ * - Larger models or transformers often benefit from `1e-4` to `3e-4`.
+ * - Lowering `epsilon` (e.g. `1e-9`) improves numerical stability on
+ *   deep networks where gradients can be very small.
+ *
+ * @section optimizer_schedule Learning Rate Scheduling
+ *
+ * The library does not provide a built-in scheduler, but both `SGD` and `Adam`
+ * expose `set_learning_rate()`.  A simple step-decay can be implemented inline:
+ *
+ * @code{.cpp}
+ * double lr = 0.01;
+ * SGD opt(params, lr);
+ *
+ * for (int epoch = 0; epoch < 200; ++epoch) {
+ *     // Halve learning rate every 50 epochs
+ *     if (epoch > 0 && epoch % 50 == 0) {
+ *         lr *= 0.5;
+ *         opt.set_learning_rate(lr);
+ *     }
+ *
+ *     opt.zero_grad();
+ *     Tensor loss = losses::mse_loss(model->forward(x), y);
+ *     loss.backward();
+ *     opt.step();
+ * }
+ * @endcode
+ *
+ * @section optimizer_comparison SGD vs Adam at a Glance
+ *
+ * | Criterion              | SGD (+ momentum)       | Adam                      |
+ * |------------------------|------------------------|---------------------------|
+ * | Convergence speed      | Slower                 | Faster on most tasks      |
+ * | Hyper-parameter tuning | Requires careful lr    | Robust to lr choice       |
+ * | Memory overhead        | Low (velocity only)    | Higher (two moment buffers)|
+ * | Common pitfall         | Setting lr too high    | lr decay not needed       |
+ *
+ * @subsection optimizer_pitfalls Common Pitfalls
+ *
+ * - **Skipping `zero_grad()`** — without it, gradients from the previous step
+ *   add to the current one, causing exponentially growing updates.
+ * - **Sharing an optimizer across models** — each optimizer holds its own moment
+ *   buffers keyed by `Tensor*`.  If a tensor is reallocated (e.g. after a copy),
+ *   the optimizer loses its state for that parameter.
+ * - **Calling `step()` before `backward()`** — parameters will be updated using
+ *   whatever gradient values happen to be present (possibly zeros or stale values).
+ * - **Weight decay with Adam** — the built-in `weight_decay` adds L2 regularisation
+ *   before the adaptive update.  For the AdamW formulation (decoupled weight decay)
+ *   you would need to implement a custom step.
+ */

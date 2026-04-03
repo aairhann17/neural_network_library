@@ -69,5 +69,6 @@ var group__tensor__api =
       [ "parents_", "classnn_1_1_tensor.html#ad8ba09dcd3c73f10f73c846df0f68d31", null ],
       [ "requires_grad_", "classnn_1_1_tensor.html#aaf823dbd57d268c98ec74501b395f054", null ],
       [ "shape_", "classnn_1_1_tensor.html#a59e132f95b2bc00573c25cfc2838814d", null ]
-    ] ]
+    ] ],
+    [ "Tensor Guide", "group__tensor__api.html#tensor_guide", "group__tensor__api_tensor_guide_dup" ]
 ];

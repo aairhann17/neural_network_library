@@ -120,7 +120,112 @@ Classes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Parameter update rules used for training. </p>
-<p>Optimizers consume parameter tensors and apply in-place updates from accumulated gradients. Choose SGD for simplicity or Adam for adaptive steps. </p>
+<p>Optimizers consume parameter tensors and apply in-place updates from accumulated gradients. Choose SGD for simplicity or Adam for adaptive steps.</p>
+<p>See the <a class="el" href="group__optimizer__api.html" title="Optimizer Guide">Optimizer Guide</a> for a usage walkthrough. </p>
+</div>
+
+<h3 class="doxsection"><a id="optimizer_guide" name="optimizer_guide"></a>Optimizer Guide</h3><div class="textblock"><h1 class="doxsection"><a class="anchor" id="optimizer_overview"></a>
+Overview</h1>
+<p>Optimizers apply in-place updates to trainable parameters after <span class="tt">backward()</span> has accumulated gradients. Both <span class="tt"><a class="el" href="classnn_1_1_s_g_d.html" title="Stochastic gradient descent with optional momentum and weight decay.">nn::SGD</a></span> and <span class="tt"><a class="el" href="classnn_1_1_adam.html" title="Adam optimizer with bias-corrected first and second moments.">nn::Adam</a></span> accept a list of <span class="tt">Tensor*</span> pointers, which are typically obtained by calling <span class="tt">model-&gt;parameters()</span>.</p>
+<p>The standard per-step sequence is:</p><ol type="1">
+<li><span class="tt">optimizer.zero_grad()</span> — clear previous gradient values</li>
+<li><span class="tt">loss = ...forward + loss computation...</span> — build the graph</li>
+<li><span class="tt">loss.backward()</span> — compute gradients</li>
+<li><span class="tt">optimizer.step()</span> — apply parameter updates</li>
+</ol>
+<h1 class="doxsection"><a class="anchor" id="optimizer_sgd"></a>
+SGD</h1>
+<p>Stochastic Gradient Descent with optional momentum and L2 weight decay. A good starting configuration for straight-forward problems:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="optimizer_8hpp.html">optimizer.hpp</a>&quot;</span></div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenn.html">nn</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> params = model-&gt;parameters();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Plain SGD</span></div>
+<div class="line"><a class="code hl_class" href="classnn_1_1_s_g_d.html">SGD</a> opt_plain(params, <span class="comment">/*learning_rate=*/</span>0.01);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// SGD with momentum (recommended — faster convergence, smoother loss curve)</span></div>
+<div class="line"><a class="code hl_class" href="classnn_1_1_s_g_d.html">SGD</a> opt_momentum(params, 0.01, <span class="comment">/*momentum=*/</span>0.9);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// SGD with momentum + L2 regularisation (helps prevent over-fitting)</span></div>
+<div class="line"><a class="code hl_class" href="classnn_1_1_s_g_d.html">SGD</a> opt_reg(params, 0.01, 0.9, <span class="comment">/*weight_decay=*/</span>1e-4);</div>
+<div class="ttc" id="aclassnn_1_1_s_g_d_html"><div class="ttname"><a href="classnn_1_1_s_g_d.html">nn::SGD</a></div><div class="ttdoc">Stochastic gradient descent with optional momentum and weight decay.</div><div class="ttdef"><b>Definition</b> <a href="optimizer_8hpp_source.html#l00034">optimizer.hpp:34</a></div></div>
+<div class="ttc" id="anamespacenn_html"><div class="ttname"><a href="namespacenn.html">nn</a></div><div class="ttdoc">Root namespace for all public NeuralNetCpp APIs.</div></div>
+<div class="ttc" id="aoptimizer_8hpp_html"><div class="ttname"><a href="optimizer_8hpp.html">optimizer.hpp</a></div><div class="ttdoc">Parameter update rules used during model training.</div></div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="optimizer_sgd_lr"></a>
+Learning Rate Tuning for SGD</h2>
+<ul>
+<li>Start at <b>0.01</b> and monitor loss per epoch.</li>
+<li>If loss oscillates: halve the rate.</li>
+<li>If loss barely moves: try 10x larger.</li>
+<li>Typical range for small networks: 0.001 – 0.1.</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="optimizer_adam"></a>
+Adam</h1>
+<p>Adam maintains per-parameter adaptive learning rates using bias-corrected first and second moment estimates. Default hyper-parameters work well for most tasks without tuning:</p>
+<div class="fragment"><div class="line"><span class="comment">// Default Adam — sensible starting point for most models</span></div>
+<div class="line"><a class="code hl_class" href="classnn_1_1_adam.html">Adam</a> opt_adam(params, <span class="comment">/*learning_rate=*/</span>0.001);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Tuned Adam for a transformer-like workload</span></div>
+<div class="line"><a class="code hl_class" href="classnn_1_1_adam.html">Adam</a> opt_tuned(</div>
+<div class="line">    params,</div>
+<div class="line">    <span class="comment">/*learning_rate=*/</span>3e-4,</div>
+<div class="line">    <span class="comment">/*beta1=*/</span>0.9,</div>
+<div class="line">    <span class="comment">/*beta2=*/</span>0.98,</div>
+<div class="line">    <span class="comment">/*epsilon=*/</span>1e-9,</div>
+<div class="line">    <span class="comment">/*weight_decay=*/</span>0.01</div>
+<div class="line">);</div>
+<div class="ttc" id="aclassnn_1_1_adam_html"><div class="ttname"><a href="classnn_1_1_adam.html">nn::Adam</a></div><div class="ttdoc">Adam optimizer with bias-corrected first and second moments.</div><div class="ttdef"><b>Definition</b> <a href="optimizer_8hpp_source.html#l00077">optimizer.hpp:77</a></div></div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="optimizer_adam_lr"></a>
+Learning Rate Tuning for Adam</h2>
+<ul>
+<li>Default <span class="tt">0.001</span> covers most small to mid-sized networks.</li>
+<li>Larger models or transformers often benefit from <span class="tt">1e-4</span> to <span class="tt">3e-4</span>.</li>
+<li>Lowering <span class="tt">epsilon</span> (e.g. <span class="tt">1e-9</span>) improves numerical stability on deep networks where gradients can be very small.</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="optimizer_schedule"></a>
+Learning Rate Scheduling</h1>
+<p>The library does not provide a built-in scheduler, but both <span class="tt">SGD</span> and <span class="tt">Adam</span> expose <span class="tt">set_learning_rate()</span>. A simple step-decay can be implemented inline:</p>
+<div class="fragment"><div class="line"><span class="keywordtype">double</span> lr = 0.01;</div>
+<div class="line"><a class="code hl_class" href="classnn_1_1_s_g_d.html">SGD</a> opt(params, lr);</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keywordtype">int</span> epoch = 0; epoch &lt; 200; ++epoch) {</div>
+<div class="line">    <span class="comment">// Halve learning rate every 50 epochs</span></div>
+<div class="line">    <span class="keywordflow">if</span> (epoch &gt; 0 &amp;&amp; epoch % 50 == 0) {</div>
+<div class="line">        lr *= 0.5;</div>
+<div class="line">        opt.set_learning_rate(lr);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    opt.zero_grad();</div>
+<div class="line">    <a class="code hl_class" href="classnn_1_1_tensor.html">Tensor</a> loss = <a class="code hl_function" href="group__loss__api.html#ga86af182110e53799143872ad64bb5063">losses::mse_loss</a>(model-&gt;forward(x), y);</div>
+<div class="line">    loss.<a class="code hl_function" href="classnn_1_1_tensor.html#a46155a74fd6356aa7f299b89487586b8">backward</a>();</div>
+<div class="line">    opt.step();</div>
+<div class="line">}</div>
+<div class="ttc" id="aclassnn_1_1_tensor_html"><div class="ttname"><a href="classnn_1_1_tensor.html">nn::Tensor</a></div><div class="ttdoc">Dense n-dimensional tensor with optional gradient storage.</div><div class="ttdef"><b>Definition</b> <a href="tensor_8hpp_source.html#l00024">tensor.hpp:24</a></div></div>
+<div class="ttc" id="aclassnn_1_1_tensor_html_a46155a74fd6356aa7f299b89487586b8"><div class="ttname"><a href="classnn_1_1_tensor.html#a46155a74fd6356aa7f299b89487586b8">nn::Tensor::backward</a></div><div class="ttdeci">void backward()</div><div class="ttdoc">Starts backpropagation from this tensor.</div><div class="ttdef"><b>Definition</b> <a href="tensor_8cpp_source.html#l00949">tensor.cpp:949</a></div></div>
+<div class="ttc" id="agroup__loss__api_html_ga86af182110e53799143872ad64bb5063"><div class="ttname"><a href="group__loss__api.html#ga86af182110e53799143872ad64bb5063">nn::losses::mse_loss</a></div><div class="ttdeci">Tensor mse_loss(const Tensor &amp;predictions, const Tensor &amp;targets)</div><div class="ttdoc">Computes mean squared error.</div><div class="ttdef"><b>Definition</b> <a href="losses_8cpp_source.html#l00017">losses.cpp:17</a></div></div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="optimizer_comparison"></a>
+SGD vs Adam at a Glance</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Criterion  </th><th class="markdownTableHeadNone">SGD (+ momentum)  </th><th class="markdownTableHeadNone">Adam  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Convergence speed  </td><td class="markdownTableBodyNone">Slower  </td><td class="markdownTableBodyNone">Faster on most tasks  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Hyper-parameter tuning  </td><td class="markdownTableBodyNone">Requires careful lr  </td><td class="markdownTableBodyNone">Robust to lr choice  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Memory overhead  </td><td class="markdownTableBodyNone">Low (velocity only)  </td><td class="markdownTableBodyNone">Higher (two moment buffers)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Common pitfall  </td><td class="markdownTableBodyNone">Setting lr too high  </td><td class="markdownTableBodyNone">lr decay not needed  </td></tr>
+</table>
+<h2 class="doxsection"><a class="anchor" id="optimizer_pitfalls"></a>
+Common Pitfalls</h2>
+<ul>
+<li><b>Skipping <span class="tt">zero_grad()</span></b> — without it, gradients from the previous step add to the current one, causing exponentially growing updates.</li>
+<li><b>Sharing an optimizer across models</b> — each optimizer holds its own moment buffers keyed by <span class="tt">Tensor*</span>. If a tensor is reallocated (e.g. after a copy), the optimizer loses its state for that parameter.</li>
+<li><b>Calling <span class="tt">step()</span> before <span class="tt">backward()</span></b> — parameters will be updated using whatever gradient values happen to be present (possibly zeros or stale values).</li>
+<li><b>Weight decay with Adam</b> — the built-in <span class="tt">weight_decay</span> adds L2 regularisation before the adaptive update. For the AdamW formulation (decoupled weight decay) you would need to implement a custom step. </li>
+</ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

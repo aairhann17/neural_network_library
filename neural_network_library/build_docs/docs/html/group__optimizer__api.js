@@ -29,5 +29,6 @@ var group__optimizer__api =
       [ "t_", "classnn_1_1_adam.html#ad74ebdabee8632405279afb058451097", null ],
       [ "v_", "classnn_1_1_adam.html#a2106404c642b598f1e482214ccffd432", null ],
       [ "weight_decay_", "classnn_1_1_adam.html#adabd3ab221a3cc47b486ed94c4f54b19", null ]
-    ] ]
+    ] ],
+    [ "Optimizer Guide", "group__optimizer__api.html#optimizer_guide", "group__optimizer__api_optimizer_guide_dup" ]
 ];

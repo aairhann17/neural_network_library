@@ -26,6 +26,7 @@ var NAVTREE =
 [
   [ "NeuralNetCpp", "index.html", [
     [ "Neural Network Library in C++", "index.html", "index" ],
+    [ "Guides", "guides.html", null ],
     [ "Contributing Guide", "md__c_1_2_users_2aaraa_2neural__network__library-1_2_c_o_n_t_r_i_b_u_t_i_n_g.html", [
       [ "Development Workflow", "md__c_1_2_users_2aaraa_2neural__network__library-1_2_c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md23", null ],
       [ "Build and Validation", "md__c_1_2_users_2aaraa_2neural__network__library-1_2_c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md24", null ],
@@ -65,7 +66,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"activations_8cpp.html"
+"activations_8cpp.html",
+"index.html#autotoc_md11"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

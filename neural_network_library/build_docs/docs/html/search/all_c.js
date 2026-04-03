@@ -14,8 +14,11 @@ var searchData=
   ['operator_5b_5d_11',['operator[]',['../classnn_1_1_sequential.html#a0963ff05195acf850dbcca1c3b394113',1,'nn::Sequential::operator[](size_t idx)'],['../classnn_1_1_sequential.html#ab8931bfb72a14ef89de2a9f1bc20c7d8',1,'nn::Sequential::operator[](size_t idx) const'],['../classnn_1_1_tensor.html#a043f6fbf307cbddec5341ae2db6f605c',1,'nn::Tensor::operator[](size_t idx)'],['../classnn_1_1_tensor.html#acff1d997cfe29af3d3e3425a40656f55',1,'nn::Tensor::operator[](size_t idx) const']]],
   ['optimizer_12',['Optimizer',['../classnn_1_1_optimizer.html',1,'nn']]],
   ['optimizer_20api_13',['Optimizer API',['../group__optimizer__api.html',1,'']]],
-  ['optimizer_2ecpp_14',['optimizer.cpp',['../optimizer_8cpp.html',1,'']]],
-  ['optimizer_2ehpp_15',['optimizer.hpp',['../optimizer_8hpp.html',1,'']]],
-  ['optimizers_16',['Optimizers',['../index.html#autotoc_md17',1,'']]],
-  ['out_5ffeatures_5f_17',['out_features_',['../classnn_1_1_linear.html#a3aafba8b34e75427793bdcfa6c6843c1',1,'nn::Linear']]]
+  ['optimizer_20guide_14',['Optimizer Guide',['../group__optimizer__api.html',1,'guides']]],
+  ['optimizer_2ecpp_15',['optimizer.cpp',['../optimizer_8cpp.html',1,'']]],
+  ['optimizer_2ehpp_16',['optimizer.hpp',['../optimizer_8hpp.html',1,'']]],
+  ['optimizer_5fguide_2edox_17',['optimizer_guide.dox',['../optimizer__guide_8dox.html',1,'']]],
+  ['optimizers_18',['Optimizers',['../index.html#autotoc_md17',1,'']]],
+  ['out_5ffeatures_5f_19',['out_features_',['../classnn_1_1_linear.html#a3aafba8b34e75427793bdcfa6c6843c1',1,'nn::Linear']]],
+  ['overview_20',['Overview',['../group__loss__api.html#loss_overview',1,'Overview'],['../group__module__api.html#module_overview',1,'Overview'],['../group__optimizer__api.html#optimizer_overview',1,'Overview'],['../group__tensor__api.html#tensor_overview',1,'Overview']]]
 ];

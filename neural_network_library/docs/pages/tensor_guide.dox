@@ -1,0 +1,139 @@
+/**
+ * @page tensor_guide Tensor Guide
+ * @ingroup tensor_api
+ *
+ * @brief Practical guide to creating, transforming, and differentiating tensors.
+ *
+ * @section tensor_overview Overview
+ *
+ * `nn::Tensor` is the single numeric primitive used everywhere in this library.
+ * It owns a flat contiguous `double` buffer together with a shape vector that
+ * describes how that buffer maps to an n-dimensional array.  All math
+ * operations, layer forward passes, and loss functions accept and return
+ * Tensor objects.
+ *
+ * @section tensor_creation Creating Tensors
+ *
+ * Three constructor patterns cover the most common needs:
+ *
+ * @code{.cpp}
+ * #include "tensor.hpp"
+ * using namespace nn;
+ *
+ * // 1. Zero-initialised 2x3 matrix
+ * Tensor a({2, 3});
+ *
+ * // 2. From explicit values (row-major flat list)
+ * Tensor b({1.0, 2.0, 3.0, 4.0}, {2, 2});
+ *
+ * // 3. With gradient tracking enabled
+ * Tensor w({0.5, -0.3}, {1, 2}, /*requires_grad=*/true);
+ * @endcode
+ *
+ * Factory helpers produce common initialisations without listing every value:
+ *
+ * @code{.cpp}
+ * Tensor zeros = Tensor::zeros({3, 3});
+ * Tensor ones  = Tensor::ones({3, 3});
+ * Tensor rnd   = Tensor::random({4, 4});         // uniform [0, 1)
+ * Tensor rnd2  = Tensor::randn({4, 4});          // standard normal
+ * Tensor eye   = Tensor::eye(5);                 // identity matrix
+ * @endcode
+ *
+ * @section tensor_indexing Indexing and Shape Utilities
+ *
+ * Flat indexing with `operator[]` is the fastest access path.  Use `at()` when
+ * you have per-dimension coordinates and want bounds checking:
+ *
+ * @code{.cpp}
+ * Tensor t({1.0, 2.0, 3.0, 4.0}, {2, 2});
+ *
+ * double v0 = t[0];              // flat index — no bounds check, fastest
+ * double v1 = t.at({1, 0});      // coordinate access — throws on bad index
+ * @endcode
+ *
+ * Shape utilities keep your code readable:
+ *
+ * @code{.cpp}
+ * t.shape();   // returns {2, 2}
+ * t.ndim();    // returns 2
+ * t.size();    // returns 4 (total elements)
+ *
+ * Tensor col = t.reshape({4, 1});   // same data, new layout
+ * Tensor tr  = t.transpose();       // swap last two dimensions
+ * @endcode
+ *
+ * @section tensor_math Element-wise and Matrix Math
+ *
+ * All binary operators require identical shapes.  For matrix multiplication
+ * both tensors must be 2D:
+ *
+ * @code{.cpp}
+ * Tensor a({2, 3});
+ * Tensor b({2, 3});
+ *
+ * Tensor sum  = a + b;          // element-wise add
+ * Tensor diff = a - b;          // element-wise subtract
+ * Tensor prod = a * b;          // element-wise multiply
+ * Tensor quot = a / b;          // element-wise divide
+ *
+ * Tensor c({3, 4});
+ * Tensor mm = a.matmul(c);      // (2,3) x (3,4) -> (2,4)
+ *
+ * // Scalar broadcast overloads
+ * Tensor scaled = a * 2.0;
+ * Tensor shifted = a + 1.0;
+ * @endcode
+ *
+ * Math functions operate element-wise and return a new Tensor:
+ *
+ * @code{.cpp}
+ * Tensor ex  = a.exp();
+ * Tensor lg  = a.log();
+ * Tensor pw  = a.pow(2.0);
+ * Tensor sq  = a.sqrt();
+ * Tensor ab  = a.abs();
+ * @endcode
+ *
+ * @section tensor_reductions Reductions
+ *
+ * @code{.cpp}
+ * Tensor m = a.mean();           // scalar mean over all elements
+ * Tensor s = a.sum();            // scalar sum over all elements
+ * Tensor mx = a.max();           // scalar maximum
+ * Tensor mn = a.min();           // scalar minimum
+ *
+ * Tensor row_mean = a.mean(1);   // reduce along axis 1 -> shape {rows}
+ * Tensor col_sum  = a.sum(0);    // reduce along axis 0 -> shape {cols}
+ * @endcode
+ *
+ * @section tensor_autograd Gradient Tracking and Backpropagation
+ *
+ * Set `requires_grad = true` on any leaf tensor whose gradient you need.
+ * Autograd records the computational graph as you call operations, then
+ * `backward()` walks it in reverse to accumulate `.grad()` on every leaf:
+ *
+ * @code{.cpp}
+ * Tensor x({1.0, 2.0, 3.0}, {1, 3}, true);  // leaf — wants grad
+ * Tensor w({0.1, 0.2, 0.3}, {3, 1}, true);  // leaf — wants grad
+ *
+ * Tensor y = x.matmul(w);       // graph edge recorded
+ * Tensor loss = y.mean();
+ *
+ * loss.backward();              // propagate gradients
+ *
+ * // Inspect accumulated gradients
+ * x.grad()->print();
+ * w.grad()->print();
+ * @endcode
+ *
+ * @subsection tensor_pitfalls Common Pitfalls
+ *
+ * - **Forgetting `zero_grad()`** — gradients accumulate additively across
+ *   calls to `backward()`. Call `optimizer.zero_grad()` (or `module.zero_grad()`)
+ *   before each training step.
+ * - **Shape mismatches** — all binary ops require equal shapes; `matmul` requires
+ *   the inner dimensions to agree. Both throw `std::invalid_argument`.
+ * - **Detaching from the graph** — if you want a copy without autograd overhead,
+ *   construct a new Tensor from the raw data pointer or use `requires_grad(false)`.
+ */

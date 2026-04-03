@@ -9,12 +9,30 @@
  */
 
 /**
+ * @page guides Guides
+ * @brief Practical usage walkthroughs for every major API area.
+ *
+ * These pages complement the API reference with annotated code examples,
+ * recommended patterns, and common pitfalls for each subsystem.
+ *
+ * @subpage tensor_guide
+ *
+ * @subpage module_guide
+ *
+ * @subpage loss_guide
+ *
+ * @subpage optimizer_guide
+ */
+
+/**
  * @defgroup tensor_api Tensor API
  * @brief Dense tensor primitives, shape transforms, math operations, and autograd.
  *
  * Start here when working on numeric data representation and transformation.
  * This group covers storage, indexing, element-wise and matrix operations,
  * reductions, shape utilities, and gradient-related helpers.
+ *
+ * See the @ref tensor_guide for a usage walkthrough.
  */
 
 /**
@@ -23,6 +41,8 @@
  *
  * Use this group when defining or extending trainable components. It includes
  * the base Module contract and built-in trainable/stateless layer wrappers.
+ *
+ * See the @ref module_guide for a usage walkthrough.
  */
 
 /**
@@ -47,6 +67,8 @@
  *
  * This group contains objective functions used during optimization. Each
  * function validates shape assumptions and returns a scalar tensor loss.
+ *
+ * See the @ref loss_guide for a usage walkthrough.
  */
 
 /**
@@ -55,4 +77,6 @@
  *
  * Optimizers consume parameter tensors and apply in-place updates from
  * accumulated gradients. Choose SGD for simplicity or Adam for adaptive steps.
+ *
+ * See the @ref optimizer_guide for a usage walkthrough.
  */

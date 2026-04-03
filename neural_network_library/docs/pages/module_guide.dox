@@ -1,0 +1,108 @@
+/**
+ * @page module_guide Module and Sequential Guide
+ * @ingroup module_api
+ *
+ * @brief Practical guide to building, composing, and extending layers.
+ *
+ * @section module_overview Overview
+ *
+ * `nn::Module` is the base interface for every trainable or stateless component
+ * in the library.  All layers implement `forward()` to define their computation
+ * and `parameters()` to expose trainable tensors to an optimizer.
+ * `nn::Sequential` is a convenience container that chains modules in the order
+ * they are added.
+ *
+ * @section module_builtin Built-in Layers
+ *
+ * | Layer       | Header       | Description                                          |
+ * |-------------|--------------|------------------------------------------------------|
+ * | `Linear`    | module.hpp   | Fully connected affine transform: `y = xW^T + b`     |
+ * | `ReLU`      | module.hpp   | Element-wise ReLU activation                         |
+ * | `Sigmoid`   | module.hpp   | Element-wise sigmoid activation                      |
+ * | `Tanh`      | module.hpp   | Element-wise tanh activation                         |
+ * | `Dropout`   | module.hpp   | Stochastic zero-masking (active only in train mode)  |
+ *
+ * @section module_sequential Assembling a Model with Sequential
+ *
+ * The simplest way to build a feed-forward network is to push layers into a
+ * `Sequential` container.  Layers execute in insertion order during `forward()`:
+ *
+ * @code{.cpp}
+ * #include "sequential.hpp"
+ * #include "module.hpp"
+ * using namespace nn;
+ *
+ * auto model = std::make_shared<Sequential>();
+ * model->add(std::make_shared<Linear>(2, 8));    // 2 inputs, 8 hidden units
+ * model->add(std::make_shared<ReLU>());
+ * model->add(std::make_shared<Linear>(8, 1));    // 1 output
+ * model->add(std::make_shared<Sigmoid>());       // binary output probability
+ * @endcode
+ *
+ * Run inference with a single call:
+ *
+ * @code{.cpp}
+ * Tensor x({0.0, 1.0}, {1, 2});   // batch of 1, 2 features
+ * Tensor y = model->forward(x);   // shape {1, 1}
+ * @endcode
+ *
+ * @section module_params Collecting Parameters
+ *
+ * Pass all trainable tensors to an optimizer in one step:
+ *
+ * @code{.cpp}
+ * auto params = model->parameters();   // flattened list from all child layers
+ * Adam opt(params, 0.001);
+ * @endcode
+ *
+ * @section module_traineval Train/Eval Mode
+ *
+ * Layers like `Dropout` behave differently depending on mode.  Always switch
+ * to eval mode before running inference or computing metrics:
+ *
+ * @code{.cpp}
+ * model->train();    // enable stochastic behaviour (e.g. dropout masking)
+ * // ... training loop ...
+ * model->eval();     // disable stochastic behaviour for validation/inference
+ * Tensor pred = model->forward(test_input);
+ * @endcode
+ *
+ * `Sequential::train()` and `Sequential::eval()` propagate recursively to all
+ * child modules.
+ *
+ * @section module_custom Writing a Custom Layer
+ *
+ * Derive from `Module`, implement `forward()` and `parameters()`:
+ *
+ * @code{.cpp}
+ * class ScaledLinear : public nn::Module {
+ * public:
+ *     ScaledLinear(size_t in, size_t out, double scale)
+ *         : linear_(in, out), scale_(scale) {}
+ *
+ *     nn::Tensor forward(const nn::Tensor& x) override {
+ *         return linear_.forward(x) * scale_;
+ *     }
+ *
+ *     std::vector<nn::Tensor*> parameters() override {
+ *         return linear_.parameters();
+ *     }
+ *
+ * private:
+ *     nn::Linear linear_;
+ *     double scale_;
+ * };
+ * @endcode
+ *
+ * @subsection module_pitfalls Common Pitfalls
+ *
+ * - **Adding a raw `Module` instead of a `shared_ptr`** — `Sequential::add()`
+ *   takes `std::shared_ptr<Module>`.  Wrap with `std::make_shared<>`.
+ * - **Calling `forward()` on an empty Sequential** — throws `std::runtime_error`.
+ *   Always add at least one layer before the forward pass.
+ * - **Forgetting to collect new parameters after adding layers** — if you add
+ *   layers after creating an optimizer, the new parameters are not tracked.
+ *   Re-collect with `model->parameters()` and rebuild the optimizer.
+ * - **Dropout in eval mode** — `Dropout` is a no-op during eval.  If predictions
+ *   look stochastic, verify you called `model->eval()` before inference.
+ */

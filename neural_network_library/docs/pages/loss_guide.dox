@@ -1,0 +1,112 @@
+/**
+ * @page loss_guide Loss Function Guide
+ * @ingroup loss_api
+ *
+ * @brief Practical guide to choosing and using loss functions.
+ *
+ * @section loss_overview Overview
+ *
+ * Loss functions live in the `nn::losses` namespace and each returns a scalar
+ * `Tensor` of shape `{1}`.  The returned tensor is part of the autograd graph,
+ * so calling `backward()` on it propagates gradients all the way back through
+ * the model.
+ *
+ * @section loss_choosing Choosing the Right Loss
+ *
+ * | Task                          | Recommended Loss          | Header function             |
+ * |-------------------------------|---------------------------|-----------------------------|
+ * | Regression (continuous output)| `mse_loss` or `mae_loss`  | losses.hpp                  |
+ * | Binary classification         | `binary_cross_entropy`    | losses.hpp                  |
+ * | Multiclass classification     | `cross_entropy_loss`      | losses.hpp                  |
+ *
+ * @section loss_mse Mean Squared Error (Regression)
+ *
+ * Use `mse_loss` when the output is a continuous value and large errors should
+ * be penalised more heavily than small ones:
+ *
+ * @code{.cpp}
+ * #include "losses.hpp"
+ * using namespace nn;
+ *
+ * Tensor pred = model->forward(x);                    // shape {batch, 1}
+ * Tensor loss = losses::mse_loss(pred, targets);      // scalar {1}
+ * loss.backward();
+ * @endcode
+ *
+ * `mae_loss` is a less sensitive alternative — it penalises all errors equally
+ * and is more robust to outliers:
+ *
+ * @code{.cpp}
+ * Tensor loss = losses::mae_loss(pred, targets);
+ * @endcode
+ *
+ * @section loss_bce Binary Cross-Entropy (Binary Classification)
+ *
+ * Use `binary_cross_entropy` when the final layer produces a sigmoid probability
+ * in (0, 1) and the target is 0 or 1:
+ *
+ * @code{.cpp}
+ * // Model output must already be in (0,1) — use Sigmoid as the final layer
+ * auto model = std::make_shared<Sequential>();
+ * model->add(std::make_shared<Linear>(2, 4));
+ * model->add(std::make_shared<ReLU>());
+ * model->add(std::make_shared<Linear>(4, 1));
+ * model->add(std::make_shared<Sigmoid>());
+ *
+ * Tensor pred = model->forward(x);                       // in (0,1)
+ * Tensor loss = losses::binary_cross_entropy(pred, y);   // scalar {1}
+ * loss.backward();
+ * @endcode
+ *
+ * @section loss_ce Cross-Entropy (Multiclass Classification)
+ *
+ * Use `cross_entropy_loss` when the model produces one logit per class.  The
+ * function applies softmax internally, so the final layer should be a plain
+ * linear layer without an additional softmax activation:
+ *
+ * @code{.cpp}
+ * // 3-class problem
+ * auto model = std::make_shared<Sequential>();
+ * model->add(std::make_shared<Linear>(4, 8));
+ * model->add(std::make_shared<ReLU>());
+ * model->add(std::make_shared<Linear>(8, 3));  // raw logits — no softmax here
+ *
+ * Tensor logits = model->forward(x);              // shape {batch, 3}
+ * Tensor targets = ...;                           // one-hot, shape {batch, 3}
+ * Tensor loss = losses::cross_entropy_loss(logits, targets);
+ * loss.backward();
+ * @endcode
+ *
+ * @section loss_training Full Training Loop Pattern
+ *
+ * @code{.cpp}
+ * for (int epoch = 0; epoch < 100; ++epoch) {
+ *     optimizer.zero_grad();                       // clear previous gradients
+ *
+ *     Tensor pred = model->forward(input);
+ *     Tensor loss = losses::mse_loss(pred, target);
+ *
+ *     loss.backward();                             // compute gradients
+ *     optimizer.step();                            // update parameters
+ *
+ *     if (epoch % 10 == 0) {
+ *         std::cout << "Epoch " << epoch
+ *                   << "  loss=" << loss[0] << "\n";
+ *     }
+ * }
+ * @endcode
+ *
+ * @subsection loss_pitfalls Common Pitfalls
+ *
+ * - **Applying softmax before `cross_entropy_loss`** — `cross_entropy_loss`
+ *   includes its own softmax.  Adding an explicit softmax layer doubles the
+ *   normalisation and produces incorrect gradients.
+ * - **Shape mismatch** — all loss functions throw `std::invalid_argument` when
+ *   `predictions.shape()` does not equal `targets.shape()`. Verify batching.
+ * - **Calling `backward()` on a non-scalar** — loss functions guarantee a
+ *   scalar output of shape `{1}`, so `backward()` is safe.  If you compute a
+ *   custom reduction and it is not scalar, the call will throw.
+ * - **Not calling `zero_grad()` before each step** — gradients accumulate
+ *   additively.  Missing a `zero_grad()` call causes gradient explosion in
+ *   subsequent epochs.
+ */
