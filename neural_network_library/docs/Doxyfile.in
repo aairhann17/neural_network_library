@@ -7,7 +7,7 @@ OUTPUT_LANGUAGE        = English
 USE_MDFILE_AS_MAINPAGE = "@DOXYGEN_MAINPAGE@"
 
 INPUT                  = @DOXYGEN_INPUT@
-FILE_PATTERNS          = *.hpp *.cpp *.md
+FILE_PATTERNS          = *.hpp *.cpp *.md *.dox
 RECURSIVE              = YES
 EXCLUDE                = "@CMAKE_CURRENT_SOURCE_DIR@/build" "@CMAKE_CURRENT_SOURCE_DIR@/build_comment_check" "@CMAKE_CURRENT_SOURCE_DIR@/build_docs"
 

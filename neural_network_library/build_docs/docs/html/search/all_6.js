@@ -7,5 +7,6 @@ var searchData=
   ['get_5flearning_5frate_4',['get_learning_rate',['../classnn_1_1_s_g_d.html#a0e589d856c6b562db91576afaf89a922',1,'nn::SGD::get_learning_rate()'],['../classnn_1_1_adam.html#a963f1f337caad3865bd2f182a342c708',1,'nn::Adam::get_learning_rate()']]],
   ['grad_5',['grad',['../classnn_1_1_tensor.html#a9384f7f7ee29bd44f22358857c2d9a25',1,'nn::Tensor::grad()'],['../classnn_1_1_tensor.html#a9c90489a951e1d20742019f6993ba092',1,'nn::Tensor::grad() const']]],
   ['grad_5f_6',['grad_',['../classnn_1_1_tensor.html#a2edacc96a1d4c79cc8b2910b7b22b8ef',1,'nn::Tensor']]],
-  ['grad_5fptr_7',['grad_ptr',['../classnn_1_1_tensor.html#a9776efa7cbb94b543f3172c39be82ed9',1,'nn::Tensor']]]
+  ['grad_5fptr_7',['grad_ptr',['../classnn_1_1_tensor.html#a9776efa7cbb94b543f3172c39be82ed9',1,'nn::Tensor']]],
+  ['guide_8',['Contributing Guide',['../md__c_1_2_users_2aaraa_2neural__network__library-1_2_c_o_n_t_r_i_b_u_t_i_n_g.html',1,'']]]
 ];

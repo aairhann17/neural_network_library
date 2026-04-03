@@ -102,7 +102,7 @@ $(function() {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">nn::Tensor Class Reference</div></div>
+  <div class="headertitle"><div class="title">nn::Tensor Class Reference<div class="ingroups"><a class="el" href="group__tensor__api.html">Tensor API</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -262,7 +262,7 @@ Friends</h2></td></tr>
 <div class="textblock"><p>Dense n-dimensional tensor with optional gradient storage. </p>
 <p><a class="el" href="classnn_1_1_tensor.html" title="Dense n-dimensional tensor with optional gradient storage.">Tensor</a> owns a flat contiguous buffer and a shape vector describing how that buffer should be interpreted. Most math operations return a new <a class="el" href="classnn_1_1_tensor.html" title="Dense n-dimensional tensor with optional gradient storage.">Tensor</a> and, when gradients are enabled, attach lightweight autograd metadata so <a class="el" href="#a46155a74fd6356aa7f299b89487586b8" title="Starts backpropagation from this tensor.">backward()</a> can propagate gradients to upstream tensors. </p>
 
-<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00023">23</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00024">24</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="a110d850d66070055b5c355014137d705" name="a110d850d66070055b5c355014137d705"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a110d850d66070055b5c355014137d705">&#9670;&#160;</a></span>shape_type</h2>
@@ -278,7 +278,7 @@ Friends</h2></td></tr>
 
 <p>Shape representation where each entry is one dimension size. </p>
 
-<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00029">29</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00030">30</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
 
 </div>
 </div>
@@ -296,7 +296,7 @@ Friends</h2></td></tr>
 
 <p>Element type stored in the tensor buffer. </p>
 
-<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00026">26</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00027">27</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
 
 </div>
 </div>
@@ -345,9 +345,9 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00079">79</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00914">allocate_grad()</a>, <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00039">grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00133">requires_grad()</a>, <a class="el" href="tensor_8hpp_source.html#l00042">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00103">shape()</a>, and <a class="el" href="tensor_8hpp_source.html#l00036">shape_</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00914">allocate_grad()</a>, <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00040">grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00134">requires_grad()</a>, <a class="el" href="tensor_8hpp_source.html#l00043">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00104">shape()</a>, and <a class="el" href="tensor_8hpp_source.html#l00037">shape_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tensor_8cpp_source.html#l00942">alias()</a>, <a class="el" href="tensor_8cpp_source.html#l00980">check_shape_compatible()</a>, <a class="el" href="tensor_8cpp_source.html#l00835">flatten()</a>, <a class="el" href="tensor_8hpp_source.html#l00388">grad()</a>, <a class="el" href="tensor_8hpp_source.html#l00394">grad()</a>, <a class="el" href="tensor_8cpp_source.html#l00539">matmul()</a>, <a class="el" href="tensor_8cpp_source.html#l00763">mean()</a>, <a class="el" href="tensor_8cpp_source.html#l00793">mean()</a>, <a class="el" href="tensor_8cpp_source.html#l00874">ones()</a>, <a class="el" href="tensor_8cpp_source.html#l00293">operator*()</a>, <a class="el" href="tensor_8cpp_source.html#l00437">operator*()</a>, <a class="el" href="tensor_8cpp_source.html#l00519">operator*=()</a>, <a class="el" href="tensor_8cpp_source.html#l00529">operator*=()</a>, <a class="el" href="tensor_8cpp_source.html#l00210">operator+()</a>, <a class="el" href="tensor_8cpp_source.html#l00380">operator+()</a>, <a class="el" href="tensor_8cpp_source.html#l00497">operator+=()</a>, <a class="el" href="tensor_8cpp_source.html#l00252">operator-()</a>, <a class="el" href="tensor_8cpp_source.html#l00409">operator-()</a>, <a class="el" href="tensor_8cpp_source.html#l00509">operator-=()</a>, <a class="el" href="tensor_8cpp_source.html#l00334">operator/()</a>, <a class="el" href="tensor_8cpp_source.html#l00465">operator/()</a>, <a class="el" href="tensor_8cpp_source.html#l00990">operator&lt;&lt;</a>, <a class="el" href="tensor_8cpp_source.html#l00145">operator=()</a>, <a class="el" href="tensor_8cpp_source.html#l00160">operator=()</a>, <a class="el" href="tensor_8cpp_source.html#l00881">randn()</a>, <a class="el" href="tensor_8cpp_source.html#l00823">reshape()</a>, <a class="el" href="tensor_8cpp_source.html#l00839">slice()</a>, <a class="el" href="tensor_8cpp_source.html#l00665">sum()</a>, <a class="el" href="tensor_8cpp_source.html#l00692">sum()</a>, <a class="el" href="tensor_8cpp_source.html#l00122">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00137">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00623">transpose()</a>, <a class="el" href="tensor_8cpp_source.html#l00896">uniform()</a>, and <a class="el" href="tensor_8cpp_source.html#l00869">zeros()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tensor_8cpp_source.html#l00942">alias()</a>, <a class="el" href="tensor_8cpp_source.html#l00980">check_shape_compatible()</a>, <a class="el" href="tensor_8cpp_source.html#l00835">flatten()</a>, <a class="el" href="tensor_8hpp_source.html#l00389">grad()</a>, <a class="el" href="tensor_8hpp_source.html#l00395">grad()</a>, <a class="el" href="tensor_8cpp_source.html#l00539">matmul()</a>, <a class="el" href="tensor_8cpp_source.html#l00763">mean()</a>, <a class="el" href="tensor_8cpp_source.html#l00793">mean()</a>, <a class="el" href="tensor_8cpp_source.html#l00874">ones()</a>, <a class="el" href="tensor_8cpp_source.html#l00293">operator*()</a>, <a class="el" href="tensor_8cpp_source.html#l00437">operator*()</a>, <a class="el" href="tensor_8cpp_source.html#l00519">operator*=()</a>, <a class="el" href="tensor_8cpp_source.html#l00529">operator*=()</a>, <a class="el" href="tensor_8cpp_source.html#l00210">operator+()</a>, <a class="el" href="tensor_8cpp_source.html#l00380">operator+()</a>, <a class="el" href="tensor_8cpp_source.html#l00497">operator+=()</a>, <a class="el" href="tensor_8cpp_source.html#l00252">operator-()</a>, <a class="el" href="tensor_8cpp_source.html#l00409">operator-()</a>, <a class="el" href="tensor_8cpp_source.html#l00509">operator-=()</a>, <a class="el" href="tensor_8cpp_source.html#l00334">operator/()</a>, <a class="el" href="tensor_8cpp_source.html#l00465">operator/()</a>, <a class="el" href="tensor_8cpp_source.html#l00990">operator&lt;&lt;</a>, <a class="el" href="tensor_8cpp_source.html#l00145">operator=()</a>, <a class="el" href="tensor_8cpp_source.html#l00160">operator=()</a>, <a class="el" href="tensor_8cpp_source.html#l00881">randn()</a>, <a class="el" href="tensor_8cpp_source.html#l00823">reshape()</a>, <a class="el" href="tensor_8cpp_source.html#l00839">slice()</a>, <a class="el" href="tensor_8cpp_source.html#l00665">sum()</a>, <a class="el" href="tensor_8cpp_source.html#l00692">sum()</a>, <a class="el" href="tensor_8cpp_source.html#l00122">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00137">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00623">transpose()</a>, <a class="el" href="tensor_8cpp_source.html#l00896">uniform()</a>, and <a class="el" href="tensor_8cpp_source.html#l00869">zeros()</a>.</p>
 
 </div>
 </div>
@@ -393,7 +393,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00099">99</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00914">allocate_grad()</a>, <a class="el" href="tensor_8hpp_source.html#l00121">data()</a>, <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00039">grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00133">requires_grad()</a>, <a class="el" href="tensor_8hpp_source.html#l00042">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00103">shape()</a>, and <a class="el" href="tensor_8hpp_source.html#l00036">shape_</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00914">allocate_grad()</a>, <a class="el" href="tensor_8hpp_source.html#l00122">data()</a>, <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00040">grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00134">requires_grad()</a>, <a class="el" href="tensor_8hpp_source.html#l00043">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00104">shape()</a>, and <a class="el" href="tensor_8hpp_source.html#l00037">shape_</a>.</p>
 
 </div>
 </div>
@@ -422,7 +422,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00122">122</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00914">allocate_grad()</a>, <a class="el" href="tensor_8hpp_source.html#l00045">backward_fn_</a>, <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00039">grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00048">parents_</a>, <a class="el" href="tensor_8hpp_source.html#l00042">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00036">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00914">allocate_grad()</a>, <a class="el" href="tensor_8hpp_source.html#l00046">backward_fn_</a>, <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00040">grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00049">parents_</a>, <a class="el" href="tensor_8hpp_source.html#l00043">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00037">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 </div>
 </div>
@@ -459,7 +459,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00137">137</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00045">backward_fn_</a>, <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00039">grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00048">parents_</a>, <a class="el" href="tensor_8hpp_source.html#l00042">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00036">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00046">backward_fn_</a>, <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00040">grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00049">parents_</a>, <a class="el" href="tensor_8hpp_source.html#l00043">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00037">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 </div>
 </div>
@@ -556,7 +556,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00914">914</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00039">grad_</a>, and <a class="el" href="tensor_8hpp_source.html#l00036">shape_</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00040">grad_</a>, and <a class="el" href="tensor_8hpp_source.html#l00037">shape_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="tensor_8cpp_source.html#l00949">backward()</a>, <a class="el" href="tensor_8cpp_source.html#l00928">ensure_grad()</a>, <a class="el" href="tensor_8cpp_source.html#l00145">operator=()</a>, <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00099">Tensor()</a>, and <a class="el" href="tensor_8cpp_source.html#l00122">Tensor()</a>.</p>
 
@@ -595,7 +595,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00180">180</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00188">compute_index()</a>, and <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00188">compute_index()</a>, and <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>.</p>
 
 </div>
 </div>
@@ -632,7 +632,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00184">184</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00188">compute_index()</a>, and <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00188">compute_index()</a>, and <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>.</p>
 
 </div>
 </div>
@@ -661,7 +661,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00949">949</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00914">allocate_grad()</a>, <a class="el" href="tensor_8cpp_source.html#l00959">backward_impl()</a>, <a class="el" href="tensor_8hpp_source.html#l00039">grad_</a>, and <a class="el" href="tensor_8hpp_source.html#l00042">requires_grad_</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00914">allocate_grad()</a>, <a class="el" href="tensor_8cpp_source.html#l00959">backward_impl()</a>, <a class="el" href="tensor_8hpp_source.html#l00040">grad_</a>, and <a class="el" href="tensor_8hpp_source.html#l00043">requires_grad_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xor__example_8cpp_source.html#l00044">main()</a>.</p>
 
@@ -694,7 +694,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00959">959</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00045">backward_fn_</a>, and <a class="el" href="tensor_8hpp_source.html#l00048">parents_</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00046">backward_fn_</a>, and <a class="el" href="tensor_8hpp_source.html#l00049">parents_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="tensor_8cpp_source.html#l00949">backward()</a>.</p>
 
@@ -739,7 +739,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00980">980</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00036">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00037">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="tensor_8cpp_source.html#l00293">operator*()</a>, <a class="el" href="tensor_8cpp_source.html#l00519">operator*=()</a>, <a class="el" href="tensor_8cpp_source.html#l00210">operator+()</a>, <a class="el" href="tensor_8cpp_source.html#l00497">operator+=()</a>, <a class="el" href="tensor_8cpp_source.html#l00252">operator-()</a>, <a class="el" href="tensor_8cpp_source.html#l00509">operator-=()</a>, and <a class="el" href="tensor_8cpp_source.html#l00334">operator/()</a>.</p>
 
@@ -779,7 +779,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00188">188</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00036">shape_</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00037">shape_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="tensor_8cpp_source.html#l00180">at()</a>, and <a class="el" href="tensor_8cpp_source.html#l00184">at()</a>.</p>
 
@@ -811,9 +811,9 @@ Friends</h2></td></tr>
 <p>Returns mutable pointer to contiguous storage. </p>
 <dl class="section return"><dt>Returns</dt><dd>Mutable raw pointer to element data. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00121">121</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00122">122</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="tensor_8cpp_source.html#l00099">Tensor()</a>.</p>
 
@@ -845,9 +845,9 @@ Friends</h2></td></tr>
 <p>Returns read-only pointer to contiguous storage. </p>
 <dl class="section return"><dt>Returns</dt><dd>Const raw pointer to element data. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00127">127</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00128">128</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>.</p>
 
 </div>
 </div>
@@ -870,7 +870,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00928">928</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00914">allocate_grad()</a>, and <a class="el" href="tensor_8hpp_source.html#l00039">grad_</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00914">allocate_grad()</a>, and <a class="el" href="tensor_8hpp_source.html#l00040">grad_</a>.</p>
 
 </div>
 </div>
@@ -894,7 +894,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00835">835</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>, <a class="el" href="tensor_8cpp_source.html#l00823">reshape()</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>, <a class="el" href="tensor_8cpp_source.html#l00823">reshape()</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 </div>
 </div>
@@ -924,9 +924,9 @@ Friends</h2></td></tr>
 <p>Returns mutable gradient tensor. </p>
 <dl class="section return"><dt>Returns</dt><dd>Mutable gradient tensor reference. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00388">388</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00389">389</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00039">grad_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00040">grad_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xor__example_8cpp_source.html#l00044">main()</a>, <a class="el" href="optimizer_8cpp_source.html#l00109">nn::Adam::step()</a>, and <a class="el" href="optimizer_8cpp_source.html#l00046">nn::SGD::step()</a>.</p>
 
@@ -958,9 +958,9 @@ Friends</h2></td></tr>
 <p>Returns read-only gradient tensor. </p>
 <dl class="section return"><dt>Returns</dt><dd>Const gradient tensor reference. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00394">394</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00395">395</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00039">grad_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00040">grad_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 </div>
 </div>
@@ -990,9 +990,9 @@ Friends</h2></td></tr>
 <p>Returns shared pointer to gradient storage. </p>
 <dl class="section return"><dt>Returns</dt><dd>Shared gradient tensor pointer. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00406">406</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00407">407</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00039">grad_</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00040">grad_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="losses_8cpp_source.html#l00029">nn::losses::binary_cross_entropy()</a>, <a class="el" href="activations_8cpp_source.html#l00017">nn::activations::relu()</a>, and <a class="el" href="activations_8cpp_source.html#l00052">nn::activations::sigmoid()</a>.</p>
 
@@ -1024,9 +1024,9 @@ Friends</h2></td></tr>
 <p>Indicates whether gradient storage exists. </p>
 <dl class="section return"><dt>Returns</dt><dd>True when gradient tensor has been allocated. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00400">400</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00401">401</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00039">grad_</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00040">grad_</a>.</p>
 
 </div>
 </div>
@@ -1062,7 +1062,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00539">539</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00942">alias()</a>, <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00042">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00036">shape_</a>, <a class="el" href="tensor_8cpp_source.html#l00665">sum()</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00942">alias()</a>, <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00043">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00037">shape_</a>, <a class="el" href="tensor_8cpp_source.html#l00665">sum()</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="module_8cpp_source.html#l00050">nn::Linear::forward()</a>, and <a class="el" href="xor__example_8cpp_source.html#l00044">main()</a>.</p>
 
@@ -1088,7 +1088,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00813">813</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>.</p>
 
 </div>
 </div>
@@ -1112,7 +1112,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00763">763</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00942">alias()</a>, <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00042">requires_grad_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00942">alias()</a>, <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00043">requires_grad_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="losses_8cpp_source.html#l00108">nn::losses::mae_loss()</a>, and <a class="el" href="losses_8cpp_source.html#l00017">nn::losses::mse_loss()</a>.</p>
 
@@ -1151,7 +1151,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00793">793</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00036">shape_</a>, <a class="el" href="tensor_8cpp_source.html#l00665">sum()</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00037">shape_</a>, <a class="el" href="tensor_8cpp_source.html#l00665">sum()</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 </div>
 </div>
@@ -1175,7 +1175,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00817">817</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>.</p>
 
 </div>
 </div>
@@ -1205,9 +1205,9 @@ Friends</h2></td></tr>
 <p>Returns the number of dimensions. </p>
 <dl class="section return"><dt>Returns</dt><dd>Rank of the tensor. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00109">109</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00110">110</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00036">shape_</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00037">shape_</a>.</p>
 
 </div>
 </div>
@@ -1250,7 +1250,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00874">874</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00133">requires_grad()</a>, <a class="el" href="tensor_8hpp_source.html#l00103">shape()</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00134">requires_grad()</a>, <a class="el" href="tensor_8hpp_source.html#l00104">shape()</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xor__example_8cpp_source.html#l00044">main()</a>.</p>
 
@@ -1288,7 +1288,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00293">293</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00942">alias()</a>, <a class="el" href="tensor_8hpp_source.html#l00045">backward_fn_</a>, <a class="el" href="tensor_8cpp_source.html#l00980">check_shape_compatible()</a>, <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00039">grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00048">parents_</a>, <a class="el" href="tensor_8hpp_source.html#l00042">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00036">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00942">alias()</a>, <a class="el" href="tensor_8hpp_source.html#l00046">backward_fn_</a>, <a class="el" href="tensor_8cpp_source.html#l00980">check_shape_compatible()</a>, <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00040">grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00049">parents_</a>, <a class="el" href="tensor_8hpp_source.html#l00043">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00037">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 </div>
 </div>
@@ -1318,7 +1318,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00437">437</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00942">alias()</a>, <a class="el" href="tensor_8hpp_source.html#l00045">backward_fn_</a>, <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00039">grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00048">parents_</a>, <a class="el" href="tensor_8hpp_source.html#l00042">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00036">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00942">alias()</a>, <a class="el" href="tensor_8hpp_source.html#l00046">backward_fn_</a>, <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00040">grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00049">parents_</a>, <a class="el" href="tensor_8hpp_source.html#l00043">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00037">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 </div>
 </div>
@@ -1354,7 +1354,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00519">519</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00980">check_shape_compatible()</a>, <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00980">check_shape_compatible()</a>, <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 </div>
 </div>
@@ -1384,7 +1384,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00529">529</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 </div>
 </div>
@@ -1420,7 +1420,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00210">210</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00942">alias()</a>, <a class="el" href="tensor_8hpp_source.html#l00045">backward_fn_</a>, <a class="el" href="tensor_8cpp_source.html#l00980">check_shape_compatible()</a>, <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00039">grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00048">parents_</a>, <a class="el" href="tensor_8hpp_source.html#l00042">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00036">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00942">alias()</a>, <a class="el" href="tensor_8hpp_source.html#l00046">backward_fn_</a>, <a class="el" href="tensor_8cpp_source.html#l00980">check_shape_compatible()</a>, <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00040">grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00049">parents_</a>, <a class="el" href="tensor_8hpp_source.html#l00043">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00037">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 </div>
 </div>
@@ -1450,7 +1450,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00380">380</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00942">alias()</a>, <a class="el" href="tensor_8hpp_source.html#l00045">backward_fn_</a>, <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00039">grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00048">parents_</a>, <a class="el" href="tensor_8hpp_source.html#l00042">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00036">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00942">alias()</a>, <a class="el" href="tensor_8hpp_source.html#l00046">backward_fn_</a>, <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00040">grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00049">parents_</a>, <a class="el" href="tensor_8hpp_source.html#l00043">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00037">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 </div>
 </div>
@@ -1486,7 +1486,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00497">497</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00980">check_shape_compatible()</a>, <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00980">check_shape_compatible()</a>, <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 </div>
 </div>
@@ -1522,7 +1522,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00252">252</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00942">alias()</a>, <a class="el" href="tensor_8hpp_source.html#l00045">backward_fn_</a>, <a class="el" href="tensor_8cpp_source.html#l00980">check_shape_compatible()</a>, <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00039">grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00048">parents_</a>, <a class="el" href="tensor_8hpp_source.html#l00042">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00036">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00942">alias()</a>, <a class="el" href="tensor_8hpp_source.html#l00046">backward_fn_</a>, <a class="el" href="tensor_8cpp_source.html#l00980">check_shape_compatible()</a>, <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00040">grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00049">parents_</a>, <a class="el" href="tensor_8hpp_source.html#l00043">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00037">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 </div>
 </div>
@@ -1552,7 +1552,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00409">409</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00942">alias()</a>, <a class="el" href="tensor_8hpp_source.html#l00045">backward_fn_</a>, <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00039">grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00048">parents_</a>, <a class="el" href="tensor_8hpp_source.html#l00042">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00036">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00942">alias()</a>, <a class="el" href="tensor_8hpp_source.html#l00046">backward_fn_</a>, <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00040">grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00049">parents_</a>, <a class="el" href="tensor_8hpp_source.html#l00043">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00037">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 </div>
 </div>
@@ -1588,7 +1588,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00509">509</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00980">check_shape_compatible()</a>, <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00980">check_shape_compatible()</a>, <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 </div>
 </div>
@@ -1625,7 +1625,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00334">334</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00942">alias()</a>, <a class="el" href="tensor_8hpp_source.html#l00045">backward_fn_</a>, <a class="el" href="tensor_8cpp_source.html#l00980">check_shape_compatible()</a>, <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00039">grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00048">parents_</a>, <a class="el" href="tensor_8hpp_source.html#l00042">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00036">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00942">alias()</a>, <a class="el" href="tensor_8hpp_source.html#l00046">backward_fn_</a>, <a class="el" href="tensor_8cpp_source.html#l00980">check_shape_compatible()</a>, <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00040">grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00049">parents_</a>, <a class="el" href="tensor_8hpp_source.html#l00043">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00037">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 </div>
 </div>
@@ -1661,7 +1661,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00465">465</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00942">alias()</a>, <a class="el" href="tensor_8hpp_source.html#l00045">backward_fn_</a>, <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00039">grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00048">parents_</a>, <a class="el" href="tensor_8hpp_source.html#l00042">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00036">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00942">alias()</a>, <a class="el" href="tensor_8hpp_source.html#l00046">backward_fn_</a>, <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00040">grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00049">parents_</a>, <a class="el" href="tensor_8hpp_source.html#l00043">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00037">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 </div>
 </div>
@@ -1691,7 +1691,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00145">145</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00914">allocate_grad()</a>, <a class="el" href="tensor_8hpp_source.html#l00045">backward_fn_</a>, <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00039">grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00048">parents_</a>, <a class="el" href="tensor_8hpp_source.html#l00042">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00036">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00914">allocate_grad()</a>, <a class="el" href="tensor_8hpp_source.html#l00046">backward_fn_</a>, <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00040">grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00049">parents_</a>, <a class="el" href="tensor_8hpp_source.html#l00043">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00037">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 </div>
 </div>
@@ -1729,7 +1729,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00160">160</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00045">backward_fn_</a>, <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00039">grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00048">parents_</a>, <a class="el" href="tensor_8hpp_source.html#l00042">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00036">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00046">backward_fn_</a>, <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00040">grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00049">parents_</a>, <a class="el" href="tensor_8hpp_source.html#l00043">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00037">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 </div>
 </div>
@@ -1765,9 +1765,9 @@ Friends</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Mutable reference to element at idx. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00146">146</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00147">147</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>.</p>
 
 </div>
 </div>
@@ -1803,9 +1803,9 @@ Friends</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Const reference to element at idx. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00153">153</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00154">154</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>.</p>
 
 </div>
 </div>
@@ -1869,7 +1869,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00881">881</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00133">requires_grad()</a>, <a class="el" href="tensor_8hpp_source.html#l00103">shape()</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00134">requires_grad()</a>, <a class="el" href="tensor_8hpp_source.html#l00104">shape()</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="module_8cpp_source.html#l00036">nn::Linear::initialize_parameters()</a>.</p>
 
@@ -1901,9 +1901,9 @@ Friends</h2></td></tr>
 <p>Reports whether gradient tracking is enabled. </p>
 <dl class="section return"><dt>Returns</dt><dd>True when this tensor participates in autograd. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00133">133</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00134">134</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00042">requires_grad_</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00043">requires_grad_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="losses_8cpp_source.html#l00029">nn::losses::binary_cross_entropy()</a>, <a class="el" href="losses_8cpp_source.html#l00074">nn::losses::cross_entropy_loss()</a>, <a class="el" href="activations_8cpp_source.html#l00145">nn::activations::elu()</a>, <a class="el" href="module_8cpp_source.html#l00115">nn::Dropout::forward()</a>, <a class="el" href="activations_8cpp_source.html#l00134">nn::activations::leaky_relu()</a>, <a class="el" href="losses_8cpp_source.html#l00108">nn::losses::mae_loss()</a>, <a class="el" href="tensor_8cpp_source.html#l00874">ones()</a>, <a class="el" href="tensor_8cpp_source.html#l00881">randn()</a>, <a class="el" href="activations_8cpp_source.html#l00017">nn::activations::relu()</a>, <a class="el" href="activations_8cpp_source.html#l00052">nn::activations::sigmoid()</a>, <a class="el" href="activations_8cpp_source.html#l00096">nn::activations::softmax()</a>, <a class="el" href="activations_8cpp_source.html#l00085">nn::activations::tanh()</a>, <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00099">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00896">uniform()</a>, and <a class="el" href="tensor_8cpp_source.html#l00869">zeros()</a>.</p>
 
@@ -1941,7 +1941,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00823">823</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00042">requires_grad_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00043">requires_grad_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="tensor_8cpp_source.html#l00835">flatten()</a>.</p>
 
@@ -1977,7 +1977,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00934">934</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00045">backward_fn_</a>, and <a class="el" href="tensor_8hpp_source.html#l00048">parents_</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00046">backward_fn_</a>, and <a class="el" href="tensor_8hpp_source.html#l00049">parents_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="losses_8cpp_source.html#l00029">nn::losses::binary_cross_entropy()</a>, <a class="el" href="activations_8cpp_source.html#l00017">nn::activations::relu()</a>, and <a class="el" href="activations_8cpp_source.html#l00052">nn::activations::sigmoid()</a>.</p>
 
@@ -2014,9 +2014,9 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00139">139</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00140">140</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00042">requires_grad_</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00043">requires_grad_</a>.</p>
 
 </div>
 </div>
@@ -2046,9 +2046,9 @@ Friends</h2></td></tr>
 <p>Returns the tensor shape. </p>
 <dl class="section return"><dt>Returns</dt><dd>Shape vector describing tensor dimensions. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00103">103</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00104">104</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00036">shape_</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00037">shape_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="losses_8cpp_source.html#l00029">nn::losses::binary_cross_entropy()</a>, <a class="el" href="losses_8cpp_source.html#l00074">nn::losses::cross_entropy_loss()</a>, <a class="el" href="activations_8cpp_source.html#l00145">nn::activations::elu()</a>, <a class="el" href="module_8cpp_source.html#l00115">nn::Dropout::forward()</a>, <a class="el" href="module_8cpp_source.html#l00050">nn::Linear::forward()</a>, <a class="el" href="activations_8cpp_source.html#l00134">nn::activations::leaky_relu()</a>, <a class="el" href="losses_8cpp_source.html#l00108">nn::losses::mae_loss()</a>, <a class="el" href="losses_8cpp_source.html#l00017">nn::losses::mse_loss()</a>, <a class="el" href="tensor_8cpp_source.html#l00874">ones()</a>, <a class="el" href="tensor_8cpp_source.html#l00881">randn()</a>, <a class="el" href="activations_8cpp_source.html#l00017">nn::activations::relu()</a>, <a class="el" href="activations_8cpp_source.html#l00052">nn::activations::sigmoid()</a>, <a class="el" href="activations_8cpp_source.html#l00096">nn::activations::softmax()</a>, <a class="el" href="activations_8cpp_source.html#l00085">nn::activations::tanh()</a>, <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00099">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00896">uniform()</a>, and <a class="el" href="tensor_8cpp_source.html#l00869">zeros()</a>.</p>
 
@@ -2074,7 +2074,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00174">174</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="losses_8cpp_source.html#l00029">nn::losses::binary_cross_entropy()</a>, <a class="el" href="activations_8cpp_source.html#l00145">nn::activations::elu()</a>, <a class="el" href="module_8cpp_source.html#l00115">nn::Dropout::forward()</a>, <a class="el" href="activations_8cpp_source.html#l00134">nn::activations::leaky_relu()</a>, <a class="el" href="losses_8cpp_source.html#l00108">nn::losses::mae_loss()</a>, <a class="el" href="xor__example_8cpp_source.html#l00044">main()</a>, <a class="el" href="activations_8cpp_source.html#l00017">nn::activations::relu()</a>, <a class="el" href="activations_8cpp_source.html#l00052">nn::activations::sigmoid()</a>, <a class="el" href="optimizer_8cpp_source.html#l00046">nn::SGD::step()</a>, and <a class="el" href="activations_8cpp_source.html#l00085">nn::activations::tanh()</a>.</p>
 
@@ -2125,7 +2125,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00839">839</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00042">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00036">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00043">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00037">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 </div>
 </div>
@@ -2149,7 +2149,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00665">665</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00942">alias()</a>, <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00042">requires_grad_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00942">alias()</a>, <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00043">requires_grad_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="tensor_8cpp_source.html#l00539">matmul()</a>, and <a class="el" href="tensor_8cpp_source.html#l00793">mean()</a>.</p>
 
@@ -2188,7 +2188,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00692">692</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00942">alias()</a>, <a class="el" href="tensor_8hpp_source.html#l00045">backward_fn_</a>, <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00039">grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00048">parents_</a>, <a class="el" href="tensor_8hpp_source.html#l00042">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00036">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00942">alias()</a>, <a class="el" href="tensor_8hpp_source.html#l00046">backward_fn_</a>, <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00040">grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00049">parents_</a>, <a class="el" href="tensor_8hpp_source.html#l00043">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00037">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 </div>
 </div>
@@ -2218,7 +2218,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00623">623</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00942">alias()</a>, <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00042">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00036">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00942">alias()</a>, <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00043">requires_grad_</a>, <a class="el" href="tensor_8hpp_source.html#l00037">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 </div>
 </div>
@@ -2273,7 +2273,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00896">896</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00133">requires_grad()</a>, <a class="el" href="tensor_8hpp_source.html#l00103">shape()</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00134">requires_grad()</a>, <a class="el" href="tensor_8hpp_source.html#l00104">shape()</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 </div>
 </div>
@@ -2296,7 +2296,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00921">921</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00039">grad_</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00040">grad_</a>.</p>
 
 </div>
 </div>
@@ -2339,7 +2339,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00869">869</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00133">requires_grad()</a>, <a class="el" href="tensor_8hpp_source.html#l00103">shape()</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00134">requires_grad()</a>, <a class="el" href="tensor_8hpp_source.html#l00104">shape()</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="optimizer_8cpp_source.html#l00090">nn::Adam::Adam()</a>, <a class="el" href="module_8cpp_source.html#l00036">nn::Linear::initialize_parameters()</a>, <a class="el" href="optimizer_8cpp_source.html#l00029">nn::SGD::SGD()</a>, <a class="el" href="optimizer_8cpp_source.html#l00109">nn::Adam::step()</a>, and <a class="el" href="optimizer_8cpp_source.html#l00046">nn::SGD::step()</a>.</p>
 
@@ -2385,7 +2385,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00990">990</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00033">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00036">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8hpp_source.html#l00034">data_</a>, <a class="el" href="tensor_8hpp_source.html#l00037">shape_</a>, and <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>.</p>
 
 </div>
 </div>
@@ -2410,7 +2410,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00045">45</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00046">46</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="tensor_8cpp_source.html#l00959">backward_impl()</a>, <a class="el" href="tensor_8cpp_source.html#l00293">operator*()</a>, <a class="el" href="tensor_8cpp_source.html#l00437">operator*()</a>, <a class="el" href="tensor_8cpp_source.html#l00210">operator+()</a>, <a class="el" href="tensor_8cpp_source.html#l00380">operator+()</a>, <a class="el" href="tensor_8cpp_source.html#l00252">operator-()</a>, <a class="el" href="tensor_8cpp_source.html#l00409">operator-()</a>, <a class="el" href="tensor_8cpp_source.html#l00334">operator/()</a>, <a class="el" href="tensor_8cpp_source.html#l00465">operator/()</a>, <a class="el" href="tensor_8cpp_source.html#l00145">operator=()</a>, <a class="el" href="tensor_8cpp_source.html#l00160">operator=()</a>, <a class="el" href="tensor_8cpp_source.html#l00934">set_autograd()</a>, <a class="el" href="tensor_8cpp_source.html#l00692">sum()</a>, <a class="el" href="tensor_8cpp_source.html#l00122">Tensor()</a>, and <a class="el" href="tensor_8cpp_source.html#l00137">Tensor()</a>.</p>
 
@@ -2436,9 +2436,9 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00033">33</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00034">34</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tensor_8cpp_source.html#l00180">at()</a>, <a class="el" href="tensor_8cpp_source.html#l00184">at()</a>, <a class="el" href="tensor_8hpp_source.html#l00121">data()</a>, <a class="el" href="tensor_8hpp_source.html#l00127">data()</a>, <a class="el" href="tensor_8cpp_source.html#l00835">flatten()</a>, <a class="el" href="tensor_8cpp_source.html#l00539">matmul()</a>, <a class="el" href="tensor_8cpp_source.html#l00813">max()</a>, <a class="el" href="tensor_8cpp_source.html#l00763">mean()</a>, <a class="el" href="tensor_8cpp_source.html#l00817">min()</a>, <a class="el" href="tensor_8cpp_source.html#l00874">ones()</a>, <a class="el" href="tensor_8cpp_source.html#l00293">operator*()</a>, <a class="el" href="tensor_8cpp_source.html#l00437">operator*()</a>, <a class="el" href="tensor_8cpp_source.html#l00519">operator*=()</a>, <a class="el" href="tensor_8cpp_source.html#l00529">operator*=()</a>, <a class="el" href="tensor_8cpp_source.html#l00210">operator+()</a>, <a class="el" href="tensor_8cpp_source.html#l00380">operator+()</a>, <a class="el" href="tensor_8cpp_source.html#l00497">operator+=()</a>, <a class="el" href="tensor_8cpp_source.html#l00252">operator-()</a>, <a class="el" href="tensor_8cpp_source.html#l00409">operator-()</a>, <a class="el" href="tensor_8cpp_source.html#l00509">operator-=()</a>, <a class="el" href="tensor_8cpp_source.html#l00334">operator/()</a>, <a class="el" href="tensor_8cpp_source.html#l00465">operator/()</a>, <a class="el" href="tensor_8cpp_source.html#l00990">operator&lt;&lt;</a>, <a class="el" href="tensor_8cpp_source.html#l00145">operator=()</a>, <a class="el" href="tensor_8cpp_source.html#l00160">operator=()</a>, <a class="el" href="tensor_8hpp_source.html#l00146">operator[]()</a>, <a class="el" href="tensor_8hpp_source.html#l00153">operator[]()</a>, <a class="el" href="tensor_8cpp_source.html#l00881">randn()</a>, <a class="el" href="tensor_8cpp_source.html#l00823">reshape()</a>, <a class="el" href="tensor_8cpp_source.html#l00174">size()</a>, <a class="el" href="tensor_8cpp_source.html#l00839">slice()</a>, <a class="el" href="tensor_8cpp_source.html#l00665">sum()</a>, <a class="el" href="tensor_8cpp_source.html#l00692">sum()</a>, <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00099">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00122">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00137">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00623">transpose()</a>, and <a class="el" href="tensor_8cpp_source.html#l00896">uniform()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tensor_8cpp_source.html#l00180">at()</a>, <a class="el" href="tensor_8cpp_source.html#l00184">at()</a>, <a class="el" href="tensor_8hpp_source.html#l00122">data()</a>, <a class="el" href="tensor_8hpp_source.html#l00128">data()</a>, <a class="el" href="tensor_8cpp_source.html#l00835">flatten()</a>, <a class="el" href="tensor_8cpp_source.html#l00539">matmul()</a>, <a class="el" href="tensor_8cpp_source.html#l00813">max()</a>, <a class="el" href="tensor_8cpp_source.html#l00763">mean()</a>, <a class="el" href="tensor_8cpp_source.html#l00817">min()</a>, <a class="el" href="tensor_8cpp_source.html#l00874">ones()</a>, <a class="el" href="tensor_8cpp_source.html#l00293">operator*()</a>, <a class="el" href="tensor_8cpp_source.html#l00437">operator*()</a>, <a class="el" href="tensor_8cpp_source.html#l00519">operator*=()</a>, <a class="el" href="tensor_8cpp_source.html#l00529">operator*=()</a>, <a class="el" href="tensor_8cpp_source.html#l00210">operator+()</a>, <a class="el" href="tensor_8cpp_source.html#l00380">operator+()</a>, <a class="el" href="tensor_8cpp_source.html#l00497">operator+=()</a>, <a class="el" href="tensor_8cpp_source.html#l00252">operator-()</a>, <a class="el" href="tensor_8cpp_source.html#l00409">operator-()</a>, <a class="el" href="tensor_8cpp_source.html#l00509">operator-=()</a>, <a class="el" href="tensor_8cpp_source.html#l00334">operator/()</a>, <a class="el" href="tensor_8cpp_source.html#l00465">operator/()</a>, <a class="el" href="tensor_8cpp_source.html#l00990">operator&lt;&lt;</a>, <a class="el" href="tensor_8cpp_source.html#l00145">operator=()</a>, <a class="el" href="tensor_8cpp_source.html#l00160">operator=()</a>, <a class="el" href="tensor_8hpp_source.html#l00147">operator[]()</a>, <a class="el" href="tensor_8hpp_source.html#l00154">operator[]()</a>, <a class="el" href="tensor_8cpp_source.html#l00881">randn()</a>, <a class="el" href="tensor_8cpp_source.html#l00823">reshape()</a>, <a class="el" href="tensor_8cpp_source.html#l00174">size()</a>, <a class="el" href="tensor_8cpp_source.html#l00839">slice()</a>, <a class="el" href="tensor_8cpp_source.html#l00665">sum()</a>, <a class="el" href="tensor_8cpp_source.html#l00692">sum()</a>, <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00099">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00122">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00137">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00623">transpose()</a>, and <a class="el" href="tensor_8cpp_source.html#l00896">uniform()</a>.</p>
 
 </div>
 </div>
@@ -2462,9 +2462,9 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00039">39</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00040">40</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tensor_8cpp_source.html#l00914">allocate_grad()</a>, <a class="el" href="tensor_8cpp_source.html#l00949">backward()</a>, <a class="el" href="tensor_8cpp_source.html#l00928">ensure_grad()</a>, <a class="el" href="tensor_8hpp_source.html#l00388">grad()</a>, <a class="el" href="tensor_8hpp_source.html#l00394">grad()</a>, <a class="el" href="tensor_8hpp_source.html#l00406">grad_ptr()</a>, <a class="el" href="tensor_8hpp_source.html#l00400">has_grad()</a>, <a class="el" href="tensor_8cpp_source.html#l00293">operator*()</a>, <a class="el" href="tensor_8cpp_source.html#l00437">operator*()</a>, <a class="el" href="tensor_8cpp_source.html#l00210">operator+()</a>, <a class="el" href="tensor_8cpp_source.html#l00380">operator+()</a>, <a class="el" href="tensor_8cpp_source.html#l00252">operator-()</a>, <a class="el" href="tensor_8cpp_source.html#l00409">operator-()</a>, <a class="el" href="tensor_8cpp_source.html#l00334">operator/()</a>, <a class="el" href="tensor_8cpp_source.html#l00465">operator/()</a>, <a class="el" href="tensor_8cpp_source.html#l00145">operator=()</a>, <a class="el" href="tensor_8cpp_source.html#l00160">operator=()</a>, <a class="el" href="tensor_8cpp_source.html#l00692">sum()</a>, <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00099">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00122">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00137">Tensor()</a>, and <a class="el" href="tensor_8cpp_source.html#l00921">zero_grad()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tensor_8cpp_source.html#l00914">allocate_grad()</a>, <a class="el" href="tensor_8cpp_source.html#l00949">backward()</a>, <a class="el" href="tensor_8cpp_source.html#l00928">ensure_grad()</a>, <a class="el" href="tensor_8hpp_source.html#l00389">grad()</a>, <a class="el" href="tensor_8hpp_source.html#l00395">grad()</a>, <a class="el" href="tensor_8hpp_source.html#l00407">grad_ptr()</a>, <a class="el" href="tensor_8hpp_source.html#l00401">has_grad()</a>, <a class="el" href="tensor_8cpp_source.html#l00293">operator*()</a>, <a class="el" href="tensor_8cpp_source.html#l00437">operator*()</a>, <a class="el" href="tensor_8cpp_source.html#l00210">operator+()</a>, <a class="el" href="tensor_8cpp_source.html#l00380">operator+()</a>, <a class="el" href="tensor_8cpp_source.html#l00252">operator-()</a>, <a class="el" href="tensor_8cpp_source.html#l00409">operator-()</a>, <a class="el" href="tensor_8cpp_source.html#l00334">operator/()</a>, <a class="el" href="tensor_8cpp_source.html#l00465">operator/()</a>, <a class="el" href="tensor_8cpp_source.html#l00145">operator=()</a>, <a class="el" href="tensor_8cpp_source.html#l00160">operator=()</a>, <a class="el" href="tensor_8cpp_source.html#l00692">sum()</a>, <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00099">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00122">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00137">Tensor()</a>, and <a class="el" href="tensor_8cpp_source.html#l00921">zero_grad()</a>.</p>
 
 </div>
 </div>
@@ -2488,7 +2488,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00048">48</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00049">49</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="tensor_8cpp_source.html#l00959">backward_impl()</a>, <a class="el" href="tensor_8cpp_source.html#l00293">operator*()</a>, <a class="el" href="tensor_8cpp_source.html#l00437">operator*()</a>, <a class="el" href="tensor_8cpp_source.html#l00210">operator+()</a>, <a class="el" href="tensor_8cpp_source.html#l00380">operator+()</a>, <a class="el" href="tensor_8cpp_source.html#l00252">operator-()</a>, <a class="el" href="tensor_8cpp_source.html#l00409">operator-()</a>, <a class="el" href="tensor_8cpp_source.html#l00334">operator/()</a>, <a class="el" href="tensor_8cpp_source.html#l00465">operator/()</a>, <a class="el" href="tensor_8cpp_source.html#l00145">operator=()</a>, <a class="el" href="tensor_8cpp_source.html#l00160">operator=()</a>, <a class="el" href="tensor_8cpp_source.html#l00934">set_autograd()</a>, <a class="el" href="tensor_8cpp_source.html#l00692">sum()</a>, <a class="el" href="tensor_8cpp_source.html#l00122">Tensor()</a>, and <a class="el" href="tensor_8cpp_source.html#l00137">Tensor()</a>.</p>
 
@@ -2514,9 +2514,9 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00042">42</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00043">43</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tensor_8cpp_source.html#l00949">backward()</a>, <a class="el" href="tensor_8cpp_source.html#l00539">matmul()</a>, <a class="el" href="tensor_8cpp_source.html#l00763">mean()</a>, <a class="el" href="tensor_8cpp_source.html#l00293">operator*()</a>, <a class="el" href="tensor_8cpp_source.html#l00437">operator*()</a>, <a class="el" href="tensor_8cpp_source.html#l00210">operator+()</a>, <a class="el" href="tensor_8cpp_source.html#l00380">operator+()</a>, <a class="el" href="tensor_8cpp_source.html#l00252">operator-()</a>, <a class="el" href="tensor_8cpp_source.html#l00409">operator-()</a>, <a class="el" href="tensor_8cpp_source.html#l00334">operator/()</a>, <a class="el" href="tensor_8cpp_source.html#l00465">operator/()</a>, <a class="el" href="tensor_8cpp_source.html#l00145">operator=()</a>, <a class="el" href="tensor_8cpp_source.html#l00160">operator=()</a>, <a class="el" href="tensor_8hpp_source.html#l00133">requires_grad()</a>, <a class="el" href="tensor_8cpp_source.html#l00823">reshape()</a>, <a class="el" href="tensor_8hpp_source.html#l00139">set_requires_grad()</a>, <a class="el" href="tensor_8cpp_source.html#l00839">slice()</a>, <a class="el" href="tensor_8cpp_source.html#l00665">sum()</a>, <a class="el" href="tensor_8cpp_source.html#l00692">sum()</a>, <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00099">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00122">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00137">Tensor()</a>, and <a class="el" href="tensor_8cpp_source.html#l00623">transpose()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tensor_8cpp_source.html#l00949">backward()</a>, <a class="el" href="tensor_8cpp_source.html#l00539">matmul()</a>, <a class="el" href="tensor_8cpp_source.html#l00763">mean()</a>, <a class="el" href="tensor_8cpp_source.html#l00293">operator*()</a>, <a class="el" href="tensor_8cpp_source.html#l00437">operator*()</a>, <a class="el" href="tensor_8cpp_source.html#l00210">operator+()</a>, <a class="el" href="tensor_8cpp_source.html#l00380">operator+()</a>, <a class="el" href="tensor_8cpp_source.html#l00252">operator-()</a>, <a class="el" href="tensor_8cpp_source.html#l00409">operator-()</a>, <a class="el" href="tensor_8cpp_source.html#l00334">operator/()</a>, <a class="el" href="tensor_8cpp_source.html#l00465">operator/()</a>, <a class="el" href="tensor_8cpp_source.html#l00145">operator=()</a>, <a class="el" href="tensor_8cpp_source.html#l00160">operator=()</a>, <a class="el" href="tensor_8hpp_source.html#l00134">requires_grad()</a>, <a class="el" href="tensor_8cpp_source.html#l00823">reshape()</a>, <a class="el" href="tensor_8hpp_source.html#l00140">set_requires_grad()</a>, <a class="el" href="tensor_8cpp_source.html#l00839">slice()</a>, <a class="el" href="tensor_8cpp_source.html#l00665">sum()</a>, <a class="el" href="tensor_8cpp_source.html#l00692">sum()</a>, <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00099">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00122">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00137">Tensor()</a>, and <a class="el" href="tensor_8cpp_source.html#l00623">transpose()</a>.</p>
 
 </div>
 </div>
@@ -2540,9 +2540,9 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00036">36</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8hpp_source.html#l00037">37</a> of file <a class="el" href="tensor_8hpp_source.html">tensor.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tensor_8cpp_source.html#l00914">allocate_grad()</a>, <a class="el" href="tensor_8cpp_source.html#l00980">check_shape_compatible()</a>, <a class="el" href="tensor_8cpp_source.html#l00188">compute_index()</a>, <a class="el" href="tensor_8cpp_source.html#l00539">matmul()</a>, <a class="el" href="tensor_8cpp_source.html#l00793">mean()</a>, <a class="el" href="tensor_8hpp_source.html#l00109">ndim()</a>, <a class="el" href="tensor_8cpp_source.html#l00293">operator*()</a>, <a class="el" href="tensor_8cpp_source.html#l00437">operator*()</a>, <a class="el" href="tensor_8cpp_source.html#l00210">operator+()</a>, <a class="el" href="tensor_8cpp_source.html#l00380">operator+()</a>, <a class="el" href="tensor_8cpp_source.html#l00252">operator-()</a>, <a class="el" href="tensor_8cpp_source.html#l00409">operator-()</a>, <a class="el" href="tensor_8cpp_source.html#l00334">operator/()</a>, <a class="el" href="tensor_8cpp_source.html#l00465">operator/()</a>, <a class="el" href="tensor_8cpp_source.html#l00990">operator&lt;&lt;</a>, <a class="el" href="tensor_8cpp_source.html#l00145">operator=()</a>, <a class="el" href="tensor_8cpp_source.html#l00160">operator=()</a>, <a class="el" href="tensor_8hpp_source.html#l00103">shape()</a>, <a class="el" href="tensor_8cpp_source.html#l00839">slice()</a>, <a class="el" href="tensor_8cpp_source.html#l00692">sum()</a>, <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00099">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00122">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00137">Tensor()</a>, and <a class="el" href="tensor_8cpp_source.html#l00623">transpose()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tensor_8cpp_source.html#l00914">allocate_grad()</a>, <a class="el" href="tensor_8cpp_source.html#l00980">check_shape_compatible()</a>, <a class="el" href="tensor_8cpp_source.html#l00188">compute_index()</a>, <a class="el" href="tensor_8cpp_source.html#l00539">matmul()</a>, <a class="el" href="tensor_8cpp_source.html#l00793">mean()</a>, <a class="el" href="tensor_8hpp_source.html#l00110">ndim()</a>, <a class="el" href="tensor_8cpp_source.html#l00293">operator*()</a>, <a class="el" href="tensor_8cpp_source.html#l00437">operator*()</a>, <a class="el" href="tensor_8cpp_source.html#l00210">operator+()</a>, <a class="el" href="tensor_8cpp_source.html#l00380">operator+()</a>, <a class="el" href="tensor_8cpp_source.html#l00252">operator-()</a>, <a class="el" href="tensor_8cpp_source.html#l00409">operator-()</a>, <a class="el" href="tensor_8cpp_source.html#l00334">operator/()</a>, <a class="el" href="tensor_8cpp_source.html#l00465">operator/()</a>, <a class="el" href="tensor_8cpp_source.html#l00990">operator&lt;&lt;</a>, <a class="el" href="tensor_8cpp_source.html#l00145">operator=()</a>, <a class="el" href="tensor_8cpp_source.html#l00160">operator=()</a>, <a class="el" href="tensor_8hpp_source.html#l00104">shape()</a>, <a class="el" href="tensor_8cpp_source.html#l00839">slice()</a>, <a class="el" href="tensor_8cpp_source.html#l00692">sum()</a>, <a class="el" href="tensor_8cpp_source.html#l00079">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00099">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00122">Tensor()</a>, <a class="el" href="tensor_8cpp_source.html#l00137">Tensor()</a>, and <a class="el" href="tensor_8cpp_source.html#l00623">transpose()</a>.</p>
 
 </div>
 </div>

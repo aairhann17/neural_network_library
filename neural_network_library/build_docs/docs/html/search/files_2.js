@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['module_2ecpp_0',['module.cpp',['../module_8cpp.html',1,'']]],
-  ['module_2ehpp_1',['module.hpp',['../module_8hpp.html',1,'']]]
+  ['losses_2ecpp_0',['losses.cpp',['../losses_8cpp.html',1,'']]],
+  ['losses_2ehpp_1',['losses.hpp',['../losses_8hpp.html',1,'']]]
 ];

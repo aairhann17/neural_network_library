@@ -7,10 +7,10 @@ var searchData=
   ['sgd_4',['SGD',['../classnn_1_1_s_g_d.html#a1c7137aca64434b7c101f1b3ed30b34b',1,'nn::SGD']]],
   ['shape_5',['shape',['../classnn_1_1_tensor.html#a32e9995651a3cd4c5cbd613d428249a2',1,'nn::Tensor']]],
   ['sigmoid_6',['Sigmoid',['../classnn_1_1_sigmoid.html#a781ac47b1095cd353064de4940a30446',1,'nn::Sigmoid']]],
-  ['sigmoid_7',['sigmoid',['../namespacenn_1_1activations.html#a321abfb434231b870d279ad2023c6ce7',1,'nn::activations']]],
+  ['sigmoid_7',['sigmoid',['../group__activation__api.html#ga321abfb434231b870d279ad2023c6ce7',1,'nn::activations']]],
   ['size_8',['size',['../classnn_1_1_sequential.html#a40ba3a56633c5178d71002dcd8be1248',1,'nn::Sequential::size()'],['../classnn_1_1_tensor.html#a3cfc3136326e7d0bb849adf7061b9b8b',1,'nn::Tensor::size() const']]],
   ['slice_9',['slice',['../classnn_1_1_tensor.html#af2f8b225f78bf5c74473e02b1dfc5269',1,'nn::Tensor']]],
-  ['softmax_10',['softmax',['../namespacenn_1_1activations.html#aacca2c3d15692c5b8562f8e347133b1d',1,'nn::activations']]],
+  ['softmax_10',['softmax',['../group__activation__api.html#gaacca2c3d15692c5b8562f8e347133b1d',1,'nn::activations']]],
   ['step_11',['step',['../classnn_1_1_optimizer.html#a1250abad23c650987618729eddd2e3a8',1,'nn::Optimizer::step()'],['../classnn_1_1_s_g_d.html#a6bcdd5dedcc687df269eaa850c65fd72',1,'nn::SGD::step()'],['../classnn_1_1_adam.html#aab214fbdf2e1130b6be4cb3d10964859',1,'nn::Adam::step()']]],
   ['sum_12',['sum',['../classnn_1_1_tensor.html#aafcdd27ee776cdf49eb6d1a753cdc67a',1,'nn::Tensor::sum() const'],['../classnn_1_1_tensor.html#ae2d48e470500d798dde662d73a68b41d',1,'nn::Tensor::sum(int axis) const']]]
 ];

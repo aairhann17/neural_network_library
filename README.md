@@ -251,7 +251,12 @@ losses::mae_loss(predictions, targets)
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit issues or pull requests.
+Contributions are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) for:
+
+- Local build and validation commands
+- API documentation expectations (`@brief`, `@param`, `@return`, `@throws`)
+- Doxygen grouping conventions
+- Pull request checklist
 
 ## License
 

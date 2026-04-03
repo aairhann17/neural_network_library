@@ -10,6 +10,7 @@
 
 namespace nn {
 
+/** @ingroup sequential_api */
 /// Ordered container that applies child modules one after another.
 class Sequential : public Module {
 public:

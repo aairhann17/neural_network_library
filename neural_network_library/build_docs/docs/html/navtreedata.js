@@ -26,6 +26,14 @@ var NAVTREE =
 [
   [ "NeuralNetCpp", "index.html", [
     [ "Neural Network Library in C++", "index.html", "index" ],
+    [ "Contributing Guide", "md__c_1_2_users_2aaraa_2neural__network__library-1_2_c_o_n_t_r_i_b_u_t_i_n_g.html", [
+      [ "Development Workflow", "md__c_1_2_users_2aaraa_2neural__network__library-1_2_c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md23", null ],
+      [ "Build and Validation", "md__c_1_2_users_2aaraa_2neural__network__library-1_2_c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md24", null ],
+      [ "Documentation Standards", "md__c_1_2_users_2aaraa_2neural__network__library-1_2_c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md25", null ],
+      [ "Code Style", "md__c_1_2_users_2aaraa_2neural__network__library-1_2_c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md26", null ],
+      [ "Pull Requests", "md__c_1_2_users_2aaraa_2neural__network__library-1_2_c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md27", null ]
+    ] ],
+    [ "Topics", "topics.html", "topics" ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -57,8 +65,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"activations_8cpp.html",
-"classnn_1_1_tensor.html#a9c5f8554b5164bbfe223ab01c5a4ba3c"
+"activations_8cpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

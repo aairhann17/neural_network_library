@@ -11,6 +11,7 @@
 
 namespace nn {
 
+/** @ingroup module_api */
 /// Base interface for all trainable or stateless neural-network layers.
 ///
 /// A Module consumes an input tensor in forward(), optionally exposes trainable
@@ -54,6 +55,7 @@ protected:
     bool training_ = true;
 };
 
+/** @ingroup module_api */
 /// Fully connected affine layer implementing $y = xW^T + b$.
 class Linear : public Module {
 public:
@@ -123,6 +125,7 @@ private:
     void initialize_parameters();
 };
 
+/** @ingroup module_api */
 /// Module wrapper around the ReLU activation function.
 class ReLU : public Module {
 public:
@@ -140,6 +143,7 @@ public:
     std::vector<Tensor*> parameters() override { return {}; }
 };
 
+/** @ingroup module_api */
 /// Module wrapper around the sigmoid activation function.
 class Sigmoid : public Module {
 public:
@@ -157,6 +161,7 @@ public:
     std::vector<Tensor*> parameters() override { return {}; }
 };
 
+/** @ingroup module_api */
 /// Module wrapper around the hyperbolic tangent activation function.
 class Tanh : public Module {
 public:
@@ -174,6 +179,7 @@ public:
     std::vector<Tensor*> parameters() override { return {}; }
 };
 
+/** @ingroup module_api */
 /// Regularization layer that randomly zeroes activations during training.
 class Dropout : public Module {
 public:

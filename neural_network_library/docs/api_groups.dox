@@ -1,11 +1,6 @@
 /**
  * @file api_groups.dox
  * @brief High-level API grouping and namespace overview for generated docs.
- *
- * @mainpage NeuralNetCpp API Reference
- *
- * This reference is organized into focused groups so users can quickly find
- * tensor primitives, layer abstractions, losses, and optimization utilities.
  */
 
 /**
@@ -16,29 +11,48 @@
 /**
  * @defgroup tensor_api Tensor API
  * @brief Dense tensor primitives, shape transforms, math operations, and autograd.
+ *
+ * Start here when working on numeric data representation and transformation.
+ * This group covers storage, indexing, element-wise and matrix operations,
+ * reductions, shape utilities, and gradient-related helpers.
  */
 
 /**
  * @defgroup module_api Module API
  * @brief Layer abstractions and trainable module interfaces.
+ *
+ * Use this group when defining or extending trainable components. It includes
+ * the base Module contract and built-in trainable/stateless layer wrappers.
  */
 
 /**
  * @defgroup sequential_api Sequential API
  * @brief Layer container utilities for ordered model composition.
+ *
+ * This group documents the high-level container used to compose layers into a
+ * feed-forward pipeline with unified parameter collection and mode control.
  */
 
 /**
  * @defgroup activation_api Activation API
  * @brief Stateless nonlinear activation helper functions.
+ *
+ * Prefer these helpers for pure tensor transformations and custom module
+ * implementations where a standalone nonlinearity is required.
  */
 
 /**
  * @defgroup loss_api Loss API
  * @brief Supervised-learning loss functions.
+ *
+ * This group contains objective functions used during optimization. Each
+ * function validates shape assumptions and returns a scalar tensor loss.
  */
 
 /**
  * @defgroup optimizer_api Optimizer API
  * @brief Parameter update rules used for training.
+ *
+ * Optimizers consume parameter tensors and apply in-place updates from
+ * accumulated gradients. Choose SGD for simplicity or Adam for adaptive steps.
  */

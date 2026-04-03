@@ -11,6 +11,7 @@
 
 namespace nn {
 
+/** @ingroup optimizer_api */
 /// Base class for parameter update rules.
 class Optimizer {
 public:
@@ -28,6 +29,7 @@ protected:
     std::vector<Tensor*> parameters_;
 };
 
+/** @ingroup optimizer_api */
 /// Stochastic gradient descent with optional momentum and weight decay.
 class SGD : public Optimizer {
 public:
@@ -70,6 +72,7 @@ private:
     std::unordered_map<Tensor*, Tensor> velocities_;
 };
 
+/** @ingroup optimizer_api */
 /// Adam optimizer with bias-corrected first and second moments.
 class Adam : public Optimizer {
 public:

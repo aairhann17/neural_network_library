@@ -8,5 +8,6 @@ var searchData=
   ['prerequisites_5',['Prerequisites',['../index.html#autotoc_md4',1,'']]],
   ['print_6',['print',['../classnn_1_1_tensor.html#af76152df2635ae32c4fccdd2f8002a27',1,'nn::Tensor']]],
   ['project_7',['Building the Project',['../index.html#autotoc_md3',1,'']]],
-  ['project_20structure_8',['Project Structure',['../index.html#autotoc_md2',1,'']]]
+  ['project_20structure_8',['Project Structure',['../index.html#autotoc_md2',1,'']]],
+  ['pull_20requests_9',['Pull Requests',['../md__c_1_2_users_2aaraa_2neural__network__library-1_2_c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md27',1,'']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['sequential_2ecpp_0',['sequential.cpp',['../sequential_8cpp.html',1,'']]],
-  ['sequential_2ehpp_1',['sequential.hpp',['../sequential_8hpp.html',1,'']]]
+  ['readme_2emd_0',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
+  ['regression_5fexample_2ecpp_1',['regression_example.cpp',['../regression__example_8cpp.html',1,'']]]
 ];

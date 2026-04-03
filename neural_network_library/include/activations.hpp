@@ -9,9 +9,11 @@
 
 namespace nn {
 
+/** @ingroup activation_api */
 /// Stateless activation helpers used by module wrappers and direct tensor code.
 namespace activations {
 
+/** @ingroup activation_api */
 /**
  * @brief Applies ReLU activation, f(x) = max(0, x).
  * @param input Input tensor.
@@ -19,6 +21,7 @@ namespace activations {
  */
 Tensor relu(const Tensor& input);
 
+/** @ingroup activation_api */
 /**
  * @brief Applies sigmoid activation, f(x) = 1 / (1 + exp(-x)).
  * @param input Input tensor.
@@ -26,6 +29,7 @@ Tensor relu(const Tensor& input);
  */
 Tensor sigmoid(const Tensor& input);
 
+/** @ingroup activation_api */
 /**
  * @brief Applies hyperbolic tangent activation.
  * @param input Input tensor.
@@ -33,6 +37,7 @@ Tensor sigmoid(const Tensor& input);
  */
 Tensor tanh(const Tensor& input);
 
+/** @ingroup activation_api */
 /**
  * @brief Applies numerically stable softmax normalization.
  * @param input Input tensor, currently expected to be 2D.
@@ -42,6 +47,7 @@ Tensor tanh(const Tensor& input);
  */
 Tensor softmax(const Tensor& input, int axis = -1);
 
+/** @ingroup activation_api */
 /**
  * @brief Applies leaky ReLU activation.
  * @param input Input tensor.
@@ -50,6 +56,7 @@ Tensor softmax(const Tensor& input, int axis = -1);
  */
 Tensor leaky_relu(const Tensor& input, double alpha = 0.01);
 
+/** @ingroup activation_api */
 /**
  * @brief Applies ELU activation.
  * @param input Input tensor.

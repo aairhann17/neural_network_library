@@ -102,7 +102,7 @@ $(function() {
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">nn::Module Class Reference<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
+  <div class="headertitle"><div class="title">nn::Module Class Reference<span class="mlabels"><span class="mlabel abstract">abstract</span></span><div class="ingroups"><a class="el" href="group__module__api.html">Module API</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -151,7 +151,7 @@ Protected Attributes</h2></td></tr>
 <div class="textblock"><p>Base interface for all trainable or stateless neural-network layers. </p>
 <p>A <a class="el" href="classnn_1_1_module.html" title="Base interface for all trainable or stateless neural-network layers.">Module</a> consumes an input tensor in <a class="el" href="#a20737d6f068ac8c2498f313669ba5dff" title="Runs layer forward pass.">forward()</a>, optionally exposes trainable <a class="el" href="#a23fb05b673acc4a2d35a1ffc1117ddd1" title="Returns trainable parameters owned by this layer.">parameters()</a>, and keeps track of whether the layer should behave in training mode or evaluation mode. </p>
 
-<p class="definition">Definition at line <a class="el" href="module_8hpp_source.html#l00019">19</a> of file <a class="el" href="module_8hpp_source.html">module.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="module_8hpp_source.html#l00020">20</a> of file <a class="el" href="module_8hpp_source.html">module.hpp</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a307d4f388a2b2e2881f76de2f3bdaf6a" name="a307d4f388a2b2e2881f76de2f3bdaf6a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a307d4f388a2b2e2881f76de2f3bdaf6a">&#9670;&#160;</a></span>~Module()</h2>
@@ -206,9 +206,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Switches layer behavior to evaluation mode. </p>
 
-<p class="definition">Definition at line <a class="el" href="module_8hpp_source.html#l00044">44</a> of file <a class="el" href="module_8hpp_source.html">module.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="module_8hpp_source.html#l00045">45</a> of file <a class="el" href="module_8hpp_source.html">module.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="module_8hpp_source.html#l00054">training_</a>.</p>
+<p class="reference">References <a class="el" href="module_8hpp_source.html#l00055">training_</a>.</p>
 
 </div>
 </div>
@@ -274,9 +274,9 @@ Protected Attributes</h2></td></tr>
 <p>Indicates whether the layer is in training mode. </p>
 <dl class="section return"><dt>Returns</dt><dd>True when layer behaves in training mode. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="module_8hpp_source.html#l00050">50</a> of file <a class="el" href="module_8hpp_source.html">module.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="module_8hpp_source.html#l00051">51</a> of file <a class="el" href="module_8hpp_source.html">module.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="module_8hpp_source.html#l00054">training_</a>.</p>
+<p class="reference">References <a class="el" href="module_8hpp_source.html#l00055">training_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="module_8cpp_source.html#l00115">nn::Dropout::forward()</a>.</p>
 
@@ -339,9 +339,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Switches layer behavior to training mode. </p>
 
-<p class="definition">Definition at line <a class="el" href="module_8hpp_source.html#l00041">41</a> of file <a class="el" href="module_8hpp_source.html">module.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="module_8hpp_source.html#l00042">42</a> of file <a class="el" href="module_8hpp_source.html">module.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="module_8hpp_source.html#l00054">training_</a>.</p>
+<p class="reference">References <a class="el" href="module_8hpp_source.html#l00055">training_</a>.</p>
 
 </div>
 </div>
@@ -389,9 +389,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="module_8hpp_source.html#l00054">54</a> of file <a class="el" href="module_8hpp_source.html">module.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="module_8hpp_source.html#l00055">55</a> of file <a class="el" href="module_8hpp_source.html">module.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="module_8hpp_source.html#l00044">eval()</a>, <a class="el" href="sequential_8cpp_source.html#l00060">nn::Sequential::eval()</a>, <a class="el" href="module_8hpp_source.html#l00050">is_training()</a>, <a class="el" href="module_8hpp_source.html#l00041">train()</a>, and <a class="el" href="sequential_8cpp_source.html#l00052">nn::Sequential::train()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="module_8hpp_source.html#l00045">eval()</a>, <a class="el" href="sequential_8cpp_source.html#l00060">nn::Sequential::eval()</a>, <a class="el" href="module_8hpp_source.html#l00051">is_training()</a>, <a class="el" href="module_8hpp_source.html#l00042">train()</a>, and <a class="el" href="sequential_8cpp_source.html#l00052">nn::Sequential::train()</a>.</p>
 
 </div>
 </div>
