@@ -18,12 +18,13 @@
 
 using namespace nn;
 
-// Generate synthetic regression data: y = 3x + 2 + noise
+// Generates noisy samples from a simple linear relationship.
 void generate_regression_data(std::vector<Tensor>& inputs, std::vector<Tensor>& targets, 
                                int num_samples = 100) {
     
     for (int i = 0; i < num_samples; ++i) {
-        double x = static_cast<double>(i) / num_samples * 10.0 - 5.0; // [-5, 5]
+    // Spread x values across a symmetric interval to make the trend visible.
+    double x = static_cast<double>(i) / num_samples * 10.0 - 5.0; // [-5, 5]
         double y = 3.0 * x + 2.0 + (static_cast<double>(rand()) / RAND_MAX - 0.5) * 2.0;
         
         inputs.push_back(Tensor({x}, {1, 1}, false));
@@ -35,14 +36,13 @@ int main() {
     std::cout << "=== Linear Regression with Neural Network ===" << std::endl;
     std::cout << "Learning the function: y = 3x + 2\n" << std::endl;
     
-    // Create a simple neural network for regression
-    // Architecture: 1 -> 10 -> 1
+    // The hidden layer gives the model enough capacity to fit the noisy line.
     auto model = std::make_shared<Sequential>();
     model->add(std::make_shared<Linear>(1, 10));
     model->add(std::make_shared<ReLU>());
     model->add(std::make_shared<Linear>(10, 1));
     
-    // Create optimizer
+    // Momentum helps smooth the optimization path on noisy samples.
     auto params = model->parameters();
     SGD optimizer(params, 0.001, 0.9); // learning rate = 0.001, momentum = 0.9
     
@@ -72,7 +72,8 @@ int main() {
             Tensor loss = losses::mse_loss(prediction, targets[i]);
             total_loss += loss[0];
             
-            // In complete implementation: loss.backward()
+            // This example keeps the original project limitation visible: the
+            // regression demo is wired for training but does not call backward().
             optimizer.step();
         }
         
@@ -91,6 +92,7 @@ int main() {
     for (double x : test_inputs) {
         Tensor input({x}, {1, 1}, false);
         Tensor prediction = model->forward(input);
+        // Compare the learned mapping with the ground-truth function.
         double expected = 3.0 * x + 2.0;
         
         std::cout << "Input: " << x 

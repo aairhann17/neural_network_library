@@ -1,11 +1,9 @@
 #pragma once
 
-// optimizer.hpp
-// Optimization algorithms that update model parameters using gradients.
-//
-// Included optimizers:
-// - SGD (optional momentum + weight decay)
-// - Adam (adaptive first/second moment estimates)
+/**
+ * @file optimizer.hpp
+ * @brief Parameter update rules used during model training.
+ */
 #include "tensor.hpp"
 #include <vector>
 #include <memory>
@@ -13,66 +11,90 @@
 
 namespace nn {
 
-// Base class for all optimizers
+/// Base class for parameter update rules.
 class Optimizer {
 public:
     virtual ~Optimizer() = default;
     
-    // Perform a single optimization step
+    /// Applies one optimization step to every managed parameter.
     virtual void step() = 0;
     
-    // Zero all gradients of parameters
+    /// Zeros gradients for all managed parameters.
     void zero_grad();
     
 protected:
+    // Non-owning pointers to trainable tensors updated by the optimizer.
     std::vector<Tensor*> parameters_;
 };
 
-// Stochastic Gradient Descent optimizer
+/// Stochastic gradient descent with optional momentum and weight decay.
 class SGD : public Optimizer {
 public:
+    /// Constructs an SGD optimizer for the provided parameter list.
     SGD(const std::vector<Tensor*>& parameters, double learning_rate, 
         double momentum = 0.0, double weight_decay = 0.0);
     
     void step() override;
     
+    /// Updates the optimizer learning rate.
     void set_learning_rate(double lr) { learning_rate_ = lr; }
+
+    /// Returns the current learning rate.
     double get_learning_rate() const { return learning_rate_; }
     
 private:
+    // Step size used during parameter updates.
     double learning_rate_;
+
+    // Momentum coefficient used for velocity accumulation.
     double momentum_;
+
+    // L2 penalty coefficient.
     double weight_decay_;
     
-    // Velocity for momentum
+    // Per-parameter velocity buffers used when momentum is enabled.
     std::unordered_map<Tensor*, Tensor> velocities_;
 };
 
-// Adam optimizer (Adaptive Moment Estimation)
+/// Adam optimizer with bias-corrected first and second moments.
 class Adam : public Optimizer {
 public:
+    /// Constructs an Adam optimizer for the provided parameter list.
     Adam(const std::vector<Tensor*>& parameters, double learning_rate = 0.001,
          double beta1 = 0.9, double beta2 = 0.999, double epsilon = 1e-8,
          double weight_decay = 0.0);
     
     void step() override;
     
+    /// Updates the optimizer learning rate.
     void set_learning_rate(double lr) { learning_rate_ = lr; }
+
+    /// Returns the current learning rate.
     double get_learning_rate() const { return learning_rate_; }
     
 private:
+    // Step size used during parameter updates.
     double learning_rate_;
+
+    // Exponential decay rate for the first moment estimate.
     double beta1_;
+
+    // Exponential decay rate for the second moment estimate.
     double beta2_;
+
+    // Small constant that avoids division by zero.
     double epsilon_;
+
+    // L2 penalty coefficient.
     double weight_decay_;
     
-    size_t t_; // time step
+    // Optimizer time step used for bias correction.
+    size_t t_;
     
-    // First moment estimate (mean)
+    // Per-parameter first moment buffers.
     std::unordered_map<Tensor*, Tensor> m_;
     
-    // Second moment estimate (variance)
+    // Per-parameter second moment buffers.
     std::unordered_map<Tensor*, Tensor> v_;
 };
 

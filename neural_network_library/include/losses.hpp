@@ -1,25 +1,24 @@
 #pragma once
 
-// losses.hpp
-// Loss functions for supervised learning.
-//
-// Functions return Tensor losses so they can participate in autograd
-// and backpropagate into model parameters.
+/**
+ * @file losses.hpp
+ * @brief Loss functions for supervised learning workflows.
+ */
 #include "tensor.hpp"
 
 namespace nn {
 namespace losses {
 
-// Mean Squared Error: MSE = mean((y_pred - y_true)^2)
+/// Mean squared error averaged across all prediction elements.
 Tensor mse_loss(const Tensor& predictions, const Tensor& targets);
 
-// Binary Cross Entropy: BCE = -mean(y * log(p) + (1-y) * log(1-p))
+/// Binary cross-entropy loss for probabilities in the range $[0, 1]$.
 Tensor binary_cross_entropy(const Tensor& predictions, const Tensor& targets);
 
-// Cross Entropy Loss (with softmax): CE = -sum(y * log(softmax(x)))
+/// Multiclass cross-entropy loss computed from logits and one-hot targets.
 Tensor cross_entropy_loss(const Tensor& logits, const Tensor& targets);
 
-// Mean Absolute Error: MAE = mean(|y_pred - y_true|)
+/// Mean absolute error averaged across all prediction elements.
 Tensor mae_loss(const Tensor& predictions, const Tensor& targets);
 
 } // namespace losses

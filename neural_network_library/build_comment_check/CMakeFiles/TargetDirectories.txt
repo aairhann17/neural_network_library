@@ -1,0 +1,6 @@
+C:/Users/aaraa/neural_network_library-1/neural_network_library/build_comment_check/CMakeFiles/neuralnet.dir
+C:/Users/aaraa/neural_network_library-1/neural_network_library/build_comment_check/CMakeFiles/xor_example.dir
+C:/Users/aaraa/neural_network_library-1/neural_network_library/build_comment_check/CMakeFiles/regression_example.dir
+C:/Users/aaraa/neural_network_library-1/neural_network_library/build_comment_check/CMakeFiles/RUN_TESTS.dir
+C:/Users/aaraa/neural_network_library-1/neural_network_library/build_comment_check/CMakeFiles/ALL_BUILD.dir
+C:/Users/aaraa/neural_network_library-1/neural_network_library/build_comment_check/CMakeFiles/ZERO_CHECK.dir

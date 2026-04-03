@@ -16,6 +16,7 @@ namespace activations {
 
 Tensor relu(const Tensor& input) {
     Tensor output(input.shape(), input.requires_grad());
+    // Keep a binary mask so backward can cheaply gate gradients.
     auto mask = std::make_shared<std::vector<double>>(input.size(), 0.0);
     
     for (size_t i = 0; i < input.size(); ++i) {
@@ -37,6 +38,7 @@ Tensor relu(const Tensor& input) {
                 }
                 input_ptr->ensure_grad();
                 for (size_t i = 0; i < input_ptr->size(); ++i) {
+                    // ReLU only passes gradients through positive inputs.
                     input_ptr->grad()[i] += (*out_grad)[i] * (*mask)[i];
                 }
             },
@@ -49,6 +51,7 @@ Tensor relu(const Tensor& input) {
 
 Tensor sigmoid(const Tensor& input) {
     Tensor output(input.shape(), input.requires_grad());
+    // Cache sigmoid outputs because the derivative depends on s * (1 - s).
     auto sigmoid_values = std::make_shared<std::vector<double>>(input.size(), 0.0);
     
     for (size_t i = 0; i < input.size(); ++i) {
@@ -68,6 +71,7 @@ Tensor sigmoid(const Tensor& input) {
                 input_ptr->ensure_grad();
                 for (size_t i = 0; i < input_ptr->size(); ++i) {
                     const double s = (*sigmoid_values)[i];
+                    // d/dx sigmoid(x) = sigmoid(x) * (1 - sigmoid(x)).
                     input_ptr->grad()[i] += (*out_grad)[i] * s * (1.0 - s);
                 }
             },
@@ -82,6 +86,7 @@ Tensor tanh(const Tensor& input) {
     Tensor output(input.shape(), input.requires_grad());
     
     for (size_t i = 0; i < input.size(); ++i) {
+        // std::tanh provides the element-wise nonlinearity directly.
         output[i] = std::tanh(input[i]);
     }
     
@@ -93,7 +98,10 @@ Tensor softmax(const Tensor& input, int axis) {
         throw std::invalid_argument("Softmax currently only supports 2D tensors");
     }
     
-    // Assume axis = -1 or 1 (apply softmax across columns for each row)
+    // This implementation normalizes across the class dimension of each row.
+    // The axis argument is accepted for API compatibility but only row-wise
+    // softmax is implemented today.
+    (void)axis;
     size_t rows = input.shape()[0];
     size_t cols = input.shape()[1];
     
@@ -127,6 +135,7 @@ Tensor leaky_relu(const Tensor& input, double alpha) {
     Tensor output(input.shape(), input.requires_grad());
     
     for (size_t i = 0; i < input.size(); ++i) {
+        // Preserve a small slope for negative inputs to avoid dead activations.
         output[i] = input[i] > 0.0 ? input[i] : alpha * input[i];
     }
     
@@ -137,6 +146,7 @@ Tensor elu(const Tensor& input, double alpha) {
     Tensor output(input.shape(), input.requires_grad());
     
     for (size_t i = 0; i < input.size(); ++i) {
+        // ELU is linear for positive inputs and smoothly saturating below zero.
         output[i] = input[i] > 0.0 ? input[i] : alpha * (std::exp(input[i]) - 1.0);
     }
     

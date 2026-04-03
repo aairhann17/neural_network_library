@@ -65,6 +65,17 @@ After building, run the examples:
 ./build/regression_example
 ```
 
+### Generating API Documentation
+
+If Doxygen is installed, you can build the generated API reference from CMake.
+
+```bash
+cmake -S . -B build_docs -DBUILD_DOCS=ON
+cmake --build build_docs --target docs --config Release
+```
+
+Open the generated HTML at `build_docs/docs/html/index.html`.
+
 ## Creating Your First Neural Network
 
 ### 1. Include the library

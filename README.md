@@ -70,6 +70,36 @@ cmake --build .
 cmake --build . --config Release
 ```
 
+## Generating API Documentation
+
+The project now includes an optional Doxygen-based documentation target.
+
+### Prerequisite
+
+- Install Doxygen and ensure it is available on your PATH.
+
+### Generate docs locally
+
+```bash
+# Configure a dedicated docs build
+cmake -S neural_network_library -B neural_network_library/build_docs -DBUILD_DOCS=ON
+
+# Generate the HTML documentation
+cmake --build neural_network_library/build_docs --target docs --config Release
+```
+
+The generated HTML entry point will be written to:
+
+```text
+neural_network_library/build_docs/docs/html/index.html
+```
+
+### CI workflow
+
+A GitHub Actions workflow is included at `.github/workflows/docs.yml`. It builds
+the API documentation on pushes and pull requests and uploads the generated site
+as a workflow artifact.
+
 ## Usage Examples
 
 ### Basic Tensor Operations

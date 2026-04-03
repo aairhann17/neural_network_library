@@ -1,42 +1,46 @@
 #pragma once
 
-// sequential.hpp
-// Simple container that chains modules in order.
-//
-// Typical usage:
-// - add(...) layers
-// - forward(...) to run through all layers
-// - parameters() to collect trainable tensors for optimizers
+/**
+ * @file sequential.hpp
+ * @brief Sequential module container for chaining layers in order.
+ */
 #include "module.hpp"
 #include <vector>
 #include <memory>
 
 namespace nn {
 
-// Sequential container for neural network layers
+/// Ordered container that applies child modules one after another.
 class Sequential : public Module {
 public:
     Sequential() = default;
     
-    // Add a layer to the sequential model
+    /// Appends a module to the end of the execution pipeline.
     void add(std::shared_ptr<Module> module);
     
-    // Forward pass through all layers
+    /// Runs the input through every stored module in insertion order.
     Tensor forward(const Tensor& input) override;
     
-    // Get all parameters from all layers
+    /// Collects parameters from every child module.
     std::vector<Tensor*> parameters() override;
     
-    // Set training/evaluation mode for all layers
+    /// Switches this container and all child modules into training mode.
     void train();
+
+    /// Switches this container and all child modules into evaluation mode.
     void eval();
     
-    // Access individual layers
+    /// Returns the number of stored modules.
     size_t size() const { return modules_.size(); }
+
+    /// Returns mutable access to a child module by index.
     std::shared_ptr<Module> operator[](size_t idx) { return modules_[idx]; }
+
+    /// Returns read-only access to a child module by index.
     const std::shared_ptr<Module> operator[](size_t idx) const { return modules_[idx]; }
     
 private:
+    // Ordered set of layers that define the forward pass.
     std::vector<std::shared_ptr<Module>> modules_;
 };
 

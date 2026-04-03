@@ -1,17 +1,20 @@
 #!/bin/bash
-# Build script for Neural Network Library (Linux/Mac)
+# Build script for Neural Network Library (Linux/Mac).
+#
+# The script configures the project with CMake, aborts on configuration or build
+# errors, and leaves the resulting binaries in the local build directory.
 
 echo "===================================="
 echo "Building Neural Network Library"
 echo "===================================="
 
-# Create build directory if it doesn't exist
+# Create the out-of-source build directory when it is missing.
 mkdir -p build
 
-# Navigate to build directory
+# Enter the build directory so CMake artifacts stay isolated from sources.
 cd build
 
-# Configure with CMake
+# Generate platform-specific build files.
 echo ""
 echo "Configuring project with CMake..."
 cmake ..
@@ -23,7 +26,7 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-# Build the project
+# Compile the project using all available logical CPUs when possible.
 echo ""
 echo "Building project..."
 cmake --build . -j$(nproc 2>/dev/null || sysctl -n hw.ncpu 2>/dev/null || echo 4)
@@ -44,4 +47,5 @@ echo "  - xor_example"
 echo "  - regression_example"
 echo ""
 
+# Return to the repository root for convenience before exiting.
 cd ..

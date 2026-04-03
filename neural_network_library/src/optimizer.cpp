@@ -18,6 +18,7 @@ namespace nn {
 void Optimizer::zero_grad() {
     for (auto* param : parameters_) {
         if (param->has_grad()) {
+            // Skip tensors without allocated gradients to avoid unnecessary work.
             param->zero_grad();
         }
     }
@@ -36,6 +37,7 @@ SGD::SGD(const std::vector<Tensor*>& parameters, double learning_rate,
     // Initialize velocity tensors for momentum
     if (momentum_ > 0.0) {
         for (auto* param : parameters_) {
+            // Keep one velocity tensor per parameter so momentum state persists.
             velocities_.emplace(param, Tensor::zeros(param->shape()));
         }
     }
@@ -52,7 +54,7 @@ void SGD::step() {
         // Apply weight decay (L2 regularization)
         Tensor effective_grad = grad;
         if (weight_decay_ > 0.0) {
-            // grad += weight_decay * param
+            // Weight decay adds an L2 penalty term directly to the gradient.
             for (size_t i = 0; i < param->size(); ++i) {
                 effective_grad[i] += weight_decay_ * (*param)[i];
             }
@@ -66,6 +68,7 @@ void SGD::step() {
             }
             Tensor& velocity = velocity_it->second;
             for (size_t i = 0; i < velocity.size(); ++i) {
+                // Exponentially smooth recent gradients into the velocity buffer.
                 velocity[i] = momentum_ * velocity[i] + effective_grad[i];
             }
             
@@ -97,13 +100,15 @@ Adam::Adam(const std::vector<Tensor*>& parameters, double learning_rate,
     
     // Initialize first and second moment estimates
     for (auto* param : parameters_) {
+        // Adam tracks running first and second moments for every parameter tensor.
         m_.emplace(param, Tensor::zeros(param->shape()));
         v_.emplace(param, Tensor::zeros(param->shape()));
     }
 }
 
 void Adam::step() {
-    t_++; // Increment time step
+    // Bias correction depends on the number of update steps already taken.
+    t_++;
     
     for (auto* param : parameters_) {
         if (!param->has_grad()) {
@@ -132,19 +137,18 @@ void Adam::step() {
         Tensor& m = m_it->second; // first moment
         Tensor& v = v_it->second; // second moment
         
-        // Update biased first and second moment estimates
+        // Update first and second moments, then convert them to bias-corrected
+        // estimates before applying the parameter update.
         for (size_t i = 0; i < param->size(); ++i) {
-            // m = beta1 * m + (1 - beta1) * grad
             m[i] = beta1_ * m[i] + (1.0 - beta1_) * effective_grad[i];
             
-            // v = beta2 * v + (1 - beta2) * grad^2
             v[i] = beta2_ * v[i] + (1.0 - beta2_) * effective_grad[i] * effective_grad[i];
             
-            // Compute bias-corrected estimates
             double m_hat = m[i] / (1.0 - std::pow(beta1_, t_));
             double v_hat = v[i] / (1.0 - std::pow(beta2_, t_));
             
-            // Update parameters
+            // Scale by the normalized second moment so large-gradient dimensions
+            // receive smaller effective step sizes.
             (*param)[i] -= learning_rate_ * m_hat / (std::sqrt(v_hat) + epsilon_);
         }
     }

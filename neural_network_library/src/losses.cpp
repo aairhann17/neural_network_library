@@ -19,6 +19,8 @@ Tensor mse_loss(const Tensor& predictions, const Tensor& targets) {
         throw std::invalid_argument("Predictions and targets must have the same shape");
     }
     
+    // MSE is implemented compositionally so existing tensor autograd rules can
+    // handle gradient propagation.
     Tensor diff = predictions - targets;
     Tensor squared = diff * diff;
     return squared.mean();
@@ -29,7 +31,8 @@ Tensor binary_cross_entropy(const Tensor& predictions, const Tensor& targets) {
         throw std::invalid_argument("Predictions and targets must have the same shape");
     }
     
-    const double epsilon = 1e-7; // for numerical stability
+    // Clamp probabilities slightly away from 0 and 1 to avoid log singularities.
+    const double epsilon = 1e-7;
     auto dloss_dpred = std::make_shared<std::vector<double>>(predictions.size(), 0.0);
     double total_loss = 0.0;
     
@@ -38,8 +41,10 @@ Tensor binary_cross_entropy(const Tensor& predictions, const Tensor& targets) {
         double y = targets[i];
         const double sample_loss = -(y * std::log(p) + (1.0 - y) * std::log(1.0 - p));
         total_loss += sample_loss;
+        // Precompute the per-element derivative so backward only needs to scale
+        // it by the upstream scalar gradient.
         (*dloss_dpred)[i] = (-((y / p) - ((1.0 - y) / (1.0 - p)))) /
-                           static_cast<double>(predictions.size());
+                    static_cast<double>(predictions.size());
     }
 
     const double mean_loss = total_loss / static_cast<double>(predictions.size());
@@ -55,6 +60,7 @@ Tensor binary_cross_entropy(const Tensor& predictions, const Tensor& targets) {
                 }
                 pred_ptr->ensure_grad();
                 for (size_t i = 0; i < pred_ptr->size(); ++i) {
+                    // The loss is scalar, so out_grad[0] is the upstream scale.
                     pred_ptr->grad()[i] += (*out_grad)[0] * (*dloss_dpred)[i];
                 }
             },
@@ -74,7 +80,7 @@ Tensor cross_entropy_loss(const Tensor& logits, const Tensor& targets) {
         throw std::invalid_argument("Batch sizes must match");
     }
     
-    // Apply softmax to logits
+    // Convert logits to probabilities before computing the negative log-likelihood.
     Tensor probs = activations::softmax(logits);
     
     const double epsilon = 1e-7;
@@ -86,7 +92,8 @@ Tensor cross_entropy_loss(const Tensor& logits, const Tensor& targets) {
     for (size_t i = 0; i < batch_size; ++i) {
         for (size_t j = 0; j < num_classes; ++j) {
             size_t idx = i * num_classes + j;
-            if (targets[idx] > 0.0) { // only compute for non-zero targets
+            // For one-hot targets only the true class contributes to the loss.
+            if (targets[idx] > 0.0) {
                 double p = std::max(epsilon, probs[idx]);
                 total_loss -= targets[idx] * std::log(p);
             }
@@ -107,6 +114,7 @@ Tensor mae_loss(const Tensor& predictions, const Tensor& targets) {
     Tensor abs_diff(diff.shape(), diff.requires_grad());
     
     for (size_t i = 0; i < diff.size(); ++i) {
+        // Store the absolute residual before averaging.
         abs_diff[i] = std::abs(diff[i]);
     }
     

@@ -1,0 +1,10 @@
+^C:\USERS\AARAA\NEURAL_NETWORK_LIBRARY-1\NEURAL_NETWORK_LIBRARY\BUILD_COMMENT_CHECK\CMAKEFILES\45DC22F431DE8197F960A21353FBD303\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/aaraa/neural_network_library-1/neural_network_library -BC:/Users/aaraa/neural_network_library-1/neural_network_library/build_comment_check --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/aaraa/neural_network_library-1/neural_network_library/build_comment_check/NeuralNetCpp.slnx
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

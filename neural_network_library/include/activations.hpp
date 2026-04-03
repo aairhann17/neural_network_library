@@ -1,34 +1,33 @@
 #pragma once
 
-// activations.hpp
-// Stateless activation functions operating on Tensor values.
-//
-// These functions are used both directly and via Module wrappers
-// (e.g., ReLU/Sigmoid/Tanh layers in module.hpp).
+/**
+ * @file activations.hpp
+ * @brief Stateless activation helpers for tensor-valued computations.
+ */
 #include "tensor.hpp"
 #include <cmath>
 
 namespace nn {
 
-// Activation functions
+/// Stateless activation helpers used by module wrappers and direct tensor code.
 namespace activations {
 
-// ReLU (Rectified Linear Unit): f(x) = max(0, x)
+/// ReLU (Rectified Linear Unit): $f(x) = \max(0, x)$.
 Tensor relu(const Tensor& input);
 
-// Sigmoid: f(x) = 1 / (1 + exp(-x))
+/// Sigmoid: $f(x) = \frac{1}{1 + e^{-x}}$.
 Tensor sigmoid(const Tensor& input);
 
-// Tanh: f(x) = tanh(x)
+/// Hyperbolic tangent: $f(x) = \tanh(x)$.
 Tensor tanh(const Tensor& input);
 
-// Softmax: f(x_i) = exp(x_i) / sum(exp(x_j))
+/// Softmax along the requested axis with numerical stabilization.
 Tensor softmax(const Tensor& input, int axis = -1);
 
-// Leaky ReLU: f(x) = x if x > 0 else alpha * x
+/// Leaky ReLU: $f(x) = x$ for positive inputs and $\alpha x$ otherwise.
 Tensor leaky_relu(const Tensor& input, double alpha = 0.01);
 
-// ELU (Exponential Linear Unit): f(x) = x if x > 0 else alpha * (exp(x) - 1)
+/// ELU: $f(x) = x$ for positive inputs and $\alpha (e^x - 1)$ otherwise.
 Tensor elu(const Tensor& input, double alpha = 1.0);
 
 } // namespace activations

@@ -1,0 +1,10 @@
+^C:\USERS\AARAA\NEURAL_NETWORK_LIBRARY-1\NEURAL_NETWORK_LIBRARY\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/aaraa/neural_network_library-1/neural_network_library -BC:/Users/aaraa/neural_network_library-1/neural_network_library/build_comment_check_clean --check-stamp-file C:/Users/aaraa/neural_network_library-1/neural_network_library/build_comment_check_clean/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

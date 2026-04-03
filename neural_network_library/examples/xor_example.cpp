@@ -18,7 +18,7 @@
 
 using namespace nn;
 
-// Simple XOR dataset
+// Populates the classic XOR truth table as one-sample mini-batches.
 void generate_xor_data(std::vector<Tensor>& inputs, std::vector<Tensor>& targets) {
     // XOR truth table
     std::vector<std::vector<double>> x_data = {
@@ -45,8 +45,8 @@ int main() {
     std::cout << "=== Neural Network Library Demo ===" << std::endl;
     std::cout << "Training a neural network to learn XOR function\n" << std::endl;
     
-    // Create a neural network for XOR problem
-    // Architecture: 2 -> 4 -> 4 -> 1
+    // A small multilayer perceptron is sufficient for XOR because the hidden
+    // layers introduce the non-linearity the task requires.
     auto model = std::make_shared<Sequential>();
     model->add(std::make_shared<Linear>(2, 4));  // Input layer
     model->add(std::make_shared<ReLU>());
@@ -55,7 +55,7 @@ int main() {
     model->add(std::make_shared<Linear>(4, 1));  // Output layer
     model->add(std::make_shared<Sigmoid>());     // Sigmoid for binary classification
     
-    // Create optimizer
+    // Adam converges quickly on this tiny non-linear problem.
     auto params = model->parameters();
     Adam optimizer(params, 0.01); // learning rate = 0.01
     
@@ -80,7 +80,7 @@ int main() {
     for (int epoch = 1; epoch <= num_epochs; ++epoch) {
         double total_loss = 0.0;
         
-        // Mini-batch training (batch size = 1 for this small dataset)
+        // Iterate sample-by-sample to keep the example easy to follow.
         for (size_t i = 0; i < inputs.size(); ++i) {
             // Zero gradients
             optimizer.zero_grad();
@@ -95,6 +95,7 @@ int main() {
             // Backward pass
             loss.backward();
 
+            // Print a one-time sanity check that autograd produced a signal.
             if (!grad_sanity_logged) {
                 bool has_nonzero_grad = false;
                 for (Tensor* param : params) {
@@ -142,7 +143,7 @@ int main() {
     
     std::cout << "\n=== Testing tensor operations ===" << std::endl;
     
-    // Test basic tensor operations
+    // Show a few standalone tensor operations outside the training example.
     Tensor a = Tensor::ones({2, 3});
     Tensor b = Tensor::ones({2, 3});
     b = b * 2.0;
@@ -166,7 +167,7 @@ int main() {
     Tensor m3 = m1.matmul(m2);
     std::cout << "m1 @ m2: " << m3 << std::endl;
     
-    // Test activations
+    // Demonstrate activation helpers on a hand-written input tensor.
     Tensor x({-2.0, -1.0, 0.0, 1.0, 2.0}, {1, 5}, false);
     std::cout << "\nInput x: " << x << std::endl;
     std::cout << "ReLU(x): " << activations::relu(x) << std::endl;

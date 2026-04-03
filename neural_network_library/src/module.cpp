@@ -15,6 +15,7 @@ namespace nn {
 // ============ Module Base Class ============
 
 void Module::zero_grad() {
+    // Delegate to each parameter tensor so the module base class stays generic.
     for (auto* param : parameters()) {
         param->zero_grad();
     }
@@ -33,13 +34,15 @@ Linear::Linear(size_t in_features, size_t out_features, bool use_bias)
 }
 
 void Linear::initialize_parameters() {
-    // Xavier/Glorot initialization
+    // Xavier/Glorot scaling keeps activation magnitudes in a reasonable range
+    // for fully connected networks at initialization time.
     double std = std::sqrt(2.0 / static_cast<double>(in_features_ + out_features_));
     
     weight_ = Tensor::randn({out_features_, in_features_}, true);
     weight_ = weight_ * std;
     
     if (use_bias_) {
+        // A zero bias is a common default and keeps the layer centered at start.
         bias_ = Tensor::zeros({out_features_}, true);
     }
 }
@@ -60,12 +63,12 @@ Tensor Linear::forward(const Tensor& input) {
         );
     }
     
-    // Matrix multiplication: input @ weight^T
+    // Transpose the stored weight matrix so each row in the batch is multiplied
+    // by one output neuron weight vector.
     Tensor output = input.matmul(weight_.transpose());
     
-    // Add bias if used
+    // Bias is stored as a 1D vector, so add it manually across every batch row.
     if (use_bias_) {
-        // Broadcast bias across batch dimension
         for (size_t i = 0; i < output.shape()[0]; ++i) {
             for (size_t j = 0; j < output.shape()[1]; ++j) {
                 output[i * output.shape()[1] + j] += bias_[j];
@@ -87,14 +90,17 @@ std::vector<Tensor*> Linear::parameters() {
 // ============ Activation Layers ============
 
 Tensor ReLU::forward(const Tensor& input) {
+    // Delegate to the stateless functional implementation.
     return activations::relu(input);
 }
 
 Tensor Sigmoid::forward(const Tensor& input) {
+    // Delegate to the stateless functional implementation.
     return activations::sigmoid(input);
 }
 
 Tensor Tanh::forward(const Tensor& input) {
+    // Delegate to the stateless functional implementation.
     return activations::tanh(input);
 }
 
@@ -108,7 +114,8 @@ Dropout::Dropout(double p) : p_(p) {
 
 Tensor Dropout::forward(const Tensor& input) {
     if (!is_training()) {
-        return input; // No dropout during evaluation
+        // During evaluation dropout becomes a no-op so predictions stay stable.
+        return input;
     }
     
     Tensor output(input.shape(), input.requires_grad());
@@ -117,12 +124,15 @@ Tensor Dropout::forward(const Tensor& input) {
     std::mt19937 gen(rd());
     std::bernoulli_distribution dist(1.0 - p_);
     
+    // Inverted dropout scales surviving activations during training so no extra
+    // rescaling is required at inference time.
     double scale = 1.0 / (1.0 - p_);
     
     for (size_t i = 0; i < input.size(); ++i) {
         if (dist(gen)) {
             output[i] = input[i] * scale;
         } else {
+            // Masked activations contribute nothing for this forward pass.
             output[i] = 0.0;
         }
     }

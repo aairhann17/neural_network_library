@@ -23,6 +23,7 @@ namespace nn {
 
 namespace {
 
+// Computes standard row-major strides for a given shape.
 std::vector<size_t> compute_strides(const std::vector<size_t>& shape) {
     std::vector<size_t> strides(shape.size(), 1);
     for (int i = static_cast<int>(shape.size()) - 2; i >= 0; --i) {
@@ -31,6 +32,7 @@ std::vector<size_t> compute_strides(const std::vector<size_t>& shape) {
     return strides;
 }
 
+// Builds the output shape produced when reducing one axis from the input.
 std::vector<size_t> remove_axis_shape(const std::vector<size_t>& shape, size_t axis) {
     std::vector<size_t> out_shape;
     out_shape.reserve(shape.size() > 0 ? shape.size() - 1 : 0);
@@ -45,6 +47,8 @@ std::vector<size_t> remove_axis_shape(const std::vector<size_t>& shape, size_t a
     return out_shape;
 }
 
+// Maps a flat index in the input tensor to the flat index in the reduced output
+// tensor when one axis has been removed.
 size_t out_index_without_axis(size_t flat_idx,
                               const std::vector<size_t>& shape,
                               const std::vector<size_t>& in_strides,
@@ -74,7 +78,7 @@ size_t out_index_without_axis(size_t flat_idx,
 
 Tensor::Tensor(const shape_type& shape, bool requires_grad)
     : shape_(shape), grad_(nullptr), requires_grad_(requires_grad) {
-    
+    // Validate the requested shape and compute the number of stored values.
     size_t total_size = 1;
     for (auto dim : shape) {
         if (dim == 0) {
@@ -83,9 +87,11 @@ Tensor::Tensor(const shape_type& shape, bool requires_grad)
         total_size *= dim;
     }
     
+    // Tensors default to zero-initialized storage.
     data_.resize(total_size, 0.0);
     
     if (requires_grad_) {
+        // Allocate the gradient eagerly for tensors that explicitly opt into it.
         allocate_grad();
     }
 }
@@ -93,7 +99,7 @@ Tensor::Tensor(const shape_type& shape, bool requires_grad)
 Tensor::Tensor(const std::vector<value_type>& data, const shape_type& shape,
                bool requires_grad)
     : shape_(shape), grad_(nullptr), requires_grad_(requires_grad) {
-    
+    // Compute the expected element count from the supplied shape.
     size_t expected_size = 1;
     for (auto dim : shape) expected_size *= dim;
     
@@ -105,6 +111,7 @@ Tensor::Tensor(const std::vector<value_type>& data, const shape_type& shape,
         );
     }
     
+    // Copy caller-owned data into tensor-managed storage.
     data_ = data;
     
     if (requires_grad_) {
@@ -120,6 +127,8 @@ Tensor::Tensor(const Tensor& other)
             backward_fn_(other.backward_fn_),
             parents_(other.parents_) {
 
+            // Copying a tensor copies the autograd metadata as well so lightweight
+            // aliases can still participate in backpropagation.
         if (requires_grad_ && !grad_) {
                 allocate_grad();
         }
@@ -181,10 +190,11 @@ size_t Tensor::compute_index(const std::vector<size_t>& indices) const {
         throw std::invalid_argument("Number of indices doesn't match dimensions");
     }
     
+    // Convert multi-dimensional coordinates to a flat row-major index.
     size_t index = 0;
     size_t stride = 1;
     
-    for (int i = shape_.size() - 1; i >= 0; --i) {
+    for (size_t i = shape_.size(); i-- > 0;) {
         if (indices[i] >= shape_[i]) {
             throw std::out_of_range("Index out of bounds");
         }
@@ -202,6 +212,7 @@ Tensor Tensor::operator+(const Tensor& other) const {
     
     Tensor result(shape_, requires_grad_ || other.requires_grad_);
     
+    // Element-wise forward computation.
     for (size_t i = 0; i < data_.size(); ++i) {
         result.data_[i] = data_[i] + other.data_[i];
     }
@@ -215,6 +226,7 @@ Tensor Tensor::operator+(const Tensor& other) const {
             if (!out_grad) {
                 return;
             }
+            // d(left + right)/d(left) = 1 and d(...)/d(right) = 1.
             if (left->requires_grad_) {
                 if (!left->grad_) {
                     left->allocate_grad();
@@ -255,6 +267,7 @@ Tensor Tensor::operator-(const Tensor& other) const {
             if (!out_grad) {
                 return;
             }
+            // d(left - right)/d(left) = 1 and d(...)/d(right) = -1.
             if (left->requires_grad_) {
                 if (!left->grad_) {
                     left->allocate_grad();
@@ -295,6 +308,7 @@ Tensor Tensor::operator*(const Tensor& other) const {
             if (!out_grad) {
                 return;
             }
+            // Product rule for element-wise multiplication.
             if (left->requires_grad_) {
                 if (!left->grad_) {
                     left->allocate_grad();
@@ -338,6 +352,7 @@ Tensor Tensor::operator/(const Tensor& other) const {
             if (!out_grad) {
                 return;
             }
+            // Quotient rule applied element-wise.
             if (left->requires_grad_) {
                 if (!left->grad_) {
                     left->allocate_grad();
@@ -351,6 +366,7 @@ Tensor Tensor::operator/(const Tensor& other) const {
                     right->allocate_grad();
                 }
                 for (size_t i = 0; i < right->data_.size(); ++i) {
+                    // d(a / b)/db = -a / b^2.
                     const value_type denom = right->data_[i] * right->data_[i];
                     right->grad_->data_[i] -= out_grad->data_[i] * left->data_[i] / denom;
                 }
@@ -364,6 +380,7 @@ Tensor Tensor::operator/(const Tensor& other) const {
 Tensor Tensor::operator+(value_type scalar) const {
     Tensor result(shape_, requires_grad_);
 
+    // Broadcast the scalar across every element.
     for (size_t i = 0; i < data_.size(); ++i) {
         result.data_[i] = data_[i] + scalar;
     }
@@ -379,6 +396,7 @@ Tensor Tensor::operator+(value_type scalar) const {
             if (!left->grad_) {
                 left->allocate_grad();
             }
+            // Adding a scalar leaves the local derivative equal to 1.
             for (size_t i = 0; i < left->data_.size(); ++i) {
                 left->grad_->data_[i] += out_grad->data_[i];
             }
@@ -406,6 +424,7 @@ Tensor Tensor::operator-(value_type scalar) const {
             if (!left->grad_) {
                 left->allocate_grad();
             }
+            // Subtracting a scalar still leaves the local derivative equal to 1.
             for (size_t i = 0; i < left->data_.size(); ++i) {
                 left->grad_->data_[i] += out_grad->data_[i];
             }
@@ -433,6 +452,7 @@ Tensor Tensor::operator*(value_type scalar) const {
             if (!left->grad_) {
                 left->allocate_grad();
             }
+            // d(scalar * x)/dx = scalar.
             for (size_t i = 0; i < left->data_.size(); ++i) {
                 left->grad_->data_[i] += out_grad->data_[i] * scalar;
             }
@@ -464,6 +484,7 @@ Tensor Tensor::operator/(value_type scalar) const {
             if (!left->grad_) {
                 left->allocate_grad();
             }
+            // d(x / scalar)/dx = 1 / scalar.
             for (size_t i = 0; i < left->data_.size(); ++i) {
                 left->grad_->data_[i] += out_grad->data_[i] / scalar;
             }
@@ -476,6 +497,8 @@ Tensor Tensor::operator/(value_type scalar) const {
 Tensor& Tensor::operator+=(const Tensor& other) {
     check_shape_compatible(other);
     
+    // Mutating operators update the current buffer directly and do not attach
+    // extra autograd metadata.
     for (size_t i = 0; i < data_.size(); ++i) {
         data_[i] += other.data_[i];
     }
@@ -533,6 +556,7 @@ Tensor Tensor::matmul(const Tensor& other) const {
     
     Tensor result({m, n}, requires_grad_ || other.requires_grad_);
     
+    // Standard triple-loop matrix multiplication over row-major storage.
     for (size_t i = 0; i < m; ++i) {
         for (size_t j = 0; j < n; ++j) {
             value_type sum = 0.0;
@@ -562,6 +586,7 @@ Tensor Tensor::matmul(const Tensor& other) const {
                     left->allocate_grad();
                 }
 
+                // d(left @ right)/d(left) = out_grad @ right^T.
                 for (size_t i = 0; i < m_local; ++i) {
                     for (size_t p = 0; p < k_local; ++p) {
                         value_type acc = 0.0;
@@ -578,6 +603,7 @@ Tensor Tensor::matmul(const Tensor& other) const {
                     right->allocate_grad();
                 }
 
+                // d(left @ right)/d(right) = left^T @ out_grad.
                 for (size_t p = 0; p < k_local; ++p) {
                     for (size_t j = 0; j < n_local; ++j) {
                         value_type acc = 0.0;
@@ -604,6 +630,7 @@ Tensor Tensor::transpose() const {
     
     Tensor result({cols, rows}, requires_grad_);
     
+    // Swap row and column coordinates while writing into the destination.
     for (size_t i = 0; i < rows; ++i) {
         for (size_t j = 0; j < cols; ++j) {
             result.data_[j * rows + i] = data_[i * cols + j];
@@ -621,6 +648,7 @@ Tensor Tensor::transpose() const {
             if (!input->grad_) {
                 input->allocate_grad();
             }
+            // The gradient of a transpose is the transpose of the upstream gradient.
             for (size_t i = 0; i < rows; ++i) {
                 for (size_t j = 0; j < cols; ++j) {
                     input->grad_->data_[i * cols + j] += out_grad->data_[j * rows + i];
@@ -650,6 +678,7 @@ Tensor Tensor::sum() const {
                 input->allocate_grad();
             }
 
+            // Every element contributes equally to the scalar sum.
             const value_type upstream = out_grad->data_[0];
             for (size_t i = 0; i < input->data_.size(); ++i) {
                 input->grad_->data_[i] += upstream;
@@ -677,6 +706,8 @@ Tensor Tensor::sum(int axis) const {
     const auto out_shape = remove_axis_shape(shape_, axis_u);
     Tensor result(out_shape, requires_grad_);
 
+    // Reduce by routing every input element to the matching output coordinate
+    // after removing the chosen axis.
     const auto in_strides = compute_strides(shape_);
     const size_t out_ndim_effective = shape_.size() > 1 ? shape_.size() - 1 : 0;
     const auto out_strides = out_ndim_effective > 0 ? compute_strides(out_shape) : std::vector<size_t>{};
@@ -705,6 +736,8 @@ Tensor Tensor::sum(int axis) const {
                 input->allocate_grad();
             }
 
+            // Backward simply broadcasts each reduced gradient value back across
+            // all positions that originally collapsed into it.
             const auto in_strides_local = compute_strides(input->shape_);
             const size_t out_ndim_effective_local = input->shape_.size() > 1 ? input->shape_.size() - 1 : 0;
             const auto out_shape_local = remove_axis_shape(input->shape_, axis_u);
@@ -744,6 +777,8 @@ Tensor Tensor::mean() const {
                 input->allocate_grad();
             }
 
+            // Mean is sum divided by element count, so each position receives an
+            // equal share of the upstream scalar gradient.
             const value_type scale = out_grad->data_[0] /
                                      static_cast<value_type>(input->data_.size());
             for (size_t i = 0; i < input->data_.size(); ++i) {
@@ -769,7 +804,8 @@ Tensor Tensor::mean(int axis) const {
     }
 
     const size_t axis_u = static_cast<size_t>(normalized_axis);
-    Tensor summed = sum(axis_u);
+    // Reuse sum(axis) and scale by the reduced dimension size.
+    Tensor summed = sum(normalized_axis);
     const value_type denom = static_cast<value_type>(shape_[axis_u]);
     return summed / denom;
 }
@@ -792,6 +828,7 @@ Tensor Tensor::reshape(const shape_type& new_shape) const {
         throw std::invalid_argument("New shape size doesn't match tensor size");
     }
     
+    // Reshape preserves element order and only changes the interpreted shape.
     return Tensor(data_, new_shape, requires_grad_);
 }
 
@@ -812,6 +849,7 @@ Tensor Tensor::slice(size_t start, size_t end, size_t axis) const {
         throw std::runtime_error("Slicing only implemented for axis=0");
     }
     
+    // axis=0 slicing can copy one contiguous row block from the flat buffer.
     size_t row_size = data_.size() / shape_[0];
     size_t new_rows = end - start;
     
@@ -829,11 +867,13 @@ Tensor Tensor::slice(size_t start, size_t end, size_t axis) const {
 // ============ Initialization ============
 
 Tensor Tensor::zeros(const shape_type& shape, bool requires_grad) {
+    // The default Tensor constructor already produces zeros.
     return Tensor(shape, requires_grad);
 }
 
 Tensor Tensor::ones(const shape_type& shape, bool requires_grad) {
     Tensor t(shape, requires_grad);
+    // Fill the storage after construction rather than allocating a custom buffer.
     std::fill(t.data_.begin(), t.data_.end(), 1.0);
     return t;
 }
@@ -841,6 +881,7 @@ Tensor Tensor::ones(const shape_type& shape, bool requires_grad) {
 Tensor Tensor::randn(const shape_type& shape, bool requires_grad) {
     Tensor t(shape, requires_grad);
     
+    // Use a fresh engine for a simple, self-contained random initializer.
     std::random_device rd;
     std::mt19937 gen(rd());
     std::normal_distribution<value_type> dist(0.0, 1.0);
@@ -856,6 +897,7 @@ Tensor Tensor::uniform(const shape_type& shape, value_type low,
                        value_type high, bool requires_grad) {
     Tensor t(shape, requires_grad);
     
+    // Fill values from the requested closed-open uniform range.
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_real_distribution<value_type> dist(low, high);
@@ -871,12 +913,14 @@ Tensor Tensor::uniform(const shape_type& shape, value_type low,
 
 void Tensor::allocate_grad() {
     if (!grad_) {
+        // Gradient tensors never require their own gradients.
         grad_ = std::make_shared<Tensor>(shape_, false);
     }
 }
 
 void Tensor::zero_grad() {
     if (grad_) {
+        // Preserve the buffer allocation and simply reset values to zero.
         std::fill(grad_->data_.begin(), grad_->data_.end(), 0.0);
     }
 }
@@ -889,11 +933,16 @@ void Tensor::ensure_grad() {
 
 void Tensor::set_autograd(std::function<void()> backward_fn,
                           std::vector<std::shared_ptr<Tensor>> parents) {
+    // Store both the local derivative rule and the graph edges needed to walk
+    // backward into upstream tensors.
     backward_fn_ = std::move(backward_fn);
     parents_ = std::move(parents);
 }
 
 std::shared_ptr<Tensor> Tensor::alias(const Tensor& tensor) {
+    // This project models graph edges by copying lightweight tensor state into
+    // shared ownership. It is simple, though not as memory-efficient as a full
+    // intrusive computation graph.
     return std::make_shared<Tensor>(tensor);
 }
 
@@ -902,11 +951,14 @@ void Tensor::backward() {
         throw std::runtime_error("Cannot backward on tensor with requires_grad=false");
     }
     if (!grad_) allocate_grad();
+    // Seed the terminal node with d(output)/d(output) = 1.
     std::fill(grad_->data_.begin(), grad_->data_.end(), 1.0);
     backward_impl();
 }
 
 void Tensor::backward_impl() {
+    // A thread-local guard prevents infinite recursion if the same tensor is
+    // revisited while traversing the lightweight graph representation.
     static thread_local std::unordered_set<const Tensor*> active;
     if (active.find(this) != active.end()) {
         return;
@@ -916,6 +968,7 @@ void Tensor::backward_impl() {
     if (backward_fn_) backward_fn_();
     for (auto& parent : parents_) {
         if (parent && parent->requires_grad_) {
+            // After applying this node's local rule, continue the chain upstream.
             parent->backward_impl();
         }
     }
@@ -935,6 +988,8 @@ void Tensor::print() const {
 }
 
 std::ostream& operator<<(std::ostream& os, const Tensor& t) {
+    // Print a compact summary that stays readable for large tensors by limiting
+    // the number of emitted values.
     os << "Tensor(shape=[";
     for (size_t i = 0; i < t.shape_.size(); ++i) {
         os << t.shape_[i];
