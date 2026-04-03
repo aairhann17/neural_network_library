@@ -1,32 +1,4 @@
-name: API Docs
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-
-jobs:
-  build-docs:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Install Doxygen
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y doxygen graphviz
-
       - name: Configure docs build
-        run: cmake -S neural_network_library -B neural_network_library/build_docs -DBUILD_DOCS=ON
-
-      - name: Generate API docs
-        run: cmake --build neural_network_library/build_docs --target docs
-
-      - name: Upload docs artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: neuralnet-api-docs
-          path: neural_network_library/build_docs/docs/html
+        run: |
+          rm -rf neural_network_library/build_docs
+          cmake -S neural_network_library -B neural_network_library/build_docs -DBUILD_DOCS=ON
