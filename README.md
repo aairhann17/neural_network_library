@@ -157,10 +157,10 @@ int main() {
         // Compute loss
         Tensor loss = losses::binary_cross_entropy(output, target);
         
-        // Backward pass (to be fully implemented with autograd)
-        // loss.backward();
+        // Backward pass — propagates gradients through the full graph
+        loss.backward();
         
-        // Update parameters
+        // Update parameters, then clear gradients for the next step
         optimizer.step();
         optimizer.zero_grad();
     }
@@ -174,11 +174,42 @@ int main() {
 After building, you can run the example programs:
 
 ```bash
-# XOR problem example
+# Linux / macOS
 ./xor_example
-
-# Linear regression example
 ./regression_example
+
+# Windows (MSVC Release build)
+.\Release\xor_example.exe
+.\Release\regression_example.exe
+```
+
+For a guided walkthrough of the build process and a first run, see [QUICKSTART.md](neural_network_library/QUICKSTART.md).
+
+## Using as a Library
+
+### CMake `add_subdirectory`
+
+If you already have a CMake project, add this repository as a subdirectory:
+
+```cmake
+add_subdirectory(neural_network_library)
+target_link_libraries(my_app PRIVATE neural_network)
+```
+
+The `neural_network` CMake target exports the `include/` directory, so no
+additional `include_directories` call is needed.
+
+### CMake `FetchContent`
+
+```cmake
+include(FetchContent)
+FetchContent_Declare(
+    neural_network
+    GIT_REPOSITORY https://github.com/aairhann17/neural_network_library.git
+    GIT_TAG        main
+)
+FetchContent_MakeAvailable(neural_network)
+target_link_libraries(my_app PRIVATE neural_network)
 ```
 
 ## API Reference
@@ -241,7 +272,7 @@ losses::mae_loss(predictions, targets)
 - [x] Loss functions
 - [x] Optimizers (SGD, Adam)
 - [x] Sequential model
-- [ ] Full automatic differentiation
+- [x] Automatic differentiation (scalar and tensor-valued graphs)
 - [ ] Convolutional layers
 - [ ] Recurrent layers (LSTM, GRU)
 - [ ] Batch normalization
