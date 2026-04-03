@@ -52,6 +52,7 @@ if(BUILD_DOCS)
         "${CMAKE_CURRENT_SOURCE_DIR}/include"
         "${CMAKE_CURRENT_SOURCE_DIR}/src"
         "${CMAKE_CURRENT_SOURCE_DIR}/examples"
+        "${DOXYGEN_MAINPAGE}"
     )
     set(DOXYGEN_MAINPAGE "${CMAKE_CURRENT_SOURCE_DIR}/../README.md")
     string(REPLACE ";" " " DOXYGEN_INPUT "${DOXYGEN_INPUT_DIRS}")

@@ -22,10 +22,10 @@ namespace nn {
 /// can propagate gradients to upstream tensors.
 class Tensor {
 public:
-    /// Element type stored in the tensor buffer.
+    /** @brief Element type stored in the tensor buffer. */
     using value_type = double;
 
-    /// Shape representation where each entry is the size of one dimension.
+    /** @brief Shape representation where each entry is one dimension size. */
     using shape_type = std::vector<size_t>;
     
 private:
@@ -47,187 +47,418 @@ private:
     // Upstream tensors that produced this tensor during the forward pass.
     std::vector<std::shared_ptr<Tensor>> parents_;
 
-    /// Recursively executes the stored backward function and visits parents.
+    /** @brief Executes backward callback and recursively traverses parents. */
     void backward_impl();
     
 public:
-    /// Creates a tensor with the given shape and initializes all values to zero.
+        /**
+         * @brief Creates a zero-initialized tensor with the provided shape.
+         * @param shape Tensor dimensions in row-major order.
+         * @param requires_grad Whether operations involving this tensor should track gradients.
+         * @throws std::invalid_argument If any dimension in shape is zero.
+         */
     explicit Tensor(const shape_type& shape, bool requires_grad = false);
 
-    /// Creates a tensor from explicit data and validates that shape matches size.
+        /**
+         * @brief Creates a tensor from explicit data and shape.
+         * @param data Flat row-major tensor values.
+         * @param shape Tensor dimensions used to interpret data.
+         * @param requires_grad Whether operations involving this tensor should track gradients.
+         * @throws std::invalid_argument If data size does not match shape product.
+         */
     Tensor(const std::vector<value_type>& data, const shape_type& shape, 
            bool requires_grad = false);
 
-    /// Copies tensor values and autograd metadata.
+        /**
+         * @brief Copy-constructs a tensor.
+         * @param other Source tensor to copy.
+         */
     Tensor(const Tensor& other);
 
-    /// Moves tensor storage and autograd metadata.
+        /**
+         * @brief Move-constructs a tensor.
+         * @param other Source tensor to move.
+         */
     Tensor(Tensor&& other) noexcept;
 
-    /// Copy assignment preserving value semantics.
+        /**
+         * @brief Copy-assigns a tensor.
+         * @param other Source tensor to copy.
+         * @return Reference to this tensor.
+         */
     Tensor& operator=(const Tensor& other);
 
-    /// Move assignment for efficient transfers.
+        /**
+         * @brief Move-assigns a tensor.
+         * @param other Source tensor to move.
+         * @return Reference to this tensor.
+         */
     Tensor& operator=(Tensor&& other) noexcept;
     ~Tensor() = default;
     
-    /// Returns the tensor shape.
+    /**
+     * @brief Returns the tensor shape.
+     * @return Shape vector describing tensor dimensions.
+     */
     const shape_type& shape() const { return shape_; }
 
-    /// Returns the number of dimensions.
+    /**
+     * @brief Returns the number of dimensions.
+     * @return Rank of the tensor.
+     */
     size_t ndim() const { return shape_.size(); }
 
-    /// Returns the total number of stored elements.
+    /**
+     * @brief Returns total number of stored elements.
+     * @return Element count in the flat storage buffer.
+     */
     size_t size() const;
 
-    /// Returns mutable access to the raw contiguous storage.
+    /**
+     * @brief Returns mutable pointer to contiguous storage.
+     * @return Mutable raw pointer to element data.
+     */
     value_type* data() { return data_.data(); }
 
-    /// Returns read-only access to the raw contiguous storage.
+    /**
+     * @brief Returns read-only pointer to contiguous storage.
+     * @return Const raw pointer to element data.
+     */
     const value_type* data() const { return data_.data(); }
 
-    /// Reports whether this tensor participates in gradient tracking.
+    /**
+     * @brief Reports whether gradient tracking is enabled.
+     * @return True when this tensor participates in autograd.
+     */
     bool requires_grad() const { return requires_grad_; }
 
-    /// Enables or disables gradient tracking for future operations.
+    /**
+     * @brief Enables or disables gradient tracking.
+     * @param value True to enable autograd recording, false to disable.
+     */
     void set_requires_grad(bool value) { requires_grad_ = value; }
     
-    /// Returns mutable access by flat index.
+    /**
+     * @brief Returns mutable element access by flat index.
+     * @param idx Zero-based flat index.
+     * @return Mutable reference to element at idx.
+     */
     value_type& operator[](size_t idx) { return data_[idx]; }
 
-    /// Returns read-only access by flat index.
+    /**
+     * @brief Returns read-only element access by flat index.
+     * @param idx Zero-based flat index.
+     * @return Const reference to element at idx.
+     */
     const value_type& operator[](size_t idx) const { return data_[idx]; }
 
-    /// Returns mutable access using multi-dimensional coordinates.
+    /**
+     * @brief Returns mutable access using multi-dimensional coordinates.
+     * @param indices Per-dimension coordinates.
+     * @return Mutable reference to indexed element.
+     * @throws std::invalid_argument If index rank does not match tensor rank.
+     * @throws std::out_of_range If any coordinate is outside shape bounds.
+     */
     value_type& at(const std::vector<size_t>& indices);
 
-    /// Returns read-only access using multi-dimensional coordinates.
+    /**
+     * @brief Returns read-only access using multi-dimensional coordinates.
+     * @param indices Per-dimension coordinates.
+     * @return Const reference to indexed element.
+     * @throws std::invalid_argument If index rank does not match tensor rank.
+     * @throws std::out_of_range If any coordinate is outside shape bounds.
+     */
     const value_type& at(const std::vector<size_t>& indices) const;
     
-    /// Performs element-wise addition with another tensor of the same shape.
+    /**
+     * @brief Computes element-wise addition.
+     * @param other Tensor added element-wise.
+     * @return Sum tensor with same shape as operands.
+     * @throws std::invalid_argument If tensor shapes are not equal.
+     */
     Tensor operator+(const Tensor& other) const;
 
-    /// Performs element-wise subtraction with another tensor of the same shape.
+    /**
+     * @brief Computes element-wise subtraction.
+     * @param other Tensor subtracted element-wise.
+     * @return Difference tensor with same shape as operands.
+     * @throws std::invalid_argument If tensor shapes are not equal.
+     */
     Tensor operator-(const Tensor& other) const;
 
-    /// Performs element-wise multiplication with another tensor of the same shape.
+    /**
+     * @brief Computes element-wise multiplication.
+     * @param other Tensor multiplied element-wise.
+     * @return Product tensor with same shape as operands.
+     * @throws std::invalid_argument If tensor shapes are not equal.
+     */
     Tensor operator*(const Tensor& other) const;
 
-    /// Performs element-wise division with another tensor of the same shape.
+    /**
+     * @brief Computes element-wise division.
+     * @param other Tensor used as element-wise divisor.
+     * @return Quotient tensor with same shape as operands.
+     * @throws std::invalid_argument If tensor shapes are not equal.
+     * @throws std::runtime_error If any divisor element is zero.
+     */
     Tensor operator/(const Tensor& other) const;
 
-    /// Adds a scalar to every tensor element.
+    /**
+     * @brief Adds scalar to all tensor elements.
+     * @param scalar Scalar value to add.
+     * @return Tensor with scalar-added values.
+     */
     Tensor operator+(value_type scalar) const;
 
-    /// Subtracts a scalar from every tensor element.
+    /**
+     * @brief Subtracts scalar from all tensor elements.
+     * @param scalar Scalar value to subtract.
+     * @return Tensor with scalar-subtracted values.
+     */
     Tensor operator-(value_type scalar) const;
 
-    /// Multiplies every tensor element by a scalar.
+    /**
+     * @brief Multiplies all tensor elements by scalar.
+     * @param scalar Scalar multiplier.
+     * @return Tensor with scaled values.
+     */
     Tensor operator*(value_type scalar) const;
 
-    /// Divides every tensor element by a scalar.
+    /**
+     * @brief Divides all tensor elements by scalar.
+     * @param scalar Scalar divisor.
+     * @return Tensor with scaled values.
+     * @throws std::runtime_error If scalar is zero.
+     */
     Tensor operator/(value_type scalar) const;
 
-    /// In-place element-wise addition.
+    /**
+     * @brief Adds another tensor in place.
+     * @param other Tensor added element-wise.
+     * @return Reference to this tensor.
+     * @throws std::invalid_argument If tensor shapes are not equal.
+     */
     Tensor& operator+=(const Tensor& other);
 
-    /// In-place element-wise subtraction.
+    /**
+     * @brief Subtracts another tensor in place.
+     * @param other Tensor subtracted element-wise.
+     * @return Reference to this tensor.
+     * @throws std::invalid_argument If tensor shapes are not equal.
+     */
     Tensor& operator-=(const Tensor& other);
 
-    /// In-place element-wise multiplication.
+    /**
+     * @brief Multiplies by another tensor in place.
+     * @param other Tensor multiplied element-wise.
+     * @return Reference to this tensor.
+     * @throws std::invalid_argument If tensor shapes are not equal.
+     */
     Tensor& operator*=(const Tensor& other);
 
-    /// In-place scalar multiplication.
+    /**
+     * @brief Multiplies by scalar in place.
+     * @param scalar Scalar multiplier.
+     * @return Reference to this tensor.
+     */
     Tensor& operator*=(value_type scalar);
     
-    /// Multiplies two 2D tensors using matrix multiplication rules.
+    /**
+     * @brief Performs 2D matrix multiplication.
+     * @param other Right-hand matrix.
+     * @return Matrix product tensor.
+     * @throws std::invalid_argument If either tensor is not 2D or dimensions are incompatible.
+     */
     Tensor matmul(const Tensor& other) const;
 
-    /// Transposes a 2D tensor.
+    /**
+     * @brief Returns matrix transpose for a 2D tensor.
+     * @return Transposed 2D tensor.
+     * @throws std::invalid_argument If tensor is not 2D.
+     */
     Tensor transpose() const;
     
-    /// Sums all tensor elements into a rank-1 tensor of shape {1}.
+    /**
+     * @brief Reduces all elements by summation.
+     * @return Rank-1 tensor of shape {1} containing total sum.
+     */
     Tensor sum() const;
 
-    /// Sums tensor elements along a specific axis.
+    /**
+     * @brief Reduces elements by summation along one axis.
+     * @param axis Reduction axis. Negative values are normalized from the end.
+     * @return Tensor with axis removed and remaining dimensions preserved.
+     * @throws std::invalid_argument If reducing axis on empty shape.
+     * @throws std::out_of_range If axis is invalid.
+     */
     Tensor sum(int axis) const;
 
-    /// Computes the mean of all tensor elements.
+    /**
+     * @brief Computes mean across all elements.
+     * @return Rank-1 tensor of shape {1} containing global mean.
+     */
     Tensor mean() const;
 
-    /// Computes the mean of tensor elements along a specific axis.
+    /**
+     * @brief Computes mean along one axis.
+     * @param axis Reduction axis. Negative values are normalized from the end.
+     * @return Tensor with axis removed and averaged values.
+     * @throws std::invalid_argument If reducing axis on empty shape.
+     * @throws std::out_of_range If axis is invalid.
+     */
     Tensor mean(int axis) const;
 
-    /// Returns the maximum stored value.
+    /**
+     * @brief Returns largest stored value.
+     * @return Maximum element value.
+     */
     value_type max() const;
 
-    /// Returns the minimum stored value.
+    /**
+     * @brief Returns smallest stored value.
+     * @return Minimum element value.
+     */
     value_type min() const;
     
-    /// Returns a new tensor view-like copy with the requested shape.
+    /**
+     * @brief Returns tensor data reinterpreted with a new shape.
+     * @param new_shape Requested output shape.
+     * @return Tensor containing same element order with new shape.
+     * @throws std::invalid_argument If new_shape product differs from size().
+     */
     Tensor reshape(const shape_type& new_shape) const;
 
-    /// Flattens the tensor into a single dimension.
+    /**
+     * @brief Flattens tensor into one dimension.
+     * @return Tensor with shape {size()}.
+     */
     Tensor flatten() const;
 
-    /// Returns a slice along the given axis.
+    /**
+     * @brief Returns a slice range along selected axis.
+     * @param start Inclusive start index on axis.
+     * @param end Exclusive end index on axis.
+     * @param axis Axis to slice, currently only axis 0 is supported.
+     * @return Sliced tensor containing copied values.
+     * @throws std::out_of_range If axis is invalid.
+     * @throws std::invalid_argument If start/end range is invalid.
+     * @throws std::runtime_error If axis other than 0 is requested.
+     */
     Tensor slice(size_t start, size_t end, size_t axis = 0) const;
     
-    /// Creates a zero-filled tensor.
+    /**
+     * @brief Creates zero-filled tensor.
+     * @param shape Tensor dimensions.
+     * @param requires_grad Whether returned tensor should track gradients.
+     * @return Zero-initialized tensor.
+     */
     static Tensor zeros(const shape_type& shape, bool requires_grad = false);
 
-    /// Creates a one-filled tensor.
+    /**
+     * @brief Creates one-filled tensor.
+     * @param shape Tensor dimensions.
+     * @param requires_grad Whether returned tensor should track gradients.
+     * @return One-initialized tensor.
+     */
     static Tensor ones(const shape_type& shape, bool requires_grad = false);
 
-    /// Creates a tensor with samples from a standard normal distribution.
+    /**
+     * @brief Creates tensor sampled from standard normal distribution.
+     * @param shape Tensor dimensions.
+     * @param requires_grad Whether returned tensor should track gradients.
+     * @return Random tensor sampled from N(0,1).
+     */
     static Tensor randn(const shape_type& shape, bool requires_grad = false);
 
-    /// Creates a tensor with samples from a uniform distribution.
+    /**
+     * @brief Creates tensor sampled from uniform distribution.
+     * @param shape Tensor dimensions.
+     * @param low Lower sampling bound.
+     * @param high Upper sampling bound.
+     * @param requires_grad Whether returned tensor should track gradients.
+     * @return Random tensor sampled from uniform distribution.
+     */
     static Tensor uniform(const shape_type& shape, value_type low = 0.0, 
                          value_type high = 1.0, bool requires_grad = false);
     
-    /// Returns mutable access to the gradient tensor.
+    /**
+     * @brief Returns mutable gradient tensor.
+     * @return Mutable gradient tensor reference.
+     */
     Tensor& grad() { return *grad_; }
 
-    /// Returns read-only access to the gradient tensor.
+    /**
+     * @brief Returns read-only gradient tensor.
+     * @return Const gradient tensor reference.
+     */
     const Tensor& grad() const { return *grad_; }
 
-    /// Reports whether a gradient tensor has been allocated.
+    /**
+     * @brief Indicates whether gradient storage exists.
+     * @return True when gradient tensor has been allocated.
+     */
     bool has_grad() const { return grad_ != nullptr; }
 
-    /// Returns the underlying shared pointer used for gradient storage.
+    /**
+     * @brief Returns shared pointer to gradient storage.
+     * @return Shared gradient tensor pointer.
+     */
     std::shared_ptr<Tensor> grad_ptr() const { return grad_; }
 
-    /// Ensures that the gradient tensor exists.
+    /** @brief Allocates gradient tensor when not already present. */
     void ensure_grad();
 
-    /// Stores the local backward rule and references to parent tensors.
+    /**
+     * @brief Stores local backward callback and parent tensor list.
+     * @param backward_fn Callback implementing local derivative propagation.
+     * @param parents Upstream tensors used during graph traversal.
+     */
     void set_autograd(std::function<void()> backward_fn,
                       std::vector<std::shared_ptr<Tensor>> parents);
 
-    /// Creates a shared copy used when wiring simple autograd graphs.
+    /**
+     * @brief Creates shared tensor copy for autograd parent wiring.
+     * @param tensor Source tensor to alias.
+     * @return Shared pointer holding copied tensor state.
+     */
     static std::shared_ptr<Tensor> alias(const Tensor& tensor);
 
-    /// Starts backpropagation using a gradient of ones at this tensor.
+    /**
+     * @brief Starts backpropagation from this tensor.
+     * @throws std::runtime_error If requires_grad() is false.
+     */
     void backward();
 
-    /// Resets the gradient buffer to zeros.
+    /** @brief Resets gradient values to zero when gradient storage exists. */
     void zero_grad();
     
-    /// Prints a compact human-readable tensor summary.
+    /** @brief Prints compact tensor summary to standard output. */
     void print() const;
 
-    /// Streams a compact tensor representation to an output stream.
+    /**
+     * @brief Streams compact tensor representation.
+     * @param os Output stream.
+     * @param t Tensor to serialize.
+     * @return Reference to output stream.
+     */
     friend std::ostream& operator<<(std::ostream& os, const Tensor& t);
     
 private:
-    /// Converts multi-dimensional coordinates into the flat buffer index.
+    /**
+     * @brief Converts multi-dimensional coordinates into flat row-major index.
+     * @param indices Per-dimension indices.
+     * @return Flat buffer index.
+     */
     size_t compute_index(const std::vector<size_t>& indices) const;
 
-    /// Throws when shapes are incompatible for element-wise operations.
+    /**
+     * @brief Validates shape compatibility for element-wise operations.
+     * @param other Other tensor participating in operation.
+     * @throws std::invalid_argument If shape() differs from other.shape().
+     */
     void check_shape_compatible(const Tensor& other) const;
 
-    /// Allocates a zero-initialized gradient tensor matching this tensor's shape.
+    /** @brief Allocates zero-initialized gradient tensor matching shape(). */
     void allocate_grad();
 };
 

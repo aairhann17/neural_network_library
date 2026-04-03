@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\aaraa\neural_network_library-1\neural_network_library\build_docs\CMakeFiles\6b09d3927b786dc9341f686a16ab553b\RUN_TESTS_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{4206AAD4-BC73-3038-8726-5A13F6E46887}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

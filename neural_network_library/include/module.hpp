@@ -18,24 +18,35 @@ namespace nn {
 /// mode or evaluation mode.
 class Module {
 public:
+    /** @brief Virtual destructor for polymorphic layer hierarchy. */
     virtual ~Module() = default;
     
-    /// Runs the layer's forward pass.
+    /**
+     * @brief Runs layer forward pass.
+     * @param input Input tensor.
+     * @return Output tensor produced by this layer.
+     */
     virtual Tensor forward(const Tensor& input) = 0;
     
-    /// Returns pointers to all trainable tensors owned by the module.
+    /**
+     * @brief Returns trainable parameters owned by this layer.
+     * @return Vector of non-owning pointers to parameter tensors.
+     */
     virtual std::vector<Tensor*> parameters() = 0;
     
-    /// Zeros all parameter gradients owned by the module.
+    /** @brief Zeros gradients of all parameters returned by parameters(). */
     void zero_grad();
     
-    /// Switches the module into training mode.
+    /** @brief Switches layer behavior to training mode. */
     void train() { training_ = true; }
 
-    /// Switches the module into evaluation mode.
+    /** @brief Switches layer behavior to evaluation mode. */
     void eval() { training_ = false; }
 
-    /// Returns whether the module is currently in training mode.
+    /**
+     * @brief Indicates whether the layer is in training mode.
+     * @return True when layer behaves in training mode.
+     */
     bool is_training() const { return training_; }
     
 protected:
@@ -46,25 +57,50 @@ protected:
 /// Fully connected affine layer implementing $y = xW^T + b$.
 class Linear : public Module {
 public:
-    /// Constructs a linear layer with optional bias.
+    /**
+     * @brief Constructs fully connected layer.
+     * @param in_features Number of input features.
+     * @param out_features Number of output features.
+     * @param use_bias Whether to include additive bias term.
+     */
     Linear(size_t in_features, size_t out_features, bool use_bias = true);
     
-    /// Applies the affine transform to a batch of inputs.
+    /**
+     * @brief Applies affine transform to batched 2D input.
+     * @param input Input tensor of shape (batch_size, in_features).
+     * @return Output tensor of shape (batch_size, out_features).
+     * @throws std::invalid_argument If input rank is not 2 or feature size mismatches in_features.
+     */
     Tensor forward(const Tensor& input) override;
 
-    /// Returns the layer's trainable weight and optional bias tensors.
+    /**
+     * @brief Returns trainable tensors of this layer.
+     * @return Vector containing weight and, when enabled, bias.
+     */
     std::vector<Tensor*> parameters() override;
     
-    /// Returns mutable access to the weight matrix.
+    /**
+     * @brief Returns mutable weight matrix.
+     * @return Weight tensor reference.
+     */
     Tensor& weight() { return weight_; }
 
-    /// Returns mutable access to the bias vector.
+    /**
+     * @brief Returns mutable bias vector.
+     * @return Bias tensor reference.
+     */
     Tensor& bias() { return bias_; }
 
-    /// Returns read-only access to the weight matrix.
+    /**
+     * @brief Returns read-only weight matrix.
+     * @return Const weight tensor reference.
+     */
     const Tensor& weight() const { return weight_; }
 
-    /// Returns read-only access to the bias vector.
+    /**
+     * @brief Returns read-only bias vector.
+     * @return Const bias tensor reference.
+     */
     const Tensor& bias() const { return bias_; }
     
 private:
@@ -83,40 +119,79 @@ private:
     // Trainable bias vector of shape (out_features).
     Tensor bias_;
     
-    /// Initializes learnable parameters with reasonable defaults.
+    /** @brief Initializes trainable parameters. */
     void initialize_parameters();
 };
 
 /// Module wrapper around the ReLU activation function.
 class ReLU : public Module {
 public:
+    /** @brief Constructs ReLU layer. */
     ReLU() = default;
+
+    /**
+     * @brief Applies ReLU activation.
+     * @param input Input tensor.
+     * @return Activated tensor.
+     */
     Tensor forward(const Tensor& input) override;
+
+    /** @brief ReLU has no trainable parameters. */
     std::vector<Tensor*> parameters() override { return {}; }
 };
 
 /// Module wrapper around the sigmoid activation function.
 class Sigmoid : public Module {
 public:
+    /** @brief Constructs sigmoid layer. */
     Sigmoid() = default;
+
+    /**
+     * @brief Applies sigmoid activation.
+     * @param input Input tensor.
+     * @return Activated tensor.
+     */
     Tensor forward(const Tensor& input) override;
+
+    /** @brief Sigmoid has no trainable parameters. */
     std::vector<Tensor*> parameters() override { return {}; }
 };
 
 /// Module wrapper around the hyperbolic tangent activation function.
 class Tanh : public Module {
 public:
+    /** @brief Constructs hyperbolic tangent layer. */
     Tanh() = default;
+
+    /**
+     * @brief Applies tanh activation.
+     * @param input Input tensor.
+     * @return Activated tensor.
+     */
     Tensor forward(const Tensor& input) override;
+
+    /** @brief Tanh has no trainable parameters. */
     std::vector<Tensor*> parameters() override { return {}; }
 };
 
 /// Regularization layer that randomly zeroes activations during training.
 class Dropout : public Module {
 public:
-    /// Constructs dropout with probability p of dropping an activation.
+    /**
+     * @brief Constructs dropout layer.
+     * @param p Probability of masking each activation.
+     * @throws std::invalid_argument If p is outside range [0, 1].
+     */
     explicit Dropout(double p = 0.5);
+
+    /**
+     * @brief Applies inverted dropout in training mode.
+     * @param input Input tensor.
+     * @return Input-like tensor with randomly masked elements in training mode.
+     */
     Tensor forward(const Tensor& input) override;
+
+    /** @brief Dropout has no trainable parameters. */
     std::vector<Tensor*> parameters() override { return {}; }
     
 private:

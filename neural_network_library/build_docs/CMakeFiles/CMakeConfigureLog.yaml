@@ -1,0 +1,2285 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineSystem.cmake:212 (message)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      The system is: Windows - 10.0.26100 - AMD64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
+        - "c:\\Users\\aaraa\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\aaraa\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Programs\\Microsoft VS Code"
+        - "C:\\Python311\\Scripts\\"
+        - "C:\\Python311\\"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\MATLAB\\R2022a\\bin"
+        - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\110\\Tools\\Binn\\"
+        - "C:\\Program Files (x86)\\Microsoft SQL Server\\120\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\120\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\120\\DTS\\Binn\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Program Files\\Xilinx\\bin\\nt"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\csc.exe.config"
+        - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
+        - "C:\\Program Files (x86)\\IncrediBuild"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\PowerShell\\7\\"
+        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\aaraa\\AppData\\Roaming\\npm"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\aaraa\\.dotnet\\tools"
+        - "C:\\Maven\\apache-maven-3.9.12-bin\\apache-maven-3.9.12\\bin"
+        - "C:\\Program Files\\Java\\jdk-17\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Programs\\Warp\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 18.3.0-release-26070-10+3972042b7 for .NET Framework
+      Build started 2026-04-02 8:58:16 PM.
+      
+      Project "C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\4.2.3\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+        Creating directory "Debug\\CompilerIdC.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        Touching "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+      ClCompile:
+        C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc145.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\4.2.3\\CompilerIdC\\CompilerIdC.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
+      Done Building Project "C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\4.2.3\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:00.96
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/4.2.3/CompilerIdC/CompilerIdC.exe
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:65 (__resolve_tool_path)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:103 (__resolve_linker_path)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "link"
+    candidate_directories:
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/"
+      - "C:/Program Files/PowerShell/7/"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/"
+      - "C:/Python311/Scripts/"
+      - "C:/Python311/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/MATLAB/R2022a/bin/"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/110/Tools/Binn/"
+      - "C:/Program Files (x86)/Microsoft SQL Server/120/Tools/Binn/"
+      - "C:/Program Files/Microsoft SQL Server/120/Tools/Binn/"
+      - "C:/Program Files/Microsoft SQL Server/120/DTS/Binn/"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Program Files/nodejs/"
+      - "C:/ProgramData/chocolatey/bin/"
+      - "C:/Program Files/Xilinx/bin/nt/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/csc.exe.config/"
+      - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/"
+      - "C:/Program Files (x86)/IncrediBuild/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/Docker/Docker/resources/bin/"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/aaraa/AppData/Roaming/npm/"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/aaraa/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/aaraa/.dotnet/tools/"
+      - "C:/Maven/apache-maven-3.9.12-bin/apache-maven-3.9.12/bin/"
+      - "C:/Program Files/Java/jdk-17/bin/"
+      - "C:/Users/aaraa/AppData/Local/Programs/Warp/bin/"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/"
+    searched_directories:
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/link.com"
+    found: "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/link.exe"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
+        - "c:\\Users\\aaraa\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\aaraa\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Programs\\Microsoft VS Code"
+        - "C:\\Python311\\Scripts\\"
+        - "C:\\Python311\\"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\MATLAB\\R2022a\\bin"
+        - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\110\\Tools\\Binn\\"
+        - "C:\\Program Files (x86)\\Microsoft SQL Server\\120\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\120\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\120\\DTS\\Binn\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Program Files\\Xilinx\\bin\\nt"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\csc.exe.config"
+        - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
+        - "C:\\Program Files (x86)\\IncrediBuild"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\PowerShell\\7\\"
+        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\aaraa\\AppData\\Roaming\\npm"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\aaraa\\.dotnet\\tools"
+        - "C:\\Maven\\apache-maven-3.9.12-bin\\apache-maven-3.9.12\\bin"
+        - "C:\\Program Files\\Java\\jdk-17\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Programs\\Warp\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:65 (__resolve_tool_path)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:104 (__resolve_linker_path)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "lld-link"
+    candidate_directories:
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/"
+      - "C:/Program Files/PowerShell/7/"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/"
+      - "C:/Python311/Scripts/"
+      - "C:/Python311/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/MATLAB/R2022a/bin/"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/110/Tools/Binn/"
+      - "C:/Program Files (x86)/Microsoft SQL Server/120/Tools/Binn/"
+      - "C:/Program Files/Microsoft SQL Server/120/Tools/Binn/"
+      - "C:/Program Files/Microsoft SQL Server/120/DTS/Binn/"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Program Files/nodejs/"
+      - "C:/ProgramData/chocolatey/bin/"
+      - "C:/Program Files/Xilinx/bin/nt/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/csc.exe.config/"
+      - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/"
+      - "C:/Program Files (x86)/IncrediBuild/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/Docker/Docker/resources/bin/"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/aaraa/AppData/Roaming/npm/"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/aaraa/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/aaraa/.dotnet/tools/"
+      - "C:/Maven/apache-maven-3.9.12-bin/apache-maven-3.9.12/bin/"
+      - "C:/Program Files/Java/jdk-17/bin/"
+      - "C:/Users/aaraa/AppData/Local/Programs/Warp/bin/"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/"
+    searched_directories:
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/lld-link.com"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/lld-link.exe"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/lld-link"
+      - "C:/Program Files/PowerShell/7/lld-link.com"
+      - "C:/Program Files/PowerShell/7/lld-link.exe"
+      - "C:/Program Files/PowerShell/7/lld-link"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/lld-link.com"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/lld-link.exe"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/lld-link"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/lld-link.com"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/lld-link.exe"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/lld-link"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/lld-link.com"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/lld-link.exe"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/lld-link"
+      - "C:/Python311/Scripts/lld-link.com"
+      - "C:/Python311/Scripts/lld-link.exe"
+      - "C:/Python311/Scripts/lld-link"
+      - "C:/Python311/lld-link.com"
+      - "C:/Python311/lld-link.exe"
+      - "C:/Python311/lld-link"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/lld-link.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/lld-link.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/lld-link"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/lld-link.com"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/lld-link.exe"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/lld-link"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link"
+      - "C:/Windows/System32/lld-link.com"
+      - "C:/Windows/System32/lld-link.exe"
+      - "C:/Windows/System32/lld-link"
+      - "C:/Windows/lld-link.com"
+      - "C:/Windows/lld-link.exe"
+      - "C:/Windows/lld-link"
+      - "C:/Windows/System32/wbem/lld-link.com"
+      - "C:/Windows/System32/wbem/lld-link.exe"
+      - "C:/Windows/System32/wbem/lld-link"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link"
+      - "C:/Windows/System32/OpenSSH/lld-link.com"
+      - "C:/Windows/System32/OpenSSH/lld-link.exe"
+      - "C:/Windows/System32/OpenSSH/lld-link"
+      - "C:/Program Files/MATLAB/R2022a/bin/lld-link.com"
+      - "C:/Program Files/MATLAB/R2022a/bin/lld-link.exe"
+      - "C:/Program Files/MATLAB/R2022a/bin/lld-link"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/110/Tools/Binn/lld-link.com"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/110/Tools/Binn/lld-link.exe"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/110/Tools/Binn/lld-link"
+      - "C:/Program Files (x86)/Microsoft SQL Server/120/Tools/Binn/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft SQL Server/120/Tools/Binn/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft SQL Server/120/Tools/Binn/lld-link"
+      - "C:/Program Files/Microsoft SQL Server/120/Tools/Binn/lld-link.com"
+      - "C:/Program Files/Microsoft SQL Server/120/Tools/Binn/lld-link.exe"
+      - "C:/Program Files/Microsoft SQL Server/120/Tools/Binn/lld-link"
+      - "C:/Program Files/Microsoft SQL Server/120/DTS/Binn/lld-link.com"
+      - "C:/Program Files/Microsoft SQL Server/120/DTS/Binn/lld-link.exe"
+      - "C:/Program Files/Microsoft SQL Server/120/DTS/Binn/lld-link"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/lld-link.com"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/lld-link.exe"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/lld-link"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/lld-link.com"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/lld-link.exe"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/lld-link"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/lld-link.com"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/lld-link.exe"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/lld-link"
+      - "C:/Program Files/dotnet/lld-link.com"
+      - "C:/Program Files/dotnet/lld-link.exe"
+      - "C:/Program Files/dotnet/lld-link"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/lld-link.com"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/lld-link.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/lld-link"
+      - "C:/Program Files/nodejs/lld-link.com"
+      - "C:/Program Files/nodejs/lld-link.exe"
+      - "C:/Program Files/nodejs/lld-link"
+      - "C:/ProgramData/chocolatey/bin/lld-link.com"
+      - "C:/ProgramData/chocolatey/bin/lld-link.exe"
+      - "C:/ProgramData/chocolatey/bin/lld-link"
+      - "C:/Program Files/Xilinx/bin/nt/lld-link.com"
+      - "C:/Program Files/Xilinx/bin/nt/lld-link.exe"
+      - "C:/Program Files/Xilinx/bin/nt/lld-link"
+      - "C:/Program Files/Git/cmd/lld-link.com"
+      - "C:/Program Files/Git/cmd/lld-link.exe"
+      - "C:/Program Files/Git/cmd/lld-link"
+      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/csc.exe.config/lld-link.com"
+      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/csc.exe.config/lld-link.exe"
+      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/csc.exe.config/lld-link"
+      - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/lld-link.com"
+      - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/lld-link.exe"
+      - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/lld-link"
+      - "C:/Program Files (x86)/IncrediBuild/lld-link.com"
+      - "C:/Program Files (x86)/IncrediBuild/lld-link.exe"
+      - "C:/Program Files (x86)/IncrediBuild/lld-link"
+      - "C:/Program Files/CMake/bin/lld-link.com"
+      - "C:/Program Files/CMake/bin/lld-link.exe"
+      - "C:/Program Files/CMake/bin/lld-link"
+      - "C:/Program Files/Docker/Docker/resources/bin/lld-link.com"
+      - "C:/Program Files/Docker/Docker/resources/bin/lld-link.exe"
+      - "C:/Program Files/Docker/Docker/resources/bin/lld-link"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WindowsApps/lld-link.com"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WindowsApps/lld-link.exe"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WindowsApps/lld-link"
+      - "C:/Users/aaraa/AppData/Roaming/npm/lld-link.com"
+      - "C:/Users/aaraa/AppData/Roaming/npm/lld-link.exe"
+      - "C:/Users/aaraa/AppData/Roaming/npm/lld-link"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.com"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.exe"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/bin/lld-link"
+      - "C:/Users/aaraa/AppData/Local/GitHubDesktop/bin/lld-link.com"
+      - "C:/Users/aaraa/AppData/Local/GitHubDesktop/bin/lld-link.exe"
+      - "C:/Users/aaraa/AppData/Local/GitHubDesktop/bin/lld-link"
+      - "C:/Users/aaraa/.dotnet/tools/lld-link.com"
+      - "C:/Users/aaraa/.dotnet/tools/lld-link.exe"
+      - "C:/Users/aaraa/.dotnet/tools/lld-link"
+      - "C:/Maven/apache-maven-3.9.12-bin/apache-maven-3.9.12/bin/lld-link.com"
+      - "C:/Maven/apache-maven-3.9.12-bin/apache-maven-3.9.12/bin/lld-link.exe"
+      - "C:/Maven/apache-maven-3.9.12-bin/apache-maven-3.9.12/bin/lld-link"
+      - "C:/Program Files/Java/jdk-17/bin/lld-link.com"
+      - "C:/Program Files/Java/jdk-17/bin/lld-link.exe"
+      - "C:/Program Files/Java/jdk-17/bin/lld-link"
+      - "C:/Users/aaraa/AppData/Local/Programs/Warp/bin/lld-link.com"
+      - "C:/Users/aaraa/AppData/Local/Programs/Warp/bin/lld-link.exe"
+      - "C:/Users/aaraa/AppData/Local/Programs/Warp/bin/lld-link"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/lld-link.com"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/lld-link.exe"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/lld-link"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
+        - "c:\\Users\\aaraa\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\aaraa\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Programs\\Microsoft VS Code"
+        - "C:\\Python311\\Scripts\\"
+        - "C:\\Python311\\"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\MATLAB\\R2022a\\bin"
+        - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\110\\Tools\\Binn\\"
+        - "C:\\Program Files (x86)\\Microsoft SQL Server\\120\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\120\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\120\\DTS\\Binn\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Program Files\\Xilinx\\bin\\nt"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\csc.exe.config"
+        - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
+        - "C:\\Program Files (x86)\\IncrediBuild"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\PowerShell\\7\\"
+        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\aaraa\\AppData\\Roaming\\npm"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\aaraa\\.dotnet\\tools"
+        - "C:\\Maven\\apache-maven-3.9.12-bin\\apache-maven-3.9.12\\bin"
+        - "C:\\Program Files\\Java\\jdk-17\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Programs\\Warp\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "program"
+    variable: "CMAKE_LINKER"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "link"
+    candidate_directories:
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/"
+      - "C:/Program Files/PowerShell/7/"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/"
+      - "C:/Python311/Scripts/"
+      - "C:/Python311/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/MATLAB/R2022a/bin/"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/110/Tools/Binn/"
+      - "C:/Program Files (x86)/Microsoft SQL Server/120/Tools/Binn/"
+      - "C:/Program Files/Microsoft SQL Server/120/Tools/Binn/"
+      - "C:/Program Files/Microsoft SQL Server/120/DTS/Binn/"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Program Files/nodejs/"
+      - "C:/ProgramData/chocolatey/bin/"
+      - "C:/Program Files/Xilinx/bin/nt/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/csc.exe.config/"
+      - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/"
+      - "C:/Program Files (x86)/IncrediBuild/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/Docker/Docker/resources/bin/"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/aaraa/AppData/Roaming/npm/"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/aaraa/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/aaraa/.dotnet/tools/"
+      - "C:/Maven/apache-maven-3.9.12-bin/apache-maven-3.9.12/bin/"
+      - "C:/Program Files/Java/jdk-17/bin/"
+      - "C:/Users/aaraa/AppData/Local/Programs/Warp/bin/"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/"
+    searched_directories:
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/link.com"
+    found: "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/link.exe"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
+        - "c:\\Users\\aaraa\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\aaraa\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Programs\\Microsoft VS Code"
+        - "C:\\Python311\\Scripts\\"
+        - "C:\\Python311\\"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\MATLAB\\R2022a\\bin"
+        - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\110\\Tools\\Binn\\"
+        - "C:\\Program Files (x86)\\Microsoft SQL Server\\120\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\120\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\120\\DTS\\Binn\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Program Files\\Xilinx\\bin\\nt"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\csc.exe.config"
+        - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
+        - "C:\\Program Files (x86)\\IncrediBuild"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\PowerShell\\7\\"
+        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\aaraa\\AppData\\Roaming\\npm"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\aaraa\\.dotnet\\tools"
+        - "C:\\Maven\\apache-maven-3.9.12-bin\\apache-maven-3.9.12\\bin"
+        - "C:\\Program Files\\Java\\jdk-17\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Programs\\Warp\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "program"
+    variable: "CMAKE_MT"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "mt"
+    candidate_directories:
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/"
+      - "C:/Program Files/PowerShell/7/"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/"
+      - "C:/Python311/Scripts/"
+      - "C:/Python311/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/MATLAB/R2022a/bin/"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/110/Tools/Binn/"
+      - "C:/Program Files (x86)/Microsoft SQL Server/120/Tools/Binn/"
+      - "C:/Program Files/Microsoft SQL Server/120/Tools/Binn/"
+      - "C:/Program Files/Microsoft SQL Server/120/DTS/Binn/"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Program Files/nodejs/"
+      - "C:/ProgramData/chocolatey/bin/"
+      - "C:/Program Files/Xilinx/bin/nt/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/csc.exe.config/"
+      - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/"
+      - "C:/Program Files (x86)/IncrediBuild/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/Docker/Docker/resources/bin/"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/aaraa/AppData/Roaming/npm/"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/aaraa/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/aaraa/.dotnet/tools/"
+      - "C:/Maven/apache-maven-3.9.12-bin/apache-maven-3.9.12/bin/"
+      - "C:/Program Files/Java/jdk-17/bin/"
+      - "C:/Users/aaraa/AppData/Local/Programs/Warp/bin/"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/"
+    searched_directories:
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/mt.com"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/mt.exe"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/mt"
+      - "C:/Program Files/PowerShell/7/mt.com"
+      - "C:/Program Files/PowerShell/7/mt.exe"
+      - "C:/Program Files/PowerShell/7/mt"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/mt.com"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/mt.exe"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/mt"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/mt.com"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/mt.exe"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/mt"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/mt.com"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/mt.exe"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/mt"
+      - "C:/Python311/Scripts/mt.com"
+      - "C:/Python311/Scripts/mt.exe"
+      - "C:/Python311/Scripts/mt"
+      - "C:/Python311/mt.com"
+      - "C:/Python311/mt.exe"
+      - "C:/Python311/mt"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/mt.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/mt.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/mt"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/mt.com"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/mt.exe"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/mt"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/mt.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/mt.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/mt"
+      - "C:/Windows/System32/mt.com"
+      - "C:/Windows/System32/mt.exe"
+      - "C:/Windows/System32/mt"
+      - "C:/Windows/mt.com"
+      - "C:/Windows/mt.exe"
+      - "C:/Windows/mt"
+      - "C:/Windows/System32/wbem/mt.com"
+      - "C:/Windows/System32/wbem/mt.exe"
+      - "C:/Windows/System32/wbem/mt"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/mt.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/mt.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/mt"
+      - "C:/Windows/System32/OpenSSH/mt.com"
+      - "C:/Windows/System32/OpenSSH/mt.exe"
+      - "C:/Windows/System32/OpenSSH/mt"
+      - "C:/Program Files/MATLAB/R2022a/bin/mt.com"
+      - "C:/Program Files/MATLAB/R2022a/bin/mt.exe"
+      - "C:/Program Files/MATLAB/R2022a/bin/mt"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/110/Tools/Binn/mt.com"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/110/Tools/Binn/mt.exe"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/110/Tools/Binn/mt"
+      - "C:/Program Files (x86)/Microsoft SQL Server/120/Tools/Binn/mt.com"
+      - "C:/Program Files (x86)/Microsoft SQL Server/120/Tools/Binn/mt.exe"
+      - "C:/Program Files (x86)/Microsoft SQL Server/120/Tools/Binn/mt"
+      - "C:/Program Files/Microsoft SQL Server/120/Tools/Binn/mt.com"
+      - "C:/Program Files/Microsoft SQL Server/120/Tools/Binn/mt.exe"
+      - "C:/Program Files/Microsoft SQL Server/120/Tools/Binn/mt"
+      - "C:/Program Files/Microsoft SQL Server/120/DTS/Binn/mt.com"
+      - "C:/Program Files/Microsoft SQL Server/120/DTS/Binn/mt.exe"
+      - "C:/Program Files/Microsoft SQL Server/120/DTS/Binn/mt"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/mt.com"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/mt.exe"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/mt"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/mt.com"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/mt.exe"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/mt"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/mt.com"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/mt.exe"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/mt"
+      - "C:/Program Files/dotnet/mt.com"
+      - "C:/Program Files/dotnet/mt.exe"
+      - "C:/Program Files/dotnet/mt"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/mt.com"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/mt.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/mt"
+      - "C:/Program Files/nodejs/mt.com"
+      - "C:/Program Files/nodejs/mt.exe"
+      - "C:/Program Files/nodejs/mt"
+      - "C:/ProgramData/chocolatey/bin/mt.com"
+      - "C:/ProgramData/chocolatey/bin/mt.exe"
+      - "C:/ProgramData/chocolatey/bin/mt"
+      - "C:/Program Files/Xilinx/bin/nt/mt.com"
+      - "C:/Program Files/Xilinx/bin/nt/mt.exe"
+      - "C:/Program Files/Xilinx/bin/nt/mt"
+      - "C:/Program Files/Git/cmd/mt.com"
+      - "C:/Program Files/Git/cmd/mt.exe"
+      - "C:/Program Files/Git/cmd/mt"
+      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/csc.exe.config/mt.com"
+      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/csc.exe.config/mt.exe"
+      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/csc.exe.config/mt"
+      - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/mt.com"
+      - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/mt.exe"
+      - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/mt"
+      - "C:/Program Files (x86)/IncrediBuild/mt.com"
+      - "C:/Program Files (x86)/IncrediBuild/mt.exe"
+      - "C:/Program Files (x86)/IncrediBuild/mt"
+      - "C:/Program Files/CMake/bin/mt.com"
+      - "C:/Program Files/CMake/bin/mt.exe"
+      - "C:/Program Files/CMake/bin/mt"
+      - "C:/Program Files/Docker/Docker/resources/bin/mt.com"
+      - "C:/Program Files/Docker/Docker/resources/bin/mt.exe"
+      - "C:/Program Files/Docker/Docker/resources/bin/mt"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WindowsApps/mt.com"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WindowsApps/mt.exe"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WindowsApps/mt"
+      - "C:/Users/aaraa/AppData/Roaming/npm/mt.com"
+      - "C:/Users/aaraa/AppData/Roaming/npm/mt.exe"
+      - "C:/Users/aaraa/AppData/Roaming/npm/mt"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/bin/mt.com"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/bin/mt.exe"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/bin/mt"
+      - "C:/Users/aaraa/AppData/Local/GitHubDesktop/bin/mt.com"
+      - "C:/Users/aaraa/AppData/Local/GitHubDesktop/bin/mt.exe"
+      - "C:/Users/aaraa/AppData/Local/GitHubDesktop/bin/mt"
+      - "C:/Users/aaraa/.dotnet/tools/mt.com"
+      - "C:/Users/aaraa/.dotnet/tools/mt.exe"
+      - "C:/Users/aaraa/.dotnet/tools/mt"
+      - "C:/Maven/apache-maven-3.9.12-bin/apache-maven-3.9.12/bin/mt.com"
+      - "C:/Maven/apache-maven-3.9.12-bin/apache-maven-3.9.12/bin/mt.exe"
+      - "C:/Maven/apache-maven-3.9.12-bin/apache-maven-3.9.12/bin/mt"
+      - "C:/Program Files/Java/jdk-17/bin/mt.com"
+      - "C:/Program Files/Java/jdk-17/bin/mt.exe"
+      - "C:/Program Files/Java/jdk-17/bin/mt"
+      - "C:/Users/aaraa/AppData/Local/Programs/Warp/bin/mt.com"
+      - "C:/Users/aaraa/AppData/Local/Programs/Warp/bin/mt.exe"
+      - "C:/Users/aaraa/AppData/Local/Programs/Warp/bin/mt"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/mt.com"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/mt.exe"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/mt"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
+        - "c:\\Users\\aaraa\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\aaraa\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Programs\\Microsoft VS Code"
+        - "C:\\Python311\\Scripts\\"
+        - "C:\\Python311\\"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\MATLAB\\R2022a\\bin"
+        - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\110\\Tools\\Binn\\"
+        - "C:\\Program Files (x86)\\Microsoft SQL Server\\120\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\120\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\120\\DTS\\Binn\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Program Files\\Xilinx\\bin\\nt"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\csc.exe.config"
+        - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
+        - "C:\\Program Files (x86)\\IncrediBuild"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\PowerShell\\7\\"
+        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\aaraa\\AppData\\Roaming\\npm"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\aaraa\\.dotnet\\tools"
+        - "C:\\Maven\\apache-maven-3.9.12-bin\\apache-maven-3.9.12\\bin"
+        - "C:\\Program Files\\Java\\jdk-17\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Programs\\Warp\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "program"
+    variable: "CMAKE_AR"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "lib"
+    candidate_directories:
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/"
+      - "C:/Program Files/PowerShell/7/"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/"
+      - "C:/Python311/Scripts/"
+      - "C:/Python311/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/MATLAB/R2022a/bin/"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/110/Tools/Binn/"
+      - "C:/Program Files (x86)/Microsoft SQL Server/120/Tools/Binn/"
+      - "C:/Program Files/Microsoft SQL Server/120/Tools/Binn/"
+      - "C:/Program Files/Microsoft SQL Server/120/DTS/Binn/"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Program Files/nodejs/"
+      - "C:/ProgramData/chocolatey/bin/"
+      - "C:/Program Files/Xilinx/bin/nt/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/csc.exe.config/"
+      - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/"
+      - "C:/Program Files (x86)/IncrediBuild/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/Docker/Docker/resources/bin/"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/aaraa/AppData/Roaming/npm/"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/aaraa/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/aaraa/.dotnet/tools/"
+      - "C:/Maven/apache-maven-3.9.12-bin/apache-maven-3.9.12/bin/"
+      - "C:/Program Files/Java/jdk-17/bin/"
+      - "C:/Users/aaraa/AppData/Local/Programs/Warp/bin/"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/"
+    searched_directories:
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/lib.com"
+    found: "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/lib.exe"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
+        - "c:\\Users\\aaraa\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\aaraa\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Programs\\Microsoft VS Code"
+        - "C:\\Python311\\Scripts\\"
+        - "C:\\Python311\\"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\MATLAB\\R2022a\\bin"
+        - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\110\\Tools\\Binn\\"
+        - "C:\\Program Files (x86)\\Microsoft SQL Server\\120\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\120\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\120\\DTS\\Binn\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Program Files\\Xilinx\\bin\\nt"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\csc.exe.config"
+        - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
+        - "C:\\Program Files (x86)\\IncrediBuild"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\PowerShell\\7\\"
+        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\aaraa\\AppData\\Roaming\\npm"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\aaraa\\.dotnet\\tools"
+        - "C:\\Maven\\apache-maven-3.9.12-bin\\apache-maven-3.9.12\\bin"
+        - "C:\\Program Files\\Java\\jdk-17\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Programs\\Warp\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
+        - "c:\\Users\\aaraa\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\aaraa\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Programs\\Microsoft VS Code"
+        - "C:\\Python311\\Scripts\\"
+        - "C:\\Python311\\"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\MATLAB\\R2022a\\bin"
+        - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\110\\Tools\\Binn\\"
+        - "C:\\Program Files (x86)\\Microsoft SQL Server\\120\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\120\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\120\\DTS\\Binn\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Program Files\\Xilinx\\bin\\nt"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\csc.exe.config"
+        - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
+        - "C:\\Program Files (x86)\\IncrediBuild"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\PowerShell\\7\\"
+        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\aaraa\\AppData\\Roaming\\npm"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\aaraa\\.dotnet\\tools"
+        - "C:\\Maven\\apache-maven-3.9.12-bin\\apache-maven-3.9.12\\bin"
+        - "C:\\Program Files\\Java\\jdk-17\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Programs\\Warp\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 18.3.0-release-26070-10+3972042b7 for .NET Framework
+      Build started 2026-04-02 8:58:18 PM.
+      
+      Project "C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\4.2.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+        Creating directory "Debug\\CompilerIdCXX.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        Touching "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+      ClCompile:
+        C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc145.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
+        CMakeCXXCompilerId.cpp
+      Link:
+        C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\4.2.3\\CompilerIdCXX\\CompilerIdCXX.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_CXX_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
+      Done Building Project "C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\4.2.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:00.90
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+      
+      The CXX compiler identification is MSVC, found in:
+        C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/4.2.3/CompilerIdCXX/CompilerIdCXX.exe
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:65 (__resolve_tool_path)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:104 (__resolve_linker_path)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "lld-link"
+    candidate_directories:
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/"
+      - "C:/Program Files/PowerShell/7/"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/"
+      - "C:/Python311/Scripts/"
+      - "C:/Python311/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/MATLAB/R2022a/bin/"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/110/Tools/Binn/"
+      - "C:/Program Files (x86)/Microsoft SQL Server/120/Tools/Binn/"
+      - "C:/Program Files/Microsoft SQL Server/120/Tools/Binn/"
+      - "C:/Program Files/Microsoft SQL Server/120/DTS/Binn/"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Program Files/nodejs/"
+      - "C:/ProgramData/chocolatey/bin/"
+      - "C:/Program Files/Xilinx/bin/nt/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/csc.exe.config/"
+      - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/"
+      - "C:/Program Files (x86)/IncrediBuild/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/Docker/Docker/resources/bin/"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/aaraa/AppData/Roaming/npm/"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/aaraa/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/aaraa/.dotnet/tools/"
+      - "C:/Maven/apache-maven-3.9.12-bin/apache-maven-3.9.12/bin/"
+      - "C:/Program Files/Java/jdk-17/bin/"
+      - "C:/Users/aaraa/AppData/Local/Programs/Warp/bin/"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/"
+    searched_directories:
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/lld-link.com"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/lld-link.exe"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/lld-link"
+      - "C:/Program Files/PowerShell/7/lld-link.com"
+      - "C:/Program Files/PowerShell/7/lld-link.exe"
+      - "C:/Program Files/PowerShell/7/lld-link"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/lld-link.com"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/lld-link.exe"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/lld-link"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/lld-link.com"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/lld-link.exe"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/lld-link"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/lld-link.com"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/lld-link.exe"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/lld-link"
+      - "C:/Python311/Scripts/lld-link.com"
+      - "C:/Python311/Scripts/lld-link.exe"
+      - "C:/Python311/Scripts/lld-link"
+      - "C:/Python311/lld-link.com"
+      - "C:/Python311/lld-link.exe"
+      - "C:/Python311/lld-link"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/lld-link.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/lld-link.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/lld-link"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/lld-link.com"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/lld-link.exe"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/lld-link"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link"
+      - "C:/Windows/System32/lld-link.com"
+      - "C:/Windows/System32/lld-link.exe"
+      - "C:/Windows/System32/lld-link"
+      - "C:/Windows/lld-link.com"
+      - "C:/Windows/lld-link.exe"
+      - "C:/Windows/lld-link"
+      - "C:/Windows/System32/wbem/lld-link.com"
+      - "C:/Windows/System32/wbem/lld-link.exe"
+      - "C:/Windows/System32/wbem/lld-link"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link"
+      - "C:/Windows/System32/OpenSSH/lld-link.com"
+      - "C:/Windows/System32/OpenSSH/lld-link.exe"
+      - "C:/Windows/System32/OpenSSH/lld-link"
+      - "C:/Program Files/MATLAB/R2022a/bin/lld-link.com"
+      - "C:/Program Files/MATLAB/R2022a/bin/lld-link.exe"
+      - "C:/Program Files/MATLAB/R2022a/bin/lld-link"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/110/Tools/Binn/lld-link.com"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/110/Tools/Binn/lld-link.exe"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/110/Tools/Binn/lld-link"
+      - "C:/Program Files (x86)/Microsoft SQL Server/120/Tools/Binn/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft SQL Server/120/Tools/Binn/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft SQL Server/120/Tools/Binn/lld-link"
+      - "C:/Program Files/Microsoft SQL Server/120/Tools/Binn/lld-link.com"
+      - "C:/Program Files/Microsoft SQL Server/120/Tools/Binn/lld-link.exe"
+      - "C:/Program Files/Microsoft SQL Server/120/Tools/Binn/lld-link"
+      - "C:/Program Files/Microsoft SQL Server/120/DTS/Binn/lld-link.com"
+      - "C:/Program Files/Microsoft SQL Server/120/DTS/Binn/lld-link.exe"
+      - "C:/Program Files/Microsoft SQL Server/120/DTS/Binn/lld-link"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/lld-link.com"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/lld-link.exe"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/lld-link"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/lld-link.com"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/lld-link.exe"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/lld-link"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/lld-link.com"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/lld-link.exe"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/lld-link"
+      - "C:/Program Files/dotnet/lld-link.com"
+      - "C:/Program Files/dotnet/lld-link.exe"
+      - "C:/Program Files/dotnet/lld-link"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/lld-link.com"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/lld-link.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/lld-link"
+      - "C:/Program Files/nodejs/lld-link.com"
+      - "C:/Program Files/nodejs/lld-link.exe"
+      - "C:/Program Files/nodejs/lld-link"
+      - "C:/ProgramData/chocolatey/bin/lld-link.com"
+      - "C:/ProgramData/chocolatey/bin/lld-link.exe"
+      - "C:/ProgramData/chocolatey/bin/lld-link"
+      - "C:/Program Files/Xilinx/bin/nt/lld-link.com"
+      - "C:/Program Files/Xilinx/bin/nt/lld-link.exe"
+      - "C:/Program Files/Xilinx/bin/nt/lld-link"
+      - "C:/Program Files/Git/cmd/lld-link.com"
+      - "C:/Program Files/Git/cmd/lld-link.exe"
+      - "C:/Program Files/Git/cmd/lld-link"
+      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/csc.exe.config/lld-link.com"
+      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/csc.exe.config/lld-link.exe"
+      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/csc.exe.config/lld-link"
+      - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/lld-link.com"
+      - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/lld-link.exe"
+      - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/lld-link"
+      - "C:/Program Files (x86)/IncrediBuild/lld-link.com"
+      - "C:/Program Files (x86)/IncrediBuild/lld-link.exe"
+      - "C:/Program Files (x86)/IncrediBuild/lld-link"
+      - "C:/Program Files/CMake/bin/lld-link.com"
+      - "C:/Program Files/CMake/bin/lld-link.exe"
+      - "C:/Program Files/CMake/bin/lld-link"
+      - "C:/Program Files/Docker/Docker/resources/bin/lld-link.com"
+      - "C:/Program Files/Docker/Docker/resources/bin/lld-link.exe"
+      - "C:/Program Files/Docker/Docker/resources/bin/lld-link"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WindowsApps/lld-link.com"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WindowsApps/lld-link.exe"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WindowsApps/lld-link"
+      - "C:/Users/aaraa/AppData/Roaming/npm/lld-link.com"
+      - "C:/Users/aaraa/AppData/Roaming/npm/lld-link.exe"
+      - "C:/Users/aaraa/AppData/Roaming/npm/lld-link"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.com"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.exe"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/bin/lld-link"
+      - "C:/Users/aaraa/AppData/Local/GitHubDesktop/bin/lld-link.com"
+      - "C:/Users/aaraa/AppData/Local/GitHubDesktop/bin/lld-link.exe"
+      - "C:/Users/aaraa/AppData/Local/GitHubDesktop/bin/lld-link"
+      - "C:/Users/aaraa/.dotnet/tools/lld-link.com"
+      - "C:/Users/aaraa/.dotnet/tools/lld-link.exe"
+      - "C:/Users/aaraa/.dotnet/tools/lld-link"
+      - "C:/Maven/apache-maven-3.9.12-bin/apache-maven-3.9.12/bin/lld-link.com"
+      - "C:/Maven/apache-maven-3.9.12-bin/apache-maven-3.9.12/bin/lld-link.exe"
+      - "C:/Maven/apache-maven-3.9.12-bin/apache-maven-3.9.12/bin/lld-link"
+      - "C:/Program Files/Java/jdk-17/bin/lld-link.com"
+      - "C:/Program Files/Java/jdk-17/bin/lld-link.exe"
+      - "C:/Program Files/Java/jdk-17/bin/lld-link"
+      - "C:/Users/aaraa/AppData/Local/Programs/Warp/bin/lld-link.com"
+      - "C:/Users/aaraa/AppData/Local/Programs/Warp/bin/lld-link.exe"
+      - "C:/Users/aaraa/AppData/Local/Programs/Warp/bin/lld-link"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/lld-link.com"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/lld-link.exe"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/lld-link"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
+        - "c:\\Users\\aaraa\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\aaraa\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Programs\\Microsoft VS Code"
+        - "C:\\Python311\\Scripts\\"
+        - "C:\\Python311\\"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\MATLAB\\R2022a\\bin"
+        - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\110\\Tools\\Binn\\"
+        - "C:\\Program Files (x86)\\Microsoft SQL Server\\120\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\120\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\120\\DTS\\Binn\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Program Files\\Xilinx\\bin\\nt"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\csc.exe.config"
+        - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
+        - "C:\\Program Files (x86)\\IncrediBuild"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\PowerShell\\7\\"
+        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\aaraa\\AppData\\Roaming\\npm"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\aaraa\\.dotnet\\tools"
+        - "C:\\Maven\\apache-maven-3.9.12-bin\\apache-maven-3.9.12\\bin"
+        - "C:\\Program Files\\Java\\jdk-17\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Programs\\Warp\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineRCCompiler.cmake:40 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/Platform/Windows-MSVC.cmake:580 (enable_language)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/Platform/Windows-MSVC.cmake:553 (__windows_compiler_msvc_enable_rc)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/Platform/Windows-MSVC-C.cmake:5 (__windows_compiler_msvc)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCInformation.cmake:48 (include)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "program"
+    variable: "CMAKE_RC_COMPILER"
+    description: "RC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "rc"
+    candidate_directories:
+      - "C:/Program Files/PowerShell/7/"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/"
+      - "C:/Python311/Scripts/"
+      - "C:/Python311/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/MATLAB/R2022a/bin/"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/110/Tools/Binn/"
+      - "C:/Program Files (x86)/Microsoft SQL Server/120/Tools/Binn/"
+      - "C:/Program Files/Microsoft SQL Server/120/Tools/Binn/"
+      - "C:/Program Files/Microsoft SQL Server/120/DTS/Binn/"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Program Files/nodejs/"
+      - "C:/ProgramData/chocolatey/bin/"
+      - "C:/Program Files/Xilinx/bin/nt/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/csc.exe.config/"
+      - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/"
+      - "C:/Program Files (x86)/IncrediBuild/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/Docker/Docker/resources/bin/"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/aaraa/AppData/Roaming/npm/"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/aaraa/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/aaraa/.dotnet/tools/"
+      - "C:/Maven/apache-maven-3.9.12-bin/apache-maven-3.9.12/bin/"
+      - "C:/Program Files/Java/jdk-17/bin/"
+      - "C:/Users/aaraa/AppData/Local/Programs/Warp/bin/"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/"
+      - "C:/Program Files/bin/"
+      - "C:/Program Files/sbin/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/bin/"
+      - "C:/Program Files (x86)/sbin/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/CMake/sbin/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files (x86)/NeuralNetCpp/bin/"
+      - "C:/Program Files (x86)/NeuralNetCpp/sbin/"
+      - "C:/Program Files (x86)/NeuralNetCpp/"
+    searched_directories:
+      - "C:/Program Files/PowerShell/7/rc.com"
+      - "C:/Program Files/PowerShell/7/rc.exe"
+      - "C:/Program Files/PowerShell/7/rc"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/rc.com"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/rc.exe"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/rc"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/rc.com"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/rc.exe"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/rc"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/rc.com"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/rc.exe"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/rc"
+      - "C:/Python311/Scripts/rc.com"
+      - "C:/Python311/Scripts/rc.exe"
+      - "C:/Python311/Scripts/rc"
+      - "C:/Python311/rc.com"
+      - "C:/Python311/rc.exe"
+      - "C:/Python311/rc"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/rc.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/rc.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/rc"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/rc.com"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/rc.exe"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/rc"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/rc.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/rc.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/rc"
+      - "C:/Windows/System32/rc.com"
+      - "C:/Windows/System32/rc.exe"
+      - "C:/Windows/System32/rc"
+      - "C:/Windows/rc.com"
+      - "C:/Windows/rc.exe"
+      - "C:/Windows/rc"
+      - "C:/Windows/System32/wbem/rc.com"
+      - "C:/Windows/System32/wbem/rc.exe"
+      - "C:/Windows/System32/wbem/rc"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/rc.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/rc.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/rc"
+      - "C:/Windows/System32/OpenSSH/rc.com"
+      - "C:/Windows/System32/OpenSSH/rc.exe"
+      - "C:/Windows/System32/OpenSSH/rc"
+      - "C:/Program Files/MATLAB/R2022a/bin/rc.com"
+      - "C:/Program Files/MATLAB/R2022a/bin/rc.exe"
+      - "C:/Program Files/MATLAB/R2022a/bin/rc"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/110/Tools/Binn/rc.com"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/110/Tools/Binn/rc.exe"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/110/Tools/Binn/rc"
+      - "C:/Program Files (x86)/Microsoft SQL Server/120/Tools/Binn/rc.com"
+      - "C:/Program Files (x86)/Microsoft SQL Server/120/Tools/Binn/rc.exe"
+      - "C:/Program Files (x86)/Microsoft SQL Server/120/Tools/Binn/rc"
+      - "C:/Program Files/Microsoft SQL Server/120/Tools/Binn/rc.com"
+      - "C:/Program Files/Microsoft SQL Server/120/Tools/Binn/rc.exe"
+      - "C:/Program Files/Microsoft SQL Server/120/Tools/Binn/rc"
+      - "C:/Program Files/Microsoft SQL Server/120/DTS/Binn/rc.com"
+      - "C:/Program Files/Microsoft SQL Server/120/DTS/Binn/rc.exe"
+      - "C:/Program Files/Microsoft SQL Server/120/DTS/Binn/rc"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/rc.com"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/rc.exe"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/rc"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/rc.com"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/rc.exe"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/rc"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/rc.com"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/rc.exe"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/rc"
+      - "C:/Program Files/dotnet/rc.com"
+      - "C:/Program Files/dotnet/rc.exe"
+      - "C:/Program Files/dotnet/rc"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/rc.com"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/rc.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/rc"
+      - "C:/Program Files/nodejs/rc.com"
+      - "C:/Program Files/nodejs/rc.exe"
+      - "C:/Program Files/nodejs/rc"
+      - "C:/ProgramData/chocolatey/bin/rc.com"
+      - "C:/ProgramData/chocolatey/bin/rc.exe"
+      - "C:/ProgramData/chocolatey/bin/rc"
+      - "C:/Program Files/Xilinx/bin/nt/rc.com"
+      - "C:/Program Files/Xilinx/bin/nt/rc.exe"
+      - "C:/Program Files/Xilinx/bin/nt/rc"
+      - "C:/Program Files/Git/cmd/rc.com"
+      - "C:/Program Files/Git/cmd/rc.exe"
+      - "C:/Program Files/Git/cmd/rc"
+      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/csc.exe.config/rc.com"
+      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/csc.exe.config/rc.exe"
+      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/csc.exe.config/rc"
+      - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/rc.com"
+      - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/rc.exe"
+      - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/rc"
+      - "C:/Program Files (x86)/IncrediBuild/rc.com"
+      - "C:/Program Files (x86)/IncrediBuild/rc.exe"
+      - "C:/Program Files (x86)/IncrediBuild/rc"
+      - "C:/Program Files/CMake/bin/rc.com"
+      - "C:/Program Files/CMake/bin/rc.exe"
+      - "C:/Program Files/CMake/bin/rc"
+      - "C:/Program Files/Docker/Docker/resources/bin/rc.com"
+      - "C:/Program Files/Docker/Docker/resources/bin/rc.exe"
+      - "C:/Program Files/Docker/Docker/resources/bin/rc"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WindowsApps/rc.com"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WindowsApps/rc.exe"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WindowsApps/rc"
+      - "C:/Users/aaraa/AppData/Roaming/npm/rc.com"
+      - "C:/Users/aaraa/AppData/Roaming/npm/rc.exe"
+      - "C:/Users/aaraa/AppData/Roaming/npm/rc"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/bin/rc.com"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/bin/rc.exe"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/bin/rc"
+      - "C:/Users/aaraa/AppData/Local/GitHubDesktop/bin/rc.com"
+      - "C:/Users/aaraa/AppData/Local/GitHubDesktop/bin/rc.exe"
+      - "C:/Users/aaraa/AppData/Local/GitHubDesktop/bin/rc"
+      - "C:/Users/aaraa/.dotnet/tools/rc.com"
+      - "C:/Users/aaraa/.dotnet/tools/rc.exe"
+      - "C:/Users/aaraa/.dotnet/tools/rc"
+      - "C:/Maven/apache-maven-3.9.12-bin/apache-maven-3.9.12/bin/rc.com"
+      - "C:/Maven/apache-maven-3.9.12-bin/apache-maven-3.9.12/bin/rc.exe"
+      - "C:/Maven/apache-maven-3.9.12-bin/apache-maven-3.9.12/bin/rc"
+      - "C:/Program Files/Java/jdk-17/bin/rc.com"
+      - "C:/Program Files/Java/jdk-17/bin/rc.exe"
+      - "C:/Program Files/Java/jdk-17/bin/rc"
+      - "C:/Users/aaraa/AppData/Local/Programs/Warp/bin/rc.com"
+      - "C:/Users/aaraa/AppData/Local/Programs/Warp/bin/rc.exe"
+      - "C:/Users/aaraa/AppData/Local/Programs/Warp/bin/rc"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/rc.com"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/rc.exe"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/rc"
+      - "C:/Program Files/bin/rc.com"
+      - "C:/Program Files/bin/rc.exe"
+      - "C:/Program Files/bin/rc"
+      - "C:/Program Files/sbin/rc.com"
+      - "C:/Program Files/sbin/rc.exe"
+      - "C:/Program Files/sbin/rc"
+      - "C:/Program Files/rc.com"
+      - "C:/Program Files/rc.exe"
+      - "C:/Program Files/rc"
+      - "C:/Program Files (x86)/bin/rc.com"
+      - "C:/Program Files (x86)/bin/rc.exe"
+      - "C:/Program Files (x86)/bin/rc"
+      - "C:/Program Files (x86)/sbin/rc.com"
+      - "C:/Program Files (x86)/sbin/rc.exe"
+      - "C:/Program Files (x86)/sbin/rc"
+      - "C:/Program Files (x86)/rc.com"
+      - "C:/Program Files (x86)/rc.exe"
+      - "C:/Program Files (x86)/rc"
+      - "C:/Program Files/CMake/bin/rc.com"
+      - "C:/Program Files/CMake/bin/rc.exe"
+      - "C:/Program Files/CMake/bin/rc"
+      - "C:/Program Files/CMake/sbin/rc.com"
+      - "C:/Program Files/CMake/sbin/rc.exe"
+      - "C:/Program Files/CMake/sbin/rc"
+      - "C:/Program Files/CMake/rc.com"
+      - "C:/Program Files/CMake/rc.exe"
+      - "C:/Program Files/CMake/rc"
+      - "C:/Program Files (x86)/NeuralNetCpp/bin/rc.com"
+      - "C:/Program Files (x86)/NeuralNetCpp/bin/rc.exe"
+      - "C:/Program Files (x86)/NeuralNetCpp/bin/rc"
+      - "C:/Program Files (x86)/NeuralNetCpp/sbin/rc.com"
+      - "C:/Program Files (x86)/NeuralNetCpp/sbin/rc.exe"
+      - "C:/Program Files (x86)/NeuralNetCpp/sbin/rc"
+      - "C:/Program Files (x86)/NeuralNetCpp/rc.com"
+      - "C:/Program Files (x86)/NeuralNetCpp/rc.exe"
+      - "C:/Program Files (x86)/NeuralNetCpp/rc"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
+        - "c:\\Users\\aaraa\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\aaraa\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Programs\\Microsoft VS Code"
+        - "C:\\Python311\\Scripts\\"
+        - "C:\\Python311\\"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\MATLAB\\R2022a\\bin"
+        - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\110\\Tools\\Binn\\"
+        - "C:\\Program Files (x86)\\Microsoft SQL Server\\120\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\120\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\120\\DTS\\Binn\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Program Files\\Xilinx\\bin\\nt"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\csc.exe.config"
+        - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
+        - "C:\\Program Files (x86)\\IncrediBuild"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\PowerShell\\7\\"
+        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\aaraa\\AppData\\Roaming\\npm"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\aaraa\\.dotnet\\tools"
+        - "C:\\Maven\\apache-maven-3.9.12-bin\\apache-maven-3.9.12\\bin"
+        - "C:\\Program Files\\Java\\jdk-17\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Programs\\Warp\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/NeuralNetCpp"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files (x86)/NeuralNetCpp"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/CMakeScratch/TryCompile-7gt4nv"
+      binary: "C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/CMakeScratch/TryCompile-7gt4nv"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/CMakeScratch/TryCompile-7gt4nv'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_f155b.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
+        MSBuild version 18.3.0-release-26070-10+3972042b7 for .NET Framework
+        Build started 2026-04-02 8:58:19 PM.
+        
+        Project "C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-7gt4nv\\cmTC_f155b.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-7gt4nv\\Debug\\".
+          Creating directory "cmTC_f155b.dir\\Debug\\cmTC_f155b.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_f155b.dir\\Debug\\cmTC_f155b.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_f155b.dir\\Debug\\cmTC_f155b.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_f155b.dir\\Debug\\\\" /Fd"cmTC_f155b.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35724 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_f155b.dir\\Debug\\\\" /Fd"cmTC_f155b.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
+          CMakeCCompilerABI.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-7gt4nv\\Debug\\cmTC_f155b.exe" /INCREMENTAL /ILK:"cmTC_f155b.dir\\Debug\\cmTC_f155b.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/CMakeScratch/TryCompile-7gt4nv/Debug/cmTC_f155b.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/CMakeScratch/TryCompile-7gt4nv/Debug/cmTC_f155b.lib" /MACHINE:X64  /machine:x64 cmTC_f155b.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_f155b.vcxproj -> C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-7gt4nv\\Debug\\cmTC_f155b.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_f155b.dir\\Debug\\cmTC_f155b.tlog\\unsuccessfulbuild".
+          Touching "cmTC_f155b.dir\\Debug\\cmTC_f155b.tlog\\cmTC_f155b.lastbuildstate".
+        Done Building Project "C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-7gt4nv\\cmTC_f155b.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.87
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'C': C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/HostX64/x64/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Running the C compiler's linker: "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.50.35724.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/CMakeScratch/TryCompile-3wl1hl"
+      binary: "C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/CMakeScratch/TryCompile-3wl1hl"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
+      CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/CMakeScratch/TryCompile-3wl1hl'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_7c5dd.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
+        MSBuild version 18.3.0-release-26070-10+3972042b7 for .NET Framework
+        Build started 2026-04-02 8:58:21 PM.
+        
+        Project "C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-3wl1hl\\cmTC_7c5dd.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-3wl1hl\\Debug\\".
+          Creating directory "cmTC_7c5dd.dir\\Debug\\cmTC_7c5dd.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_7c5dd.dir\\Debug\\cmTC_7c5dd.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_7c5dd.dir\\Debug\\cmTC_7c5dd.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_7c5dd.dir\\Debug\\\\" /Fd"cmTC_7c5dd.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35724 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_7c5dd.dir\\Debug\\\\" /Fd"cmTC_7c5dd.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+          CMakeCXXCompilerABI.cpp
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-3wl1hl\\Debug\\cmTC_7c5dd.exe" /INCREMENTAL /ILK:"cmTC_7c5dd.dir\\Debug\\cmTC_7c5dd.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/CMakeScratch/TryCompile-3wl1hl/Debug/cmTC_7c5dd.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/CMakeScratch/TryCompile-3wl1hl/Debug/cmTC_7c5dd.lib" /MACHINE:X64  /machine:x64 cmTC_7c5dd.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_7c5dd.vcxproj -> C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-3wl1hl\\Debug\\cmTC_7c5dd.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_7c5dd.dir\\Debug\\cmTC_7c5dd.tlog\\unsuccessfulbuild".
+          Touching "cmTC_7c5dd.dir\\Debug\\cmTC_7c5dd.tlog\\cmTC_7c5dd.lastbuildstate".
+        Done Building Project "C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-3wl1hl\\cmTC_7c5dd.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.74
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'CXX': C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/HostX64/x64/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Running the CXX compiler's linker: "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.50.35724.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindOpenMP.cmake:333 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindOpenMP.cmake:640 (_OPENMP_GET_FLAGS)"
+      - "CMakeLists.txt:41 (find_package)"
+    description: "Detecting C OpenMP compiler info"
+    directories:
+      source: "C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/CMakeScratch/TryCompile-0p1xye"
+      binary: "C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/CMakeScratch/TryCompile-0p1xye"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_C_openmp"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/CMakeScratch/TryCompile-0p1xye'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_a28ca.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
+        MSBuild version 18.3.0-release-26070-10+3972042b7 for .NET Framework
+        Build started 2026-04-02 8:58:22 PM.
+        
+        Project "C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-0p1xye\\cmTC_a28ca.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-0p1xye\\Debug\\".
+          Creating directory "cmTC_a28ca.dir\\Debug\\cmTC_a28ca.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_a28ca.dir\\Debug\\cmTC_a28ca.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_a28ca.dir\\Debug\\cmTC_a28ca.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /openmp /Fo"cmTC_a28ca.dir\\Debug\\\\" /Fd"cmTC_a28ca.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-0p1xye\\OpenMPTryFlag.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35724 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /openmp /Fo"cmTC_a28ca.dir\\Debug\\\\" /Fd"cmTC_a28ca.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-0p1xye\\OpenMPTryFlag.c"
+          OpenMPTryFlag.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-0p1xye\\Debug\\cmTC_a28ca.exe" /INCREMENTAL /ILK:"cmTC_a28ca.dir\\Debug\\cmTC_a28ca.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/CMakeScratch/TryCompile-0p1xye/Debug/cmTC_a28ca.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/CMakeScratch/TryCompile-0p1xye/Debug/cmTC_a28ca.lib" /MACHINE:X64  /machine:x64 cmTC_a28ca.dir\\Debug\\OpenMPTryFlag.obj
+          cmTC_a28ca.vcxproj -> C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-0p1xye\\Debug\\cmTC_a28ca.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_a28ca.dir\\Debug\\cmTC_a28ca.tlog\\unsuccessfulbuild".
+          Touching "cmTC_a28ca.dir\\Debug\\cmTC_a28ca.tlog\\cmTC_a28ca.lastbuildstate".
+        Done Building Project "C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-0p1xye\\cmTC_a28ca.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.74
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindOpenMP.cmake:333 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindOpenMP.cmake:640 (_OPENMP_GET_FLAGS)"
+      - "CMakeLists.txt:41 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/CMakeScratch/TryCompile-v6e89u"
+      binary: "C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/CMakeScratch/TryCompile-v6e89u"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
+      CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_openmp"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/CMakeScratch/TryCompile-v6e89u'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_f428b.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
+        MSBuild version 18.3.0-release-26070-10+3972042b7 for .NET Framework
+        Build started 2026-04-02 8:58:23 PM.
+        
+        Project "C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-v6e89u\\cmTC_f428b.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-v6e89u\\Debug\\".
+          Creating directory "cmTC_f428b.dir\\Debug\\cmTC_f428b.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_f428b.dir\\Debug\\cmTC_f428b.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_f428b.dir\\Debug\\cmTC_f428b.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /openmp /std:c++17 /Fo"cmTC_f428b.dir\\Debug\\\\" /Fd"cmTC_f428b.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-v6e89u\\OpenMPTryFlag.cpp"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35724 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /openmp /std:c++17 /Fo"cmTC_f428b.dir\\Debug\\\\" /Fd"cmTC_f428b.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-v6e89u\\OpenMPTryFlag.cpp"
+          OpenMPTryFlag.cpp
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-v6e89u\\Debug\\cmTC_f428b.exe" /INCREMENTAL /ILK:"cmTC_f428b.dir\\Debug\\cmTC_f428b.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/CMakeScratch/TryCompile-v6e89u/Debug/cmTC_f428b.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/CMakeScratch/TryCompile-v6e89u/Debug/cmTC_f428b.lib" /MACHINE:X64  /machine:x64 cmTC_f428b.dir\\Debug\\OpenMPTryFlag.obj
+          cmTC_f428b.vcxproj -> C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-v6e89u\\Debug\\cmTC_f428b.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_f428b.dir\\Debug\\cmTC_f428b.tlog\\unsuccessfulbuild".
+          Touching "cmTC_f428b.dir\\Debug\\cmTC_f428b.tlog\\cmTC_f428b.lastbuildstate".
+        Done Building Project "C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-v6e89u\\cmTC_f428b.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.76
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindOpenMP.cmake:574 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindOpenMP.cmake:714 (_OPENMP_GET_SPEC_DATE)"
+      - "CMakeLists.txt:41 (find_package)"
+    description: "Detecting C OpenMP version"
+    directories:
+      source: "C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/CMakeScratch/TryCompile-p5bzzm"
+      binary: "C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/CMakeScratch/TryCompile-p5bzzm"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "OpenMP_SPECTEST_C_"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/CMakeScratch/TryCompile-p5bzzm'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_ffdb2.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
+        MSBuild version 18.3.0-release-26070-10+3972042b7 for .NET Framework
+        Build started 2026-04-02 8:58:24 PM.
+        
+        Project "C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-p5bzzm\\cmTC_ffdb2.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-p5bzzm\\Debug\\".
+          Creating directory "cmTC_ffdb2.dir\\Debug\\cmTC_ffdb2.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_ffdb2.dir\\Debug\\cmTC_ffdb2.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_ffdb2.dir\\Debug\\cmTC_ffdb2.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /openmp /Fo"cmTC_ffdb2.dir\\Debug\\\\" /Fd"cmTC_ffdb2.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-p5bzzm\\OpenMPCheckVersion.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35724 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /openmp /Fo"cmTC_ffdb2.dir\\Debug\\\\" /Fd"cmTC_ffdb2.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-p5bzzm\\OpenMPCheckVersion.c"
+          OpenMPCheckVersion.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-p5bzzm\\Debug\\cmTC_ffdb2.exe" /INCREMENTAL /ILK:"cmTC_ffdb2.dir\\Debug\\cmTC_ffdb2.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/CMakeScratch/TryCompile-p5bzzm/Debug/cmTC_ffdb2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/CMakeScratch/TryCompile-p5bzzm/Debug/cmTC_ffdb2.lib" /MACHINE:X64  /machine:x64 cmTC_ffdb2.dir\\Debug\\OpenMPCheckVersion.obj
+          cmTC_ffdb2.vcxproj -> C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-p5bzzm\\Debug\\cmTC_ffdb2.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_ffdb2.dir\\Debug\\cmTC_ffdb2.tlog\\unsuccessfulbuild".
+          Touching "cmTC_ffdb2.dir\\Debug\\cmTC_ffdb2.tlog\\cmTC_ffdb2.lastbuildstate".
+        Done Building Project "C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-p5bzzm\\cmTC_ffdb2.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.74
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindOpenMP.cmake:574 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindOpenMP.cmake:714 (_OPENMP_GET_SPEC_DATE)"
+      - "CMakeLists.txt:41 (find_package)"
+    description: "Detecting CXX OpenMP version"
+    directories:
+      source: "C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/CMakeScratch/TryCompile-oic6uh"
+      binary: "C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/CMakeScratch/TryCompile-oic6uh"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
+      CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "OpenMP_SPECTEST_CXX_"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/CMakeScratch/TryCompile-oic6uh'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_b6938.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
+        MSBuild version 18.3.0-release-26070-10+3972042b7 for .NET Framework
+        Build started 2026-04-02 8:58:26 PM.
+        
+        Project "C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-oic6uh\\cmTC_b6938.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-oic6uh\\Debug\\".
+          Creating directory "cmTC_b6938.dir\\Debug\\cmTC_b6938.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_b6938.dir\\Debug\\cmTC_b6938.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_b6938.dir\\Debug\\cmTC_b6938.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /openmp /std:c++17 /Fo"cmTC_b6938.dir\\Debug\\\\" /Fd"cmTC_b6938.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-oic6uh\\OpenMPCheckVersion.cpp"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35724 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /openmp /std:c++17 /Fo"cmTC_b6938.dir\\Debug\\\\" /Fd"cmTC_b6938.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-oic6uh\\OpenMPCheckVersion.cpp"
+          OpenMPCheckVersion.cpp
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-oic6uh\\Debug\\cmTC_b6938.exe" /INCREMENTAL /ILK:"cmTC_b6938.dir\\Debug\\cmTC_b6938.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/CMakeScratch/TryCompile-oic6uh/Debug/cmTC_b6938.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs/CMakeFiles/CMakeScratch/TryCompile-oic6uh/Debug/cmTC_b6938.lib" /MACHINE:X64  /machine:x64 cmTC_b6938.dir\\Debug\\OpenMPCheckVersion.obj
+          cmTC_b6938.vcxproj -> C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-oic6uh\\Debug\\cmTC_b6938.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_b6938.dir\\Debug\\cmTC_b6938.tlog\\unsuccessfulbuild".
+          Touching "cmTC_b6938.dir\\Debug\\cmTC_b6938.tlog\\cmTC_b6938.lastbuildstate".
+        Done Building Project "C:\\Users\\aaraa\\neural_network_library-1\\neural_network_library\\build_docs\\CMakeFiles\\CMakeScratch\\TryCompile-oic6uh\\cmTC_b6938.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.79
+        
+      exitCode: 0
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindDoxygen.cmake:858 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindDoxygen.cmake:959 (_Doxygen_find_dot)"
+      - "CMakeLists.txt:44 (find_package)"
+    mode: "program"
+    variable: "DOXYGEN_DOT_EXECUTABLE"
+    description: "Dot tool for use with Doxygen"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "dot"
+    candidate_directories:
+      - "C:/Program Files/PowerShell/7/"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/"
+      - "C:/Python311/Scripts/"
+      - "C:/Python311/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/MATLAB/R2022a/bin/"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/110/Tools/Binn/"
+      - "C:/Program Files (x86)/Microsoft SQL Server/120/Tools/Binn/"
+      - "C:/Program Files/Microsoft SQL Server/120/Tools/Binn/"
+      - "C:/Program Files/Microsoft SQL Server/120/DTS/Binn/"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
+      - "C:/Program Files/nodejs/"
+      - "C:/ProgramData/chocolatey/bin/"
+      - "C:/Program Files/Xilinx/bin/nt/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/csc.exe.config/"
+      - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/"
+      - "C:/Program Files (x86)/IncrediBuild/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/Docker/Docker/resources/bin/"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/aaraa/AppData/Roaming/npm/"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/aaraa/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/aaraa/.dotnet/tools/"
+      - "C:/Maven/apache-maven-3.9.12-bin/apache-maven-3.9.12/bin/"
+      - "C:/Program Files/Java/jdk-17/bin/"
+      - "C:/Users/aaraa/AppData/Local/Programs/Warp/bin/"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/"
+      - "C:/Program Files/bin/"
+      - "C:/Program Files/sbin/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/bin/"
+      - "C:/Program Files (x86)/sbin/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/CMake/sbin/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files (x86)/NeuralNetCpp/bin/"
+      - "C:/Program Files (x86)/NeuralNetCpp/sbin/"
+      - "C:/Program Files (x86)/NeuralNetCpp/"
+      - "C:/Program Files/Graphviz/bin/"
+      - "C:/Program Files/ATT/Graphviz/bin/"
+      - "/REGISTRY-NOTFOUND/bin/"
+      - "/Applications/Graphviz.app/Contents/MacOS/"
+      - "/Applications/Utilities/Graphviz.app/Contents/MacOS/"
+      - "/Applications/Doxygen.app/Contents/Resources/"
+      - "/Applications/Doxygen.app/Contents/MacOS/"
+      - "/Applications/Utilities/Doxygen.app/Contents/Resources/"
+      - "/Applications/Utilities/Doxygen.app/Contents/MacOS/"
+    searched_directories:
+      - "C:/Program Files/PowerShell/7/dot.com"
+      - "C:/Program Files/PowerShell/7/dot.exe"
+      - "C:/Program Files/PowerShell/7/dot"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/dot.com"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/dot.exe"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/dot"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/dot.com"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/dot.exe"
+      - "C:/Users/aaraa/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/dot"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/dot.com"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/dot.exe"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/dot"
+      - "C:/Python311/Scripts/dot.com"
+      - "C:/Python311/Scripts/dot.exe"
+      - "C:/Python311/Scripts/dot"
+      - "C:/Python311/dot.com"
+      - "C:/Python311/dot.exe"
+      - "C:/Python311/dot"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/dot.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/dot.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/dot"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/dot.com"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/dot.exe"
+      - "C:/Program Files/Microsoft/jdk-11.0.16.101-hotspot/bin/dot"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/dot.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/dot.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/dot"
+      - "C:/Windows/System32/dot.com"
+      - "C:/Windows/System32/dot.exe"
+      - "C:/Windows/System32/dot"
+      - "C:/Windows/dot.com"
+      - "C:/Windows/dot.exe"
+      - "C:/Windows/dot"
+      - "C:/Windows/System32/wbem/dot.com"
+      - "C:/Windows/System32/wbem/dot.exe"
+      - "C:/Windows/System32/wbem/dot"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/dot.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/dot.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/dot"
+      - "C:/Windows/System32/OpenSSH/dot.com"
+      - "C:/Windows/System32/OpenSSH/dot.exe"
+      - "C:/Windows/System32/OpenSSH/dot"
+      - "C:/Program Files/MATLAB/R2022a/bin/dot.com"
+      - "C:/Program Files/MATLAB/R2022a/bin/dot.exe"
+      - "C:/Program Files/MATLAB/R2022a/bin/dot"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/110/Tools/Binn/dot.com"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/110/Tools/Binn/dot.exe"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/110/Tools/Binn/dot"
+      - "C:/Program Files (x86)/Microsoft SQL Server/120/Tools/Binn/dot.com"
+      - "C:/Program Files (x86)/Microsoft SQL Server/120/Tools/Binn/dot.exe"
+      - "C:/Program Files (x86)/Microsoft SQL Server/120/Tools/Binn/dot"
+      - "C:/Program Files/Microsoft SQL Server/120/Tools/Binn/dot.com"
+      - "C:/Program Files/Microsoft SQL Server/120/Tools/Binn/dot.exe"
+      - "C:/Program Files/Microsoft SQL Server/120/Tools/Binn/dot"
+      - "C:/Program Files/Microsoft SQL Server/120/DTS/Binn/dot.com"
+      - "C:/Program Files/Microsoft SQL Server/120/DTS/Binn/dot.exe"
+      - "C:/Program Files/Microsoft SQL Server/120/DTS/Binn/dot"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/dot.com"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/dot.exe"
+      - "C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/dot"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/dot.com"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/dot.exe"
+      - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/dot"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/dot.com"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/dot.exe"
+      - "C:/Program Files/Microsoft SQL Server/150/Tools/Binn/dot"
+      - "C:/Program Files/dotnet/dot.com"
+      - "C:/Program Files/dotnet/dot.exe"
+      - "C:/Program Files/dotnet/dot"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/dot.com"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/dot.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/dot"
+      - "C:/Program Files/nodejs/dot.com"
+      - "C:/Program Files/nodejs/dot.exe"
+      - "C:/Program Files/nodejs/dot"
+      - "C:/ProgramData/chocolatey/bin/dot.com"
+      - "C:/ProgramData/chocolatey/bin/dot.exe"
+      - "C:/ProgramData/chocolatey/bin/dot"
+      - "C:/Program Files/Xilinx/bin/nt/dot.com"
+      - "C:/Program Files/Xilinx/bin/nt/dot.exe"
+      - "C:/Program Files/Xilinx/bin/nt/dot"
+      - "C:/Program Files/Git/cmd/dot.com"
+      - "C:/Program Files/Git/cmd/dot.exe"
+      - "C:/Program Files/Git/cmd/dot"
+      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/csc.exe.config/dot.com"
+      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/csc.exe.config/dot.exe"
+      - "C:/Windows/Microsoft.NET/Framework/v4.0.30319/csc.exe.config/dot"
+      - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/dot.com"
+      - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/dot.exe"
+      - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/dot"
+      - "C:/Program Files (x86)/IncrediBuild/dot.com"
+      - "C:/Program Files (x86)/IncrediBuild/dot.exe"
+      - "C:/Program Files (x86)/IncrediBuild/dot"
+      - "C:/Program Files/CMake/bin/dot.com"
+      - "C:/Program Files/CMake/bin/dot.exe"
+      - "C:/Program Files/CMake/bin/dot"
+      - "C:/Program Files/Docker/Docker/resources/bin/dot.com"
+      - "C:/Program Files/Docker/Docker/resources/bin/dot.exe"
+      - "C:/Program Files/Docker/Docker/resources/bin/dot"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WindowsApps/dot.com"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WindowsApps/dot.exe"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WindowsApps/dot"
+      - "C:/Users/aaraa/AppData/Roaming/npm/dot.com"
+      - "C:/Users/aaraa/AppData/Roaming/npm/dot.exe"
+      - "C:/Users/aaraa/AppData/Roaming/npm/dot"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/bin/dot.com"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/bin/dot.exe"
+      - "C:/Users/aaraa/AppData/Local/Programs/Microsoft VS Code/bin/dot"
+      - "C:/Users/aaraa/AppData/Local/GitHubDesktop/bin/dot.com"
+      - "C:/Users/aaraa/AppData/Local/GitHubDesktop/bin/dot.exe"
+      - "C:/Users/aaraa/AppData/Local/GitHubDesktop/bin/dot"
+      - "C:/Users/aaraa/.dotnet/tools/dot.com"
+      - "C:/Users/aaraa/.dotnet/tools/dot.exe"
+      - "C:/Users/aaraa/.dotnet/tools/dot"
+      - "C:/Maven/apache-maven-3.9.12-bin/apache-maven-3.9.12/bin/dot.com"
+      - "C:/Maven/apache-maven-3.9.12-bin/apache-maven-3.9.12/bin/dot.exe"
+      - "C:/Maven/apache-maven-3.9.12-bin/apache-maven-3.9.12/bin/dot"
+      - "C:/Program Files/Java/jdk-17/bin/dot.com"
+      - "C:/Program Files/Java/jdk-17/bin/dot.exe"
+      - "C:/Program Files/Java/jdk-17/bin/dot"
+      - "C:/Users/aaraa/AppData/Local/Programs/Warp/bin/dot.com"
+      - "C:/Users/aaraa/AppData/Local/Programs/Warp/bin/dot.exe"
+      - "C:/Users/aaraa/AppData/Local/Programs/Warp/bin/dot"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/dot.com"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/dot.exe"
+      - "C:/Users/aaraa/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/dot"
+      - "C:/Program Files/bin/dot.com"
+      - "C:/Program Files/bin/dot.exe"
+      - "C:/Program Files/bin/dot"
+      - "C:/Program Files/sbin/dot.com"
+      - "C:/Program Files/sbin/dot.exe"
+      - "C:/Program Files/sbin/dot"
+      - "C:/Program Files/dot.com"
+      - "C:/Program Files/dot.exe"
+      - "C:/Program Files/dot"
+      - "C:/Program Files (x86)/bin/dot.com"
+      - "C:/Program Files (x86)/bin/dot.exe"
+      - "C:/Program Files (x86)/bin/dot"
+      - "C:/Program Files (x86)/sbin/dot.com"
+      - "C:/Program Files (x86)/sbin/dot.exe"
+      - "C:/Program Files (x86)/sbin/dot"
+      - "C:/Program Files (x86)/dot.com"
+      - "C:/Program Files (x86)/dot.exe"
+      - "C:/Program Files (x86)/dot"
+      - "C:/Program Files/CMake/bin/dot.com"
+      - "C:/Program Files/CMake/bin/dot.exe"
+      - "C:/Program Files/CMake/bin/dot"
+      - "C:/Program Files/CMake/sbin/dot.com"
+      - "C:/Program Files/CMake/sbin/dot.exe"
+      - "C:/Program Files/CMake/sbin/dot"
+      - "C:/Program Files/CMake/dot.com"
+      - "C:/Program Files/CMake/dot.exe"
+      - "C:/Program Files/CMake/dot"
+      - "C:/Program Files (x86)/NeuralNetCpp/bin/dot.com"
+      - "C:/Program Files (x86)/NeuralNetCpp/bin/dot.exe"
+      - "C:/Program Files (x86)/NeuralNetCpp/bin/dot"
+      - "C:/Program Files (x86)/NeuralNetCpp/sbin/dot.com"
+      - "C:/Program Files (x86)/NeuralNetCpp/sbin/dot.exe"
+      - "C:/Program Files (x86)/NeuralNetCpp/sbin/dot"
+      - "C:/Program Files (x86)/NeuralNetCpp/dot.com"
+      - "C:/Program Files (x86)/NeuralNetCpp/dot.exe"
+      - "C:/Program Files (x86)/NeuralNetCpp/dot"
+      - "C:/Program Files/Graphviz/bin/dot.com"
+    found: "C:/Program Files/Graphviz/bin/dot.exe"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\PowerShell\\7"
+        - "c:\\Users\\aaraa\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\aaraa\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Programs\\Microsoft VS Code"
+        - "C:\\Python311\\Scripts\\"
+        - "C:\\Python311\\"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\MATLAB\\R2022a\\bin"
+        - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\110\\Tools\\Binn\\"
+        - "C:\\Program Files (x86)\\Microsoft SQL Server\\120\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\120\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\120\\DTS\\Binn\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\ProgramData\\chocolatey\\bin"
+        - "C:\\Program Files\\Xilinx\\bin\\nt"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\csc.exe.config"
+        - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
+        - "C:\\Program Files (x86)\\IncrediBuild"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\PowerShell\\7\\"
+        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\aaraa\\AppData\\Roaming\\npm"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\aaraa\\.dotnet\\tools"
+        - "C:\\Maven\\apache-maven-3.9.12-bin\\apache-maven-3.9.12\\bin"
+        - "C:\\Program Files\\Java\\jdk-17\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Programs\\Warp\\bin"
+        - "C:\\Users\\aaraa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/NeuralNetCpp"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files (x86)/NeuralNetCpp"
+...

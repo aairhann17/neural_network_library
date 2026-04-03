@@ -12,22 +12,50 @@ namespace nn {
 /// Stateless activation helpers used by module wrappers and direct tensor code.
 namespace activations {
 
-/// ReLU (Rectified Linear Unit): $f(x) = \max(0, x)$.
+/**
+ * @brief Applies ReLU activation, f(x) = max(0, x).
+ * @param input Input tensor.
+ * @return Tensor with ReLU applied element-wise.
+ */
 Tensor relu(const Tensor& input);
 
-/// Sigmoid: $f(x) = \frac{1}{1 + e^{-x}}$.
+/**
+ * @brief Applies sigmoid activation, f(x) = 1 / (1 + exp(-x)).
+ * @param input Input tensor.
+ * @return Tensor with sigmoid applied element-wise.
+ */
 Tensor sigmoid(const Tensor& input);
 
-/// Hyperbolic tangent: $f(x) = \tanh(x)$.
+/**
+ * @brief Applies hyperbolic tangent activation.
+ * @param input Input tensor.
+ * @return Tensor with tanh applied element-wise.
+ */
 Tensor tanh(const Tensor& input);
 
-/// Softmax along the requested axis with numerical stabilization.
+/**
+ * @brief Applies numerically stable softmax normalization.
+ * @param input Input tensor, currently expected to be 2D.
+ * @param axis Axis to normalize along, currently row-wise behavior is implemented.
+ * @return Tensor containing normalized probabilities.
+ * @throws std::invalid_argument If input is not 2D.
+ */
 Tensor softmax(const Tensor& input, int axis = -1);
 
-/// Leaky ReLU: $f(x) = x$ for positive inputs and $\alpha x$ otherwise.
+/**
+ * @brief Applies leaky ReLU activation.
+ * @param input Input tensor.
+ * @param alpha Negative-slope coefficient.
+ * @return Tensor with leaky ReLU applied element-wise.
+ */
 Tensor leaky_relu(const Tensor& input, double alpha = 0.01);
 
-/// ELU: $f(x) = x$ for positive inputs and $\alpha (e^x - 1)$ otherwise.
+/**
+ * @brief Applies ELU activation.
+ * @param input Input tensor.
+ * @param alpha ELU scaling coefficient for negative branch.
+ * @return Tensor with ELU applied element-wise.
+ */
 Tensor elu(const Tensor& input, double alpha = 1.0);
 
 } // namespace activations
