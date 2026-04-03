@@ -6,7 +6,7 @@ ALLOW_UNICODE_NAMES    = NO
 OUTPUT_LANGUAGE        = English
 USE_MDFILE_AS_MAINPAGE = "C:/Users/aaraa/neural_network_library-1/neural_network_library/../README.md"
 
-INPUT                  = C:/Users/aaraa/neural_network_library-1/neural_network_library/include C:/Users/aaraa/neural_network_library-1/neural_network_library/src C:/Users/aaraa/neural_network_library-1/neural_network_library/examples
+INPUT                  = C:/Users/aaraa/neural_network_library-1/neural_network_library/include C:/Users/aaraa/neural_network_library-1/neural_network_library/src C:/Users/aaraa/neural_network_library-1/neural_network_library/examples C:/Users/aaraa/neural_network_library-1/neural_network_library/../README.md
 FILE_PATTERNS          = *.hpp *.cpp *.md
 RECURSIVE              = YES
 EXCLUDE                = "C:/Users/aaraa/neural_network_library-1/neural_network_library/build" "C:/Users/aaraa/neural_network_library-1/neural_network_library/build_comment_check" "C:/Users/aaraa/neural_network_library-1/neural_network_library/build_docs"

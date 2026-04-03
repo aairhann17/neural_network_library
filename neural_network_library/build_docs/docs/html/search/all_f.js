@@ -16,5 +16,6 @@ var searchData=
   ['slice_13',['slice',['../classnn_1_1_tensor.html#af2f8b225f78bf5c74473e02b1dfc5269',1,'nn::Tensor']]],
   ['softmax_14',['softmax',['../namespacenn_1_1activations.html#aacca2c3d15692c5b8562f8e347133b1d',1,'nn::activations']]],
   ['step_15',['step',['../classnn_1_1_optimizer.html#a1250abad23c650987618729eddd2e3a8',1,'nn::Optimizer::step()'],['../classnn_1_1_s_g_d.html#a6bcdd5dedcc687df269eaa850c65fd72',1,'nn::SGD::step()'],['../classnn_1_1_adam.html#aab214fbdf2e1130b6be4cb3d10964859',1,'nn::Adam::step()']]],
-  ['sum_16',['sum',['../classnn_1_1_tensor.html#aafcdd27ee776cdf49eb6d1a753cdc67a',1,'nn::Tensor::sum() const'],['../classnn_1_1_tensor.html#ae2d48e470500d798dde662d73a68b41d',1,'nn::Tensor::sum(int axis) const']]]
+  ['structure_16',['Project Structure',['../index.html#autotoc_md2',1,'']]],
+  ['sum_17',['sum',['../classnn_1_1_tensor.html#aafcdd27ee776cdf49eb6d1a753cdc67a',1,'nn::Tensor::sum() const'],['../classnn_1_1_tensor.html#ae2d48e470500d798dde662d73a68b41d',1,'nn::Tensor::sum(int axis) const']]]
 ];

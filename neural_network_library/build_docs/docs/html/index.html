@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>NeuralNetCpp: Main Page</title>
+<title>NeuralNetCpp: Neural Network Library in C++</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
 <script type="text/javascript" src="jquery.js"></script>
@@ -101,10 +101,277 @@ $(function() {
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">NeuralNetCpp Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">Neural Network Library in C++ </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md__c_1_2_users_2aaraa_2neural__network__library-1_2_r_e_a_d_m_e"></a></p>
+<p>A modern C++ neural network library with automatic differentiation support, built from scratch.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
+Features</h1>
+<ul>
+<li><b>Tensor Operations</b>: Multi-dimensional array support with various operations</li>
+<li><b>Automatic Differentiation</b>: Gradient computation for backpropagation</li>
+<li><b>Neural Network Layers</b>:<ul>
+<li>Linear (Fully Connected) Layer</li>
+<li>Activation Functions (ReLU, Sigmoid, Tanh, Leaky ReLU, ELU)</li>
+<li>Dropout</li>
+</ul>
+</li>
+<li><b>Loss Functions</b>:<ul>
+<li>Mean Squared Error (MSE)</li>
+<li>Binary Cross Entropy</li>
+<li>Cross Entropy Loss</li>
+<li>Mean Absolute Error (MAE)</li>
+</ul>
+</li>
+<li><b>Optimizers</b>:<ul>
+<li>Stochastic Gradient Descent (SGD) with momentum</li>
+<li>Adam Optimizer</li>
+</ul>
+</li>
+<li><b>Sequential Model</b>: Easy model construction</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
+Project Structure</h1>
+<div class="fragment"><div class="line">neural_network_library/</div>
+<div class="line">├── include/              # Header files</div>
+<div class="line">│   ├── tensor.hpp</div>
+<div class="line">│   ├── module.hpp</div>
+<div class="line">│   ├── sequential.hpp</div>
+<div class="line">│   ├── activations.hpp</div>
+<div class="line">│   ├── losses.hpp</div>
+<div class="line">│   ├── optimizer.hpp</div>
+<div class="line">│   └── neural_network.hpp</div>
+<div class="line">├── src/                  # Implementation files</div>
+<div class="line">│   ├── tensor.cpp</div>
+<div class="line">│   ├── module.cpp</div>
+<div class="line">│   ├── sequential.cpp</div>
+<div class="line">│   ├── activations.cpp</div>
+<div class="line">│   ├── losses.cpp</div>
+<div class="line">│   └── optimizer.cpp</div>
+<div class="line">├── examples/             # Example programs</div>
+<div class="line">│   ├── xor_example.cpp</div>
+<div class="line">│   └── regression_example.cpp</div>
+<div class="line">├── build/                # Build directory</div>
+<div class="line">└── CMakeLists.txt</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
+Building the Project</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+Prerequisites</h2>
+<ul>
+<li>CMake 3.15 or higher</li>
+<li>C++17 compatible compiler (GCC, Clang, MSVC)</li>
+<li>OpenMP (optional, for parallelization)</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+Build Instructions</h2>
+<div class="fragment"><div class="line"># Create and navigate to build directory</div>
+<div class="line">mkdir -p build</div>
+<div class="line">cd build</div>
+<div class="line"> </div>
+<div class="line"># Configure with CMake</div>
+<div class="line">cmake ..</div>
+<div class="line"> </div>
+<div class="line"># Build the project</div>
+<div class="line">cmake --build .</div>
+<div class="line"> </div>
+<div class="line"># On Windows with MSVC, you might use:</div>
+<div class="line">cmake --build . --config Release</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+Generating API Documentation</h1>
+<p>The project now includes an optional Doxygen-based documentation target.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
+Prerequisite</h2>
+<ul>
+<li>Install Doxygen and ensure it is available on your PATH.</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+Generate docs locally</h2>
+<div class="fragment"><div class="line"># Configure a dedicated docs build</div>
+<div class="line">cmake -S neural_network_library -B neural_network_library/build_docs -DBUILD_DOCS=ON</div>
+<div class="line"> </div>
+<div class="line"># Generate the HTML documentation</div>
+<div class="line">cmake --build neural_network_library/build_docs --target docs --config Release</div>
+</div><!-- fragment --><p>The generated HTML entry point will be written to:</p>
+<div class="fragment"><div class="line">neural_network_library/build_docs/docs/html/index.html</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
+CI workflow</h2>
+<p>A GitHub Actions workflow is included at <span class="tt">.github/workflows/docs.yml</span>. It builds the API documentation on pushes and pull requests and uploads the generated site as a workflow artifact.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
+Usage Examples</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
+Basic Tensor Operations</h2>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="neural__network_8hpp.html">neural_network.hpp</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenn.html">nn</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="regression__example_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line">    <span class="comment">// Create tensors</span></div>
+<div class="line">    <a class="code hl_class" href="classnn_1_1_tensor.html">Tensor</a> a = <a class="code hl_function" href="classnn_1_1_tensor.html#adb383000686ce0e2556c71cdc62ad994">Tensor::ones</a>({2, 3});</div>
+<div class="line">    <a class="code hl_class" href="classnn_1_1_tensor.html">Tensor</a> b = <a class="code hl_function" href="classnn_1_1_tensor.html#a753024f6d5fdbcb93b2a54602542e218">Tensor::randn</a>({2, 3});</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Basic operations</span></div>
+<div class="line">    <a class="code hl_class" href="classnn_1_1_tensor.html">Tensor</a> c = a + b;</div>
+<div class="line">    <a class="code hl_class" href="classnn_1_1_tensor.html">Tensor</a> d = a * b;  <span class="comment">// Element-wise multiplication</span></div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Matrix multiplication</span></div>
+<div class="line">    <a class="code hl_class" href="classnn_1_1_tensor.html">Tensor</a> m1({1.0, 2.0, 3.0, 4.0}, {2, 2});</div>
+<div class="line">    <a class="code hl_class" href="classnn_1_1_tensor.html">Tensor</a> m2({5.0, 6.0, 7.0, 8.0}, {2, 2});</div>
+<div class="line">    <a class="code hl_class" href="classnn_1_1_tensor.html">Tensor</a> result = m1.<a class="code hl_function" href="classnn_1_1_tensor.html#af1a12f55d4ae9fc5e5478f8ec8669f47">matmul</a>(m2);</div>
+<div class="line">    </div>
+<div class="line">    result.<a class="code hl_function" href="classnn_1_1_tensor.html#af76152df2635ae32c4fccdd2f8002a27">print</a>();</div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="aclassnn_1_1_tensor_html"><div class="ttname"><a href="classnn_1_1_tensor.html">nn::Tensor</a></div><div class="ttdoc">Dense n-dimensional tensor with optional gradient storage.</div><div class="ttdef"><b>Definition</b> <a href="tensor_8hpp_source.html#l00023">tensor.hpp:23</a></div></div>
+<div class="ttc" id="aclassnn_1_1_tensor_html_a753024f6d5fdbcb93b2a54602542e218"><div class="ttname"><a href="classnn_1_1_tensor.html#a753024f6d5fdbcb93b2a54602542e218">nn::Tensor::randn</a></div><div class="ttdeci">static Tensor randn(const shape_type &amp;shape, bool requires_grad=false)</div><div class="ttdoc">Creates tensor sampled from standard normal distribution.</div><div class="ttdef"><b>Definition</b> <a href="tensor_8cpp_source.html#l00881">tensor.cpp:881</a></div></div>
+<div class="ttc" id="aclassnn_1_1_tensor_html_adb383000686ce0e2556c71cdc62ad994"><div class="ttname"><a href="classnn_1_1_tensor.html#adb383000686ce0e2556c71cdc62ad994">nn::Tensor::ones</a></div><div class="ttdeci">static Tensor ones(const shape_type &amp;shape, bool requires_grad=false)</div><div class="ttdoc">Creates one-filled tensor.</div><div class="ttdef"><b>Definition</b> <a href="tensor_8cpp_source.html#l00874">tensor.cpp:874</a></div></div>
+<div class="ttc" id="aclassnn_1_1_tensor_html_af1a12f55d4ae9fc5e5478f8ec8669f47"><div class="ttname"><a href="classnn_1_1_tensor.html#af1a12f55d4ae9fc5e5478f8ec8669f47">nn::Tensor::matmul</a></div><div class="ttdeci">Tensor matmul(const Tensor &amp;other) const</div><div class="ttdoc">Performs 2D matrix multiplication.</div><div class="ttdef"><b>Definition</b> <a href="tensor_8cpp_source.html#l00539">tensor.cpp:539</a></div></div>
+<div class="ttc" id="aclassnn_1_1_tensor_html_af76152df2635ae32c4fccdd2f8002a27"><div class="ttname"><a href="classnn_1_1_tensor.html#af76152df2635ae32c4fccdd2f8002a27">nn::Tensor::print</a></div><div class="ttdeci">void print() const</div><div class="ttdoc">Prints compact tensor summary to standard output.</div><div class="ttdef"><b>Definition</b> <a href="tensor_8cpp_source.html#l00986">tensor.cpp:986</a></div></div>
+<div class="ttc" id="anamespacenn_html"><div class="ttname"><a href="namespacenn.html">nn</a></div><div class="ttdef"><b>Definition</b> <a href="activations_8hpp_source.html#l00010">activations.hpp:10</a></div></div>
+<div class="ttc" id="aneural__network_8hpp_html"><div class="ttname"><a href="neural__network_8hpp.html">neural_network.hpp</a></div><div class="ttdoc">Umbrella header that re-exports the library&#39;s public API.</div></div>
+<div class="ttc" id="aregression__example_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="regression__example_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition</b> <a href="regression__example_8cpp_source.html#l00035">regression_example.cpp:35</a></div></div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
+Building a Neural Network</h2>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="neural__network_8hpp.html">neural_network.hpp</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacenn.html">nn</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="regression__example_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line">    <span class="comment">// Create a neural network</span></div>
+<div class="line">    <span class="keyword">auto</span> model = std::make_shared&lt;Sequential&gt;();</div>
+<div class="line">    model-&gt;add(std::make_shared&lt;Linear&gt;(10, 64));</div>
+<div class="line">    model-&gt;add(std::make_shared&lt;ReLU&gt;());</div>
+<div class="line">    model-&gt;add(std::make_shared&lt;Dropout&gt;(0.5));</div>
+<div class="line">    model-&gt;add(std::make_shared&lt;Linear&gt;(64, 32));</div>
+<div class="line">    model-&gt;add(std::make_shared&lt;ReLU&gt;());</div>
+<div class="line">    model-&gt;add(std::make_shared&lt;Linear&gt;(32, 1));</div>
+<div class="line">    model-&gt;add(std::make_shared&lt;Sigmoid&gt;());</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Create optimizer</span></div>
+<div class="line">    <a class="code hl_class" href="classnn_1_1_adam.html">Adam</a> optimizer(model-&gt;parameters(), 0.001);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Training loop</span></div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> epoch = 0; epoch &lt; 100; ++epoch) {</div>
+<div class="line">        <span class="comment">// Forward pass</span></div>
+<div class="line">        <a class="code hl_class" href="classnn_1_1_tensor.html">Tensor</a> output = model-&gt;forward(input);</div>
+<div class="line">        </div>
+<div class="line">        <span class="comment">// Compute loss</span></div>
+<div class="line">        <a class="code hl_class" href="classnn_1_1_tensor.html">Tensor</a> loss = <a class="code hl_function" href="namespacenn_1_1losses.html#a5f0877563823bf09fc4a9372934f6621">losses::binary_cross_entropy</a>(output, target);</div>
+<div class="line">        </div>
+<div class="line">        <span class="comment">// Backward pass (to be fully implemented with autograd)</span></div>
+<div class="line">        <span class="comment">// loss.backward();</span></div>
+<div class="line">        </div>
+<div class="line">        <span class="comment">// Update parameters</span></div>
+<div class="line">        optimizer.step();</div>
+<div class="line">        optimizer.zero_grad();</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="aclassnn_1_1_adam_html"><div class="ttname"><a href="classnn_1_1_adam.html">nn::Adam</a></div><div class="ttdoc">Adam optimizer with bias-corrected first and second moments.</div><div class="ttdef"><b>Definition</b> <a href="optimizer_8hpp_source.html#l00074">optimizer.hpp:74</a></div></div>
+<div class="ttc" id="anamespacenn_1_1losses_html_a5f0877563823bf09fc4a9372934f6621"><div class="ttname"><a href="namespacenn_1_1losses.html#a5f0877563823bf09fc4a9372934f6621">nn::losses::binary_cross_entropy</a></div><div class="ttdeci">Tensor binary_cross_entropy(const Tensor &amp;predictions, const Tensor &amp;targets)</div><div class="ttdoc">Computes binary cross-entropy loss.</div><div class="ttdef"><b>Definition</b> <a href="losses_8cpp_source.html#l00029">losses.cpp:29</a></div></div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
+Running Examples</h2>
+<p>After building, you can run the example programs:</p>
+<div class="fragment"><div class="line"># XOR problem example</div>
+<div class="line">./xor_example</div>
+<div class="line"> </div>
+<div class="line"># Linear regression example</div>
+<div class="line">./regression_example</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
+API Reference</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
+Tensor Class</h2>
+<div class="fragment"><div class="line"><span class="comment">// Construction</span></div>
+<div class="line"><a class="code hl_class" href="classnn_1_1_tensor.html">Tensor</a>(shape, requires_grad=<span class="keyword">false</span>)</div>
+<div class="line"><a class="code hl_class" href="classnn_1_1_tensor.html">Tensor</a>(data, shape, requires_grad=false)</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Static factory methods</span></div>
+<div class="line"><a class="code hl_class" href="classnn_1_1_tensor.html">Tensor</a>::zeros(shape)</div>
+<div class="line"><a class="code hl_class" href="classnn_1_1_tensor.html">Tensor</a>::ones(shape)</div>
+<div class="line"><a class="code hl_class" href="classnn_1_1_tensor.html">Tensor</a>::randn(shape)</div>
+<div class="line"><a class="code hl_class" href="classnn_1_1_tensor.html">Tensor</a>::uniform(shape, low, high)</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Operations</span></div>
+<div class="line">tensor.matmul(other)</div>
+<div class="line">tensor.transpose()</div>
+<div class="line">tensor.reshape(new_shape)</div>
+<div class="line">tensor.sum(), tensor.mean()</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Autograd</span></div>
+<div class="line">tensor.backward()</div>
+<div class="line">tensor.zero_grad()</div>
+<div class="line">tensor.grad()</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
+Neural Network Layers</h2>
+<div class="fragment"><div class="line"><a class="code hl_class" href="classnn_1_1_linear.html">Linear</a>(in_features, out_features, use_bias=<span class="keyword">true</span>)</div>
+<div class="line"><a class="code hl_class" href="classnn_1_1_re_l_u.html">ReLU</a>()</div>
+<div class="line"><a class="code hl_class" href="classnn_1_1_sigmoid.html">Sigmoid</a>()</div>
+<div class="line"><a class="code hl_class" href="classnn_1_1_tanh.html">Tanh</a>()</div>
+<div class="line"><a class="code hl_class" href="classnn_1_1_dropout.html">Dropout</a>(p=0.5)</div>
+<div class="ttc" id="aclassnn_1_1_dropout_html"><div class="ttname"><a href="classnn_1_1_dropout.html">nn::Dropout</a></div><div class="ttdoc">Regularization layer that randomly zeroes activations during training.</div><div class="ttdef"><b>Definition</b> <a href="module_8hpp_source.html#l00178">module.hpp:178</a></div></div>
+<div class="ttc" id="aclassnn_1_1_linear_html"><div class="ttname"><a href="classnn_1_1_linear.html">nn::Linear</a></div><div class="ttdoc">Fully connected affine layer implementing $y = xW^T + b$.</div><div class="ttdef"><b>Definition</b> <a href="module_8hpp_source.html#l00058">module.hpp:58</a></div></div>
+<div class="ttc" id="aclassnn_1_1_re_l_u_html"><div class="ttname"><a href="classnn_1_1_re_l_u.html">nn::ReLU</a></div><div class="ttdoc">Module wrapper around the ReLU activation function.</div><div class="ttdef"><b>Definition</b> <a href="module_8hpp_source.html#l00127">module.hpp:127</a></div></div>
+<div class="ttc" id="aclassnn_1_1_sigmoid_html"><div class="ttname"><a href="classnn_1_1_sigmoid.html">nn::Sigmoid</a></div><div class="ttdoc">Module wrapper around the sigmoid activation function.</div><div class="ttdef"><b>Definition</b> <a href="module_8hpp_source.html#l00144">module.hpp:144</a></div></div>
+<div class="ttc" id="aclassnn_1_1_tanh_html"><div class="ttname"><a href="classnn_1_1_tanh.html">nn::Tanh</a></div><div class="ttdoc">Module wrapper around the hyperbolic tangent activation function.</div><div class="ttdef"><b>Definition</b> <a href="module_8hpp_source.html#l00161">module.hpp:161</a></div></div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
+Optimizers</h2>
+<div class="fragment"><div class="line"><a class="code hl_class" href="classnn_1_1_s_g_d.html">SGD</a>(parameters, learning_rate, momentum=0.0, weight_decay=0.0)</div>
+<div class="line"><a class="code hl_class" href="classnn_1_1_adam.html">Adam</a>(parameters, learning_rate=0.001, beta1=0.9, beta2=0.999)</div>
+<div class="ttc" id="aclassnn_1_1_s_g_d_html"><div class="ttname"><a href="classnn_1_1_s_g_d.html">nn::SGD</a></div><div class="ttdoc">Stochastic gradient descent with optional momentum and weight decay.</div><div class="ttdef"><b>Definition</b> <a href="optimizer_8hpp_source.html#l00032">optimizer.hpp:32</a></div></div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
+Loss Functions</h2>
+<div class="fragment"><div class="line"><a class="code hl_function" href="namespacenn_1_1losses.html#a86af182110e53799143872ad64bb5063">losses::mse_loss</a>(predictions, targets)</div>
+<div class="line"><a class="code hl_function" href="namespacenn_1_1losses.html#a5f0877563823bf09fc4a9372934f6621">losses::binary_cross_entropy</a>(predictions, targets)</div>
+<div class="line"><a class="code hl_function" href="namespacenn_1_1losses.html#af776167c69e36bcf75d5de224919d1ed">losses::cross_entropy_loss</a>(logits, targets)</div>
+<div class="line"><a class="code hl_function" href="namespacenn_1_1losses.html#a89d7b2decad1aceaed75a5929b76420c">losses::mae_loss</a>(predictions, targets)</div>
+<div class="ttc" id="anamespacenn_1_1losses_html_a86af182110e53799143872ad64bb5063"><div class="ttname"><a href="namespacenn_1_1losses.html#a86af182110e53799143872ad64bb5063">nn::losses::mse_loss</a></div><div class="ttdeci">Tensor mse_loss(const Tensor &amp;predictions, const Tensor &amp;targets)</div><div class="ttdoc">Computes mean squared error.</div><div class="ttdef"><b>Definition</b> <a href="losses_8cpp_source.html#l00017">losses.cpp:17</a></div></div>
+<div class="ttc" id="anamespacenn_1_1losses_html_a89d7b2decad1aceaed75a5929b76420c"><div class="ttname"><a href="namespacenn_1_1losses.html#a89d7b2decad1aceaed75a5929b76420c">nn::losses::mae_loss</a></div><div class="ttdeci">Tensor mae_loss(const Tensor &amp;predictions, const Tensor &amp;targets)</div><div class="ttdoc">Computes mean absolute error.</div><div class="ttdef"><b>Definition</b> <a href="losses_8cpp_source.html#l00108">losses.cpp:108</a></div></div>
+<div class="ttc" id="anamespacenn_1_1losses_html_af776167c69e36bcf75d5de224919d1ed"><div class="ttname"><a href="namespacenn_1_1losses.html#af776167c69e36bcf75d5de224919d1ed">nn::losses::cross_entropy_loss</a></div><div class="ttdeci">Tensor cross_entropy_loss(const Tensor &amp;logits, const Tensor &amp;targets)</div><div class="ttdoc">Computes multiclass cross-entropy from logits and targets.</div><div class="ttdef"><b>Definition</b> <a href="losses_8cpp_source.html#l00074">losses.cpp:74</a></div></div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md19"></a>
+Roadmap</h1>
+<ul class="check">
+<li class="checked">Basic tensor operations</li>
+</ul>
+<ul class="check">
+<li class="checked">Activation functions</li>
+</ul>
+<ul class="check">
+<li class="checked">Loss functions</li>
+</ul>
+<ul class="check">
+<li class="checked">Optimizers (SGD, Adam)</li>
+</ul>
+<ul class="check">
+<li class="checked">Sequential model</li>
+<li class="unchecked">Full automatic differentiation</li>
+</ul>
+<ul class="check">
+<li class="unchecked">Convolutional layers</li>
+</ul>
+<ul class="check">
+<li class="unchecked">Recurrent layers (LSTM, GRU)</li>
+</ul>
+<ul class="check">
+<li class="unchecked">Batch normalization</li>
+</ul>
+<ul class="check">
+<li class="unchecked">Data loaders and datasets</li>
+</ul>
+<ul class="check">
+<li class="unchecked">Model serialization</li>
+</ul>
+<ul class="check">
+<li class="unchecked">GPU support</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md20"></a>
+Contributing</h1>
+<p>Contributions are welcome! Please feel free to submit issues or pull requests.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md21"></a>
+License</h1>
+<p>This project is open source and available under the MIT License. </p>
+</div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->
 </div><!-- doc-content -->

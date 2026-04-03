@@ -14,6 +14,7 @@
 
 namespace nn {
 
+/** @ingroup tensor_api */
 /// Dense n-dimensional tensor with optional gradient storage.
 ///
 /// Tensor owns a flat contiguous buffer and a shape vector describing how that
